@@ -11,7 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     override func didMove(to: SKView) {
-        if let grid = Grid(blockSize: 40.0, rows:5, cols:5) {
+        if let grid = Grid(blockSize: 40.0, rows:10, cols:10) {
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             addChild(grid)
             
@@ -21,4 +21,6 @@ class GameScene: SKScene {
             grid.addChild(gamePiece)
         }
     }
+    
+    
 }

@@ -22,6 +22,7 @@ class Grid:SKSpriteNode {
         self.blockSize = blockSize
         self.rows = rows
         self.cols = cols
+        self.isUserInteractionEnabled = true
     }
     
     class func gridTexture(blockSize:CGFloat,rows:Int,cols:Int) -> SKTexture? {
@@ -61,5 +62,25 @@ class Grid:SKSpriteNode {
         let x = CGFloat(col) * blockSize - (blockSize * CGFloat(cols)) / 2.0 + offset
         let y = CGFloat(rows - row - 1) * blockSize - (blockSize * CGFloat(rows)) / 2.0 + offset
         return CGPoint(x:x, y:y)
+    }
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let position = touch.location(in:self)
+            let node = atPoint(position)
+            if node != self {
+                let action = SKAction.rotate(byAngle:CGFloat.pi*2, duration: 1)
+                node.run(action)
+            }
+            else {
+                let x = size.width / 2 + position.x
+                let y = size.height / 2 - position.y
+                let row = Int(floor(x / blockSize))
+                let col = Int(floor(y / blockSize))
+                print("\(row) \(col)")
+            }
+        }
     }
 }
