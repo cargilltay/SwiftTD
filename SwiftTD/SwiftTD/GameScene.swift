@@ -30,6 +30,7 @@ class GameScene: SKScene {
         
         if let body = physicsWorld.body(at: touchLocation) {
             //start here: Not detecting for some reason
+            //https://www.raywenderlich.com/123393/how-to-create-a-breakout-game-with-sprite-kit-and-swift
             print(body.node!.name ?? "none")
             if body.node!.name == TowerButtonName {
                 print("Began touch on paddle")
