@@ -29,6 +29,7 @@
 		701E16A91E6BD67D007EEAD9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A81E6BD67D007EEAD9 /* SignUpViewController.swift */; };
 		701E16AB1E6BD693007EEAD9 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16AA1E6BD693007EEAD9 /* MainMenuViewController.swift */; };
 		701E16AD1E6BD6A1007EEAD9 /* GameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16AC1E6BD6A1007EEAD9 /* GameModeViewController.swift */; };
+		7048332E1E896AEE0085BC6B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048332D1E896AEE0085BC6B /* GameController.swift */; };
 		70674CC71E6FC79300A5BFB9 /* SwiftTDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CC61E6FC79300A5BFB9 /* SwiftTDLabel.swift */; };
 		70674CC91E6FC7A800A5BFB9 /* SwiftTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CC81E6FC7A800A5BFB9 /* SwiftTDButton.swift */; };
 		70674CCB1E6FC7D000A5BFB9 /* SwiftTDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CCA1E6FC7D000A5BFB9 /* SwiftTDTextField.swift */; };
@@ -84,6 +85,7 @@
 		701E16A81E6BD67D007EEAD9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		701E16AA1E6BD693007EEAD9 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		701E16AC1E6BD6A1007EEAD9 /* GameModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeViewController.swift; sourceTree = "<group>"; };
+		7048332D1E896AEE0085BC6B /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		70674CC61E6FC79300A5BFB9 /* SwiftTDLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDLabel.swift; sourceTree = "<group>"; };
 		70674CC81E6FC7A800A5BFB9 /* SwiftTDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDButton.swift; sourceTree = "<group>"; };
 		70674CCA1E6FC7D000A5BFB9 /* SwiftTDTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDTextField.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */,
 				70674CCC1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift */,
+				7048332D1E896AEE0085BC6B /* GameController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				701E16AB1E6BD693007EEAD9 /* MainMenuViewController.swift in Sources */,
 				701E16A21E666894007EEAD9 /* Grid.swift in Sources */,
 				709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */,
+				7048332E1E896AEE0085BC6B /* GameController.swift in Sources */,
 				701E169B1E666870007EEAD9 /* BaseTower.swift in Sources */,
 				701E169C1E666870007EEAD9 /* TestMonster.swift in Sources */,
 				701E163A1E6126B3007EEAD9 /* GameViewController.swift in Sources */,

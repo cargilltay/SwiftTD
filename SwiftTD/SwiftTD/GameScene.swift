@@ -27,7 +27,14 @@ class GameScene: SKScene {
             //add monsters
             
             tMonster.setScale(0.0625)
+            
+            let moveTime = TimeInterval(2.0)
+            print(tMonster.position)
             self.addChild(tMonster)
+            
+            
+            tMonster.position = CGPoint(x: 0.0 / 2, y: UIScreen.main.bounds.height)
+            tMonster.moveToCustom(x: 0.0, y: 0.0, timeToMove: moveTime);
         }
         
     }
