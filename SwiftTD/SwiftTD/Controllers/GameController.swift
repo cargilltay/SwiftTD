@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SpriteKit
 
 class GameController {
     var level: Int = 1
@@ -23,7 +23,15 @@ class GameController {
     var time: Date = Date()
     //var difficulty
     //var mode
+    func setup(){
+        self.populateMinions()
+    }
     
-    
-    
+    func populateMinions(){
+        //going to ahve to send monsters their stats dynamically eventually.
+        for _ in 1...self.numMonsters {
+            let m = BaseMonster(damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Spaceship"), color: UIColor.blue)
+            self.monsters.append(m)
+        }
+    }
 }
