@@ -16,6 +16,7 @@ class GameScene: SKScene {
     var monsterTimer: Timer?
     var spawnedMonsterCount: Int = 0
     var rockButton: SKSpriteNode!
+    var background: SKSpriteNode!
     var movableNode : SKNode?
     
     override func didMove(to: SKView) {
@@ -26,6 +27,9 @@ class GameScene: SKScene {
         rockButton.zPosition = 100
         self.addChild(rockButton)
         
+        background = SKSpriteNode(imageNamed: "Background")
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
         
         //rockButton.position
         //rockButton.position = CGPoint(x: 150, y: 150)
