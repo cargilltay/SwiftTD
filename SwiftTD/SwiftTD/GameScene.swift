@@ -12,6 +12,8 @@ import GameplayKit
 class GameScene: SKScene {
     let game: GameController = GameController()
     let TowerButtonName = "Rock"
+    var monsterTimer: Timer?
+    var spawnedMonsterCount: Int = 0
     static let defaultScale: CGFloat = 0.0625
     var isFingerOnTower = false
     
@@ -60,16 +62,38 @@ class GameScene: SKScene {
     }
     
     func drawMonsters(){
-        //temporary
-        let tMonster = BaseMonster(damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Spaceship"), color: UIColor.blue)
+        //prevent timer being called twice
+        guard monsterTimer == nil else { return }
+        monsterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(drawMonster), userInfo: nil, repeats: true)
+            
+        //}
+    }
+    
+    @objc func drawMonster(){
+        if(spawnedMonsterCount == game.monsters.count){
+            guard monsterTimer != nil else { return }
+            monsterTimer?.invalidate()
+            monsterTimer = nil
+            return;
+        }
+        let monster = game.monsters[spawnedMonsterCount]
+        monster.setScale(GameScene.defaultScale)
         
-        tMonster.setScale(GameScene.defaultScale)
-        tMonster.position = CGPoint(x: 0.0 / 2, y: UIScreen.main.bounds.height)
-        self.addChild(tMonster)
+        let screenSize = UIScreen.main.bounds
+        //no idea what this needs to be twice as large
+        let screenWidth = screenSize.width * 2
+        let screenHeight = screenSize.height * 2
+        
+        
+        monster.position = CGPoint(x: screenWidth / 2, y: screenHeight)
+        self.addChild(monster)
         
         let moveTime = TimeInterval(2.0)
         
-        tMonster.moveToCustom(x: 0.0, y: 0.0, timeToMove: moveTime);
+        monster.moveToCustom(x: screenWidth / 2, y: 0.0, timeToMove: moveTime);
+        spawnedMonsterCount += 1
+        
+    
     }
     
     func drawGrid(){
