@@ -11,14 +11,26 @@ import GameplayKit
 
 class GameScene: SKScene {
     let game: GameController = GameController()
-    let TowerButtonName = "Rock"
+    static let defaultScale: CGFloat = 0.0625
+    
     var monsterTimer: Timer?
     var spawnedMonsterCount: Int = 0
-    static let defaultScale: CGFloat = 0.0625
-    var isFingerOnTower = false
+    var rockButton: SKSpriteNode!
+    var movableNode : SKNode?
     
     override func didMove(to: SKView) {
         game.setup()
+        
+        rockButton = SKSpriteNode(imageNamed: "Rock")
+        rockButton.position = CGPoint(x: 150, y: 150)
+        rockButton.zPosition = 100
+        self.addChild(rockButton)
+        
+        
+        //rockButton.position
+        //rockButton.position = CGPoint(x: 150, y: 150)
+        //rockButton.texture = SKTexture(imageNamed: "Rock")
+        //self.addChild(rockButton)
         
         drawGrid()
         
@@ -27,46 +39,47 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        let touchLocation = touch!.location(in: self)
-        
-        if let body = physicsWorld.body(at: touchLocation) {
-            //start here: Not detecting for some reason
-            //https://www.raywenderlich.com/123393/how-to-create-a-breakout-game-with-sprite-kit-and-swift
-            print(body.node!.name ?? "none")
-            if body.node!.name == TowerButtonName {
-                print("Began touch on paddle")
-                isFingerOnTower = true
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            if rockButton.contains(location) {
+                movableNode = createRock()
+                movableNode!.position = location
             }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isFingerOnTower {
-            let touch = touches.first
-            let touchLocation = touch!.location(in: self)
-            let previousLocation = touch!.previousLocation(in: self)
-            
-            let tower = childNode(withName: TowerButtonName) as! SKSpriteNode
-            
-            //create towerX
-            var towerX = tower.position.x + (touchLocation.x - previousLocation.x)
-            
-            //assign towerX
-            towerX = max(towerX, tower.size.width/2)
-            towerX = min(towerX, size.width - tower.size.width/2)
-            
-            //set position during drag
-            tower.position = CGPoint(x: towerX, y: tower.position.y)
+        if let touch = touches.first, movableNode != nil {
+            movableNode!.position = touch.location(in: self)
         }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first, movableNode != nil {
+            movableNode!.position = touch.location(in: self)
+            movableNode = nil
+        }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            movableNode = nil
+        }
+    }
+    
+    func createRock() -> SKSpriteNode{
+        let rock: SKSpriteNode!
+        rock = SKSpriteNode(imageNamed: "Rock")
+        rock.position = CGPoint(x: 150, y: 150)
+        rock.zPosition = 100
+        self.addChild(rock)
+        
+        return rock
     }
     
     func drawMonsters(){
         //prevent timer being called twice
         guard monsterTimer == nil else { return }
         monsterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(drawMonster), userInfo: nil, repeats: true)
-            
-        //}
     }
     
     @objc func drawMonster(){
@@ -81,6 +94,7 @@ class GameScene: SKScene {
         
         let screenSize = UIScreen.main.bounds
         //no idea what this needs to be twice as large
+        //posisbly use self.frame.size.width
         let screenWidth = screenSize.width * 2
         let screenHeight = screenSize.height * 2
         
