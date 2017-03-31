@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5oF-Tb-no6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHZ-to-DZx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,8 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU7-0f-KlR" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="597" width="143" height="40"/>
+                                <rect key="frame" x="113" y="597" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6Ad-11-9XD"/>
                                     <constraint firstAttribute="height" constant="40" id="BdD-Sa-Zny"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
@@ -33,9 +34,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drx-V6-cP4" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="320" width="143" height="40"/>
+                                <rect key="frame" x="113" y="364" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IBD-bQ-Uhx"/>
+                                    <constraint firstAttribute="width" constant="150" id="Y7I-qt-DCm"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
@@ -43,8 +45,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCY-aG-0iT" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="230" width="143" height="40"/>
+                                <rect key="frame" x="113" y="274" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0uw-Wm-9UW"/>
                                     <constraint firstAttribute="height" constant="40" id="lbs-nG-sPT"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -52,7 +55,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zt-lW6" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="140" width="150" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="103-51-lqC"/>
                                     <constraint firstAttribute="height" constant="40" id="k4I-up-7JB"/>
@@ -64,19 +67,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="drx-V6-cP4" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="7ja-fq-wJr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="drx-V6-cP4" secondAttribute="trailing" constant="100" id="8NX-EO-FW4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fU7-0f-KlR" secondAttribute="trailing" constant="100" id="FTP-iE-4NK"/>
+                            <constraint firstItem="drx-V6-cP4" firstAttribute="centerX" secondItem="11E-lY-QvO" secondAttribute="centerX" id="93o-Oa-1QG"/>
                             <constraint firstItem="gFd-1k-Njj" firstAttribute="top" secondItem="fU7-0f-KlR" secondAttribute="bottom" constant="30" id="ITN-Fe-0n8"/>
-                            <constraint firstItem="LCY-aG-0iT" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="Mnd-rh-jQE"/>
-                            <constraint firstItem="fU7-0f-KlR" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="e8w-jM-V38"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LCY-aG-0iT" secondAttribute="trailing" constant="100" id="ggv-Ux-TQY"/>
+                            <constraint firstItem="fU7-0f-KlR" firstAttribute="centerX" secondItem="11E-lY-QvO" secondAttribute="centerX" id="Tgw-3j-7rD"/>
                             <constraint firstItem="eiH-Zt-lW6" firstAttribute="top" secondItem="TMl-p5-2rU" secondAttribute="bottom" constant="120" id="nVQ-h8-9kp"/>
+                            <constraint firstItem="LCY-aG-0iT" firstAttribute="centerX" secondItem="11E-lY-QvO" secondAttribute="centerX" id="nqQ-fh-YLH"/>
                             <constraint firstItem="eiH-Zt-lW6" firstAttribute="centerX" secondItem="11E-lY-QvO" secondAttribute="centerX" id="ptr-HW-nqu"/>
                             <constraint firstItem="drx-V6-cP4" firstAttribute="top" secondItem="LCY-aG-0iT" secondAttribute="bottom" constant="50" id="r3M-uJ-a8q"/>
                             <constraint firstItem="LCY-aG-0iT" firstAttribute="top" secondItem="eiH-Zt-lW6" secondAttribute="bottom" constant="50" id="won-oC-kdv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="b4v-26-RPc"/>
                     <connections>
                         <outlet property="passWordField" destination="LCY-aG-0iT" id="hav-6z-fib"/>
                         <outlet property="signIn" destination="drx-V6-cP4" id="kNa-J2-NxZ"/>
@@ -86,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckQ-tx-KE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1956" y="164"/>
+            <point key="canvasLocation" x="-1016.8" y="163.26836581709148"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="OLX-VO-Idk">
@@ -138,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yR-gt-nCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978.39999999999998" y="162.3688155922039"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="162.3688155922039"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="hYg-f0-ogv">
@@ -349,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkY-sQ-zVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-0.80000000000000004" y="163.26836581709148"/>
+            <point key="canvasLocation" x="938.39999999999998" y="163.26836581709148"/>
         </scene>
         <!--Difficulty View Controller-->
         <scene sceneID="bJr-2R-GGO">
@@ -415,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG4-IY-8d4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512.8" y="658.92053973013503"/>
+            <point key="canvasLocation" x="2452" y="658.92053973013503"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -449,7 +450,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512.8" y="-206.44677661169416"/>
+            <point key="canvasLocation" x="2452" y="-206.44677661169416"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GkY-xG-nB8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RHZ-to-DZx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="97H-lh-Bgp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5oF-Tb-no6" kind="relationship" relationship="rootViewController" id="6TA-fL-kub"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCo-wp-VBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1956" y="163.26836581709148"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
