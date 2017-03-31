@@ -22,6 +22,15 @@ class GameScene: SKScene {
     override func didMove(to: SKView) {
         game.setup()
         
+        setupUI()
+        
+        drawGrid()
+        
+        drawMonsters()
+        
+    }
+    
+    func setupUI(){
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 150, y: 150)
         rockButton.zPosition = 100
@@ -29,17 +38,7 @@ class GameScene: SKScene {
         
         background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
-        addChild(background)
-        
-        //rockButton.position
-        //rockButton.position = CGPoint(x: 150, y: 150)
-        //rockButton.texture = SKTexture(imageNamed: "Rock")
-        //self.addChild(rockButton)
-        
-        drawGrid()
-        
-        drawMonsters()
-        
+        self.addChild(background)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
