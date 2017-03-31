@@ -11,6 +11,15 @@ import GameplayKit
 
 class GameScene: SKScene {
     let game: GameController = GameController()
+    
+    
+    let screenSize = UIScreen.main.bounds
+    //no idea what this needs to be twice as large
+    //posisbly use self.frame.size.width
+    var screenWidth: CGFloat?
+    var screenHeight: CGFloat?
+
+    
     static let defaultScale: CGFloat = 0.0625
     
     var monsterTimer: Timer?
@@ -31,6 +40,10 @@ class GameScene: SKScene {
     }
     
     func setupUI(){
+        
+        screenWidth = screenSize.width * 2
+        screenHeight = screenSize.height * 2
+        
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 150, y: 150)
         rockButton.zPosition = 100
@@ -59,6 +72,23 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, movableNode != nil {
+            //check here if within grid.
+            let touchX = touch.location(in: self).x
+            let touchY = touch.location(in: self).y
+            let xInBounds = touchX < screenWidth! && touchX > 0
+            
+            //need to change 500 to bottom of grid
+            let yInBounds = touchY < screenHeight! && touchY > 500
+            
+            
+            if(!xInBounds || !yInBounds){
+                
+                movableNode?.removeFromParent()
+                movableNode = nil
+                return;
+            }
+            
+            //if in grid. set position to grid col/row
             movableNode!.position = touch.location(in: self)
             movableNode = nil
         }
@@ -95,26 +125,24 @@ class GameScene: SKScene {
         let monster = game.monsters[spawnedMonsterCount]
         monster.setScale(GameScene.defaultScale)
         
-        let screenSize = UIScreen.main.bounds
-        //no idea what this needs to be twice as large
-        //posisbly use self.frame.size.width
-        let screenWidth = screenSize.width * 2
-        let screenHeight = screenSize.height * 2
         
-        
-        monster.position = CGPoint(x: screenWidth / 2, y: screenHeight)
+        monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
         self.addChild(monster)
         
         let moveTime = TimeInterval(2.0)
         
-        monster.moveToCustom(x: screenWidth / 2, y: 0.0, timeToMove: moveTime);
+        monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
         spawnedMonsterCount += 1
         
     
     }
     
     func drawGrid(){
-        if let grid = Grid(blockSize: 40.0, rows:10, cols:10) {
+        let gridRows = 10
+        let gridCols = 10
+        let blockSize = screenWidth! / CGFloat(gridRows)
+        
+        if let grid = Grid(blockSize: blockSize, rows:gridRows, cols:gridCols) {
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             addChild(grid)
             
