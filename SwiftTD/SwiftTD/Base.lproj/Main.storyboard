@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,9 +101,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZf-V6-zJt" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="230" width="143" height="40"/>
+                                <rect key="frame" x="113" y="274" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IZB-Y5-gBr"/>
+                                    <constraint firstAttribute="width" constant="150" id="s6e-fm-FCA"/>
                                 </constraints>
                                 <state key="normal" title="Settings"/>
                                 <connections>
@@ -112,9 +112,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-7k-D7f" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fuv-2p-R5G"/>
+                                    <constraint firstAttribute="width" constant="150" id="Zoq-cP-jUc"/>
                                 </constraints>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -124,12 +125,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hfW-7k-D7f" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="7j0-Pn-az6"/>
                             <constraint firstItem="vZf-V6-zJt" firstAttribute="top" secondItem="hfW-7k-D7f" secondAttribute="bottom" constant="50" id="CKw-Fv-qId"/>
                             <constraint firstItem="hfW-7k-D7f" firstAttribute="top" secondItem="MUI-Fb-vsd" secondAttribute="bottom" constant="120" id="G4P-v0-ECk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vZf-V6-zJt" secondAttribute="trailing" constant="100" id="d9s-Dg-qhs"/>
-                            <constraint firstItem="hfW-7k-D7f" firstAttribute="leading" secondItem="3NQ-6A-KwF" secondAttribute="leadingMargin" constant="100" id="ngQ-Ip-e4m"/>
-                            <constraint firstItem="vZf-V6-zJt" firstAttribute="leading" secondItem="3NQ-6A-KwF" secondAttribute="leadingMargin" constant="100" id="uRJ-IH-HUY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hfW-7k-D7f" secondAttribute="trailing" constant="100" id="wYu-4t-0f8"/>
+                            <constraint firstItem="vZf-V6-zJt" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="e8Z-K6-EK6"/>
                         </constraints>
                     </view>
                     <connections>
@@ -154,26 +153,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUG-Jk-cpN" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="230" width="143" height="40"/>
+                                <rect key="frame" x="113" y="274" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="76B-RU-0wU"/>
+                                    <constraint firstAttribute="width" constant="150" id="gne-kT-F7k"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS3-ws-T0b" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="320" width="143" height="40"/>
+                                <rect key="frame" x="113" y="364" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FeP-fe-7Ni"/>
+                                    <constraint firstAttribute="width" constant="150" id="Po1-ws-fte"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bX6-cV-GYJ" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="8HW-Jc-6mz"/>
                                     <constraint firstAttribute="height" constant="40" id="fSb-xC-MY2"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -181,8 +183,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izb-xH-aEw" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="597" width="143" height="40"/>
+                                <rect key="frame" x="113" y="597" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4pQ-gb-p30"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="EaF-Nv-vwj"/>
                                     <constraint firstAttribute="height" constant="40" id="uX8-dq-XOX"/>
                                 </constraints>
@@ -191,16 +194,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MS3-ws-T0b" secondAttribute="trailing" constant="100" id="2Rq-5F-0QU"/>
-                            <constraint firstItem="bX6-cV-GYJ" firstAttribute="leading" secondItem="Hhl-TM-iTk" secondAttribute="leadingMargin" constant="100" id="CHF-fj-Zpc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bX6-cV-GYJ" secondAttribute="trailing" constant="100" id="Dvw-oD-BdI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Izb-xH-aEw" secondAttribute="trailing" constant="100" id="GGW-61-6gL"/>
+                            <constraint firstItem="JUG-Jk-cpN" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="O8k-DM-RwW"/>
                             <constraint firstItem="MS3-ws-T0b" firstAttribute="top" secondItem="JUG-Jk-cpN" secondAttribute="bottom" constant="50" id="Pg9-np-r69"/>
-                            <constraint firstItem="JUG-Jk-cpN" firstAttribute="leading" secondItem="Hhl-TM-iTk" secondAttribute="leadingMargin" constant="100" id="f2A-zj-WTW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JUG-Jk-cpN" secondAttribute="trailing" constant="100" id="g4q-hb-d1P"/>
-                            <constraint firstItem="MS3-ws-T0b" firstAttribute="leading" secondItem="Hhl-TM-iTk" secondAttribute="leadingMargin" constant="100" id="gOp-tR-da0"/>
+                            <constraint firstItem="Izb-xH-aEw" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Sho-EB-RCl"/>
+                            <constraint firstItem="bX6-cV-GYJ" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Wvq-W8-GSa"/>
                             <constraint firstItem="JUG-Jk-cpN" firstAttribute="top" secondItem="bX6-cV-GYJ" secondAttribute="bottom" constant="50" id="hYX-HN-v3A"/>
-                            <constraint firstItem="Izb-xH-aEw" firstAttribute="leading" secondItem="Hhl-TM-iTk" secondAttribute="leadingMargin" constant="100" id="kWe-65-2qt"/>
+                            <constraint firstItem="MS3-ws-T0b" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="jSr-Fz-aLg"/>
                             <constraint firstItem="bX6-cV-GYJ" firstAttribute="top" secondItem="b4H-5n-8eA" secondAttribute="bottom" constant="120" id="ufd-qy-bpd"/>
                             <constraint firstItem="efB-oF-LxF" firstAttribute="top" secondItem="Izb-xH-aEw" secondAttribute="bottom" constant="30" id="vlV-kb-mmU"/>
                         </constraints>
@@ -223,21 +222,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1Z-m3-Db6">
-                                <rect key="frame" x="114" y="350" width="147" height="41"/>
+                                <rect key="frame" x="111" y="394" width="154" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7y5-El-Qlv"/>
+                                    <constraint firstAttribute="width" constant="150" id="EC5-qR-LlH"/>
                                 </constraints>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-24-6oz">
-                                <rect key="frame" x="114" y="210" width="147" height="41"/>
+                                <rect key="frame" x="111" y="254" width="154" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0mR-WY-KTQ"/>
+                                    <constraint firstAttribute="width" constant="150" id="xSP-Gx-tqR"/>
                                 </constraints>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npq-Qs-0ok" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GeK-PL-l9z"/>
+                                    <constraint firstAttribute="width" constant="150" id="OIK-Nt-nfl"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="lHZ-iE-R3j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -245,15 +247,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-ma-6az" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="597" width="143" height="40"/>
+                                <rect key="frame" x="113" y="597" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="X9Y-jo-Jdg"/>
+                                    <constraint firstAttribute="width" constant="150" id="kZm-um-ZMm"/>
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-KY-s2k" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="280" width="143" height="40"/>
+                                <rect key="frame" x="113" y="324" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Njb-8B-30e"/>
                                     <constraint firstAttribute="height" constant="40" id="yxV-Dd-5R0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -263,21 +267,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Jm-ma-6az" secondAttribute="trailing" constant="100" id="1r4-9t-pKD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wwv-KY-s2k" secondAttribute="trailing" constant="100" id="2w7-ob-205"/>
                             <constraint firstItem="Wwv-KY-s2k" firstAttribute="top" secondItem="0fS-24-6oz" secondAttribute="bottom" constant="30" id="5b4-p4-I7l"/>
-                            <constraint firstItem="0fS-24-6oz" firstAttribute="leading" secondItem="T3G-Pf-qX9" secondAttribute="leadingMargin" constant="100" id="7om-n3-oRk"/>
+                            <constraint firstItem="9Jm-ma-6az" firstAttribute="centerX" secondItem="T3G-Pf-qX9" secondAttribute="centerX" id="7CN-VV-MEh"/>
                             <constraint firstItem="sUH-7A-6yZ" firstAttribute="top" secondItem="9Jm-ma-6az" secondAttribute="bottom" constant="30" id="8AC-hX-fpj"/>
-                            <constraint firstItem="9Jm-ma-6az" firstAttribute="leading" secondItem="T3G-Pf-qX9" secondAttribute="leadingMargin" constant="100" id="F3I-o8-YQc"/>
-                            <constraint firstItem="Npq-Qs-0ok" firstAttribute="leading" secondItem="T3G-Pf-qX9" secondAttribute="leadingMargin" constant="100" id="WJH-jH-ark"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0fS-24-6oz" secondAttribute="trailing" constant="100" id="WaC-fa-Ygr"/>
+                            <constraint firstItem="0fS-24-6oz" firstAttribute="centerX" secondItem="T3G-Pf-qX9" secondAttribute="centerX" id="LH3-Cs-j3U"/>
+                            <constraint firstItem="Npq-Qs-0ok" firstAttribute="centerX" secondItem="T3G-Pf-qX9" secondAttribute="centerX" id="Mbv-so-kgv"/>
                             <constraint firstItem="0fS-24-6oz" firstAttribute="top" secondItem="Npq-Qs-0ok" secondAttribute="bottom" constant="30" id="ZnU-Aw-zdH"/>
-                            <constraint firstItem="A1Z-m3-Db6" firstAttribute="leading" secondItem="T3G-Pf-qX9" secondAttribute="leadingMargin" constant="100" id="cDV-eu-ZBB"/>
                             <constraint firstItem="A1Z-m3-Db6" firstAttribute="top" secondItem="Wwv-KY-s2k" secondAttribute="bottom" constant="30" id="hb6-bg-xEy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A1Z-m3-Db6" secondAttribute="trailing" constant="100" id="kKk-Cj-zLG"/>
                             <constraint firstItem="Npq-Qs-0ok" firstAttribute="top" secondItem="jzj-ze-V88" secondAttribute="bottom" constant="120" id="kRf-R8-pRE"/>
-                            <constraint firstItem="Wwv-KY-s2k" firstAttribute="leading" secondItem="T3G-Pf-qX9" secondAttribute="leadingMargin" constant="100" id="lEs-fx-vhx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Npq-Qs-0ok" secondAttribute="trailing" constant="100" id="saQ-XX-FKq"/>
+                            <constraint firstItem="A1Z-m3-Db6" firstAttribute="centerX" secondItem="T3G-Pf-qX9" secondAttribute="centerX" id="odd-DZ-Hyr"/>
+                            <constraint firstItem="Wwv-KY-s2k" firstAttribute="centerX" secondItem="T3G-Pf-qX9" secondAttribute="centerX" id="pi2-Tl-7cB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -302,9 +301,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-wW-yWn" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="110" y="184" width="155" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1y2-Th-I9G"/>
+                                    <constraint firstAttribute="width" constant="155" id="xKL-k4-3dn"/>
                                 </constraints>
                                 <state key="normal" title="New Game"/>
                                 <connections>
@@ -312,8 +312,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-R5-ppa" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="230" width="143" height="40"/>
+                                <rect key="frame" x="110" y="274" width="155" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="WVA-4g-lOz"/>
                                     <constraint firstAttribute="height" constant="40" id="gEn-uB-YEh"/>
                                 </constraints>
                                 <state key="normal" title="Resume Game"/>
@@ -322,8 +323,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmT-8I-J5G" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="86" y="320" width="203" height="40"/>
+                                <rect key="frame" x="110" y="364" width="155" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="BlS-te-JaR"/>
                                     <constraint firstAttribute="height" constant="40" id="nVs-Wx-OJG"/>
                                 </constraints>
                                 <state key="normal" title="New Multiplayer Game"/>
@@ -331,15 +333,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="AmT-8I-J5G" secondAttribute="trailing" constant="70" id="0Rg-yK-Xdg"/>
                             <constraint firstItem="AmT-8I-J5G" firstAttribute="top" secondItem="gh8-R5-ppa" secondAttribute="bottom" constant="50" id="8GU-5C-Q8r"/>
-                            <constraint firstItem="rOd-wW-yWn" firstAttribute="leading" secondItem="Z4f-su-1Yx" secondAttribute="leadingMargin" constant="100" id="ETu-qt-NSg"/>
-                            <constraint firstItem="gh8-R5-ppa" firstAttribute="leading" secondItem="Z4f-su-1Yx" secondAttribute="leadingMargin" constant="100" id="IQ4-NW-l0t"/>
                             <constraint firstItem="rOd-wW-yWn" firstAttribute="top" secondItem="q8R-l5-kir" secondAttribute="bottom" constant="120" id="JjE-bA-nu7"/>
-                            <constraint firstItem="AmT-8I-J5G" firstAttribute="leading" secondItem="Z4f-su-1Yx" secondAttribute="leadingMargin" constant="70" id="ViE-18-8PB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rOd-wW-yWn" secondAttribute="trailing" constant="100" id="i4o-gL-Ddr"/>
+                            <constraint firstItem="rOd-wW-yWn" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="Rw7-nh-tEI"/>
+                            <constraint firstItem="AmT-8I-J5G" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="Utg-nI-6jr"/>
                             <constraint firstItem="gh8-R5-ppa" firstAttribute="top" secondItem="rOd-wW-yWn" secondAttribute="bottom" constant="50" id="m6p-oh-ZNH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gh8-R5-ppa" secondAttribute="trailing" constant="100" id="rZI-dD-6vK"/>
+                            <constraint firstItem="gh8-R5-ppa" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="xWm-CN-y4s"/>
                         </constraints>
                     </view>
                     <connections>
@@ -365,8 +364,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqk-97-bHi" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9l6-ML-qe5"/>
                                     <constraint firstAttribute="height" constant="40" id="Vp4-Ne-fx8"/>
                                 </constraints>
                                 <state key="normal" title="Easy"/>
@@ -375,9 +375,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-Mn-jti" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="230" width="143" height="40"/>
+                                <rect key="frame" x="113" y="274" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3JM-6Y-pth"/>
+                                    <constraint firstAttribute="width" constant="150" id="sbu-hX-mEP"/>
                                 </constraints>
                                 <state key="normal" title="Medium"/>
                                 <connections>
@@ -385,9 +386,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKL-Xi-1Tg" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="320" width="143" height="40"/>
+                                <rect key="frame" x="113" y="364" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0RW-VB-zcc"/>
+                                    <constraint firstAttribute="width" constant="150" id="0oq-Os-m04"/>
                                 </constraints>
                                 <state key="normal" title="Hard"/>
                                 <connections>
@@ -398,14 +400,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FAc-Mn-jti" firstAttribute="top" secondItem="Cqk-97-bHi" secondAttribute="bottom" constant="50" id="1cV-US-UIn"/>
-                            <constraint firstItem="EKL-Xi-1Tg" firstAttribute="leading" secondItem="rK9-cl-zh0" secondAttribute="leadingMargin" constant="100" id="C6y-sL-Hva"/>
+                            <constraint firstItem="FAc-Mn-jti" firstAttribute="centerX" secondItem="rK9-cl-zh0" secondAttribute="centerX" id="AVs-SD-WrI"/>
                             <constraint firstItem="EKL-Xi-1Tg" firstAttribute="top" secondItem="FAc-Mn-jti" secondAttribute="bottom" constant="50" id="H1R-e5-vEY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EKL-Xi-1Tg" secondAttribute="trailing" constant="100" id="Qvf-gk-LR8"/>
-                            <constraint firstItem="Cqk-97-bHi" firstAttribute="leading" secondItem="rK9-cl-zh0" secondAttribute="leadingMargin" constant="100" id="Rmo-F0-6EI"/>
-                            <constraint firstItem="FAc-Mn-jti" firstAttribute="leading" secondItem="rK9-cl-zh0" secondAttribute="leadingMargin" constant="100" id="Rrx-2e-ht5"/>
+                            <constraint firstItem="Cqk-97-bHi" firstAttribute="centerX" secondItem="rK9-cl-zh0" secondAttribute="centerX" id="Ufa-Yh-Y17"/>
                             <constraint firstItem="Cqk-97-bHi" firstAttribute="top" secondItem="daJ-jj-QPE" secondAttribute="bottom" constant="120" id="VgP-rU-lbm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cqk-97-bHi" secondAttribute="trailing" constant="100" id="hJt-ou-arC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FAc-Mn-jti" secondAttribute="trailing" constant="100" id="qGx-Li-V76"/>
+                            <constraint firstItem="EKL-Xi-1Tg" firstAttribute="centerX" secondItem="rK9-cl-zh0" secondAttribute="centerX" id="m5p-NI-lkx"/>
                         </constraints>
                     </view>
                     <connections>
