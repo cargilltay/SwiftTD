@@ -52,8 +52,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zt-lW6" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="116" y="140" width="143" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="103-51-lqC"/>
                                     <constraint firstAttribute="height" constant="40" id="k4I-up-7JB"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -67,13 +68,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="drx-V6-cP4" secondAttribute="trailing" constant="100" id="8NX-EO-FW4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fU7-0f-KlR" secondAttribute="trailing" constant="100" id="FTP-iE-4NK"/>
                             <constraint firstItem="gFd-1k-Njj" firstAttribute="top" secondItem="fU7-0f-KlR" secondAttribute="bottom" constant="30" id="ITN-Fe-0n8"/>
-                            <constraint firstItem="eiH-Zt-lW6" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="KTn-9X-4fD"/>
                             <constraint firstItem="LCY-aG-0iT" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="Mnd-rh-jQE"/>
                             <constraint firstItem="fU7-0f-KlR" firstAttribute="leading" secondItem="11E-lY-QvO" secondAttribute="leadingMargin" constant="100" id="e8w-jM-V38"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LCY-aG-0iT" secondAttribute="trailing" constant="100" id="ggv-Ux-TQY"/>
                             <constraint firstItem="eiH-Zt-lW6" firstAttribute="top" secondItem="TMl-p5-2rU" secondAttribute="bottom" constant="120" id="nVQ-h8-9kp"/>
+                            <constraint firstItem="eiH-Zt-lW6" firstAttribute="centerX" secondItem="11E-lY-QvO" secondAttribute="centerX" id="ptr-HW-nqu"/>
                             <constraint firstItem="drx-V6-cP4" firstAttribute="top" secondItem="LCY-aG-0iT" secondAttribute="bottom" constant="50" id="r3M-uJ-a8q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eiH-Zt-lW6" secondAttribute="trailing" constant="100" id="s8d-AA-PIc"/>
                             <constraint firstItem="LCY-aG-0iT" firstAttribute="top" secondItem="eiH-Zt-lW6" secondAttribute="bottom" constant="50" id="won-oC-kdv"/>
                         </constraints>
                     </view>
