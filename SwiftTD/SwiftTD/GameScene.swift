@@ -11,14 +11,12 @@ import GameplayKit
 
 class GameScene: SKScene {
     let game: GameController = GameController()
-    
-    
     let screenSize = UIScreen.main.bounds
+    
     //no idea what this needs to be twice as large
     //posisbly use self.frame.size.width
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
-    
     
     static let defaultScale: CGFloat = 0.0625
     
@@ -41,7 +39,6 @@ class GameScene: SKScene {
     }
     
     func setupUI(){
-        
         screenWidth = screenSize.width * 2
         screenHeight = screenSize.height * 2
         
@@ -75,17 +72,15 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, movableNode != nil {
+            
             //check here if within grid.
             let touchX = touch.location(in: self).x
             let touchY = touch.location(in: self).y
             let xInBounds = touchX < screenWidth! && touchX > 0
-            
-            //need to change 500 to bottom of grid
             let yInBounds = touchY < screenHeight! && touchY > grid!.baseOffset
             
-            
+            //if not in bounds, bail
             if(!xInBounds || !yInBounds){
-                
                 movableNode?.removeFromParent()
                 movableNode = nil
                 return;
@@ -94,7 +89,6 @@ class GameScene: SKScene {
             let closest = grid?.closestCell(x: touchX, y: touchY)
             
             //if in grid. set position to grid col/row
-            //now obvious way to access a 2d array of grid nodes.
             if(!(closest!.isBlocked)){
                 
                 movableNode!.position = CGPoint(x: closest!.xPos, y: closest!.yPos)
@@ -103,8 +97,6 @@ class GameScene: SKScene {
                 closest?.isBlocked = true
                 
             }
-            
-            
             
         }
     }
@@ -137,20 +129,17 @@ class GameScene: SKScene {
             monsterTimer = nil
             return;
         }
+        
         let monster = game.monsters[spawnedMonsterCount]
         monster.setScale(GameScene.defaultScale)
         monster.zPosition = 5
-        
-        
         monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
         self.addChild(monster)
         
         let moveTime = TimeInterval(2.0)
-        
         monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
+        
         spawnedMonsterCount += 1
-        
-        
     }
     
     func drawGrid(){
@@ -159,7 +148,6 @@ class GameScene: SKScene {
         let blockSize = screenWidth! / CGFloat(gridRows)
         
         grid = Grid(blockSize: blockSize, rows:gridRows, cols:gridCols, baseOffset: 250)
-        //grid!.baseOffset = 250
         grid!.position = CGPoint (x:frame.midX, y:grid!.baseOffset + grid!.texture!.size().height / 2)
         grid?.zPosition = 2
         
@@ -169,7 +157,6 @@ class GameScene: SKScene {
         gamePiece.setScale(GameScene.defaultScale)
         gamePiece.position = grid!.gridPosition(row: 1, col: 0)
         grid!.addChild(gamePiece)
-        
         
     }
 }
