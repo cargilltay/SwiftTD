@@ -64,7 +64,6 @@ class Grid:SKSpriteNode {
         for i in 0...rows{
             for j in 0...cols{
                 self.cells.append(Cell(x: xPositions[i], y: yPositions[j], size: blockSize))
-                //self.cells.append(Cell(x: CGFloat(i), y: CGFloat(j), size: blockSize))
             }
         }
         

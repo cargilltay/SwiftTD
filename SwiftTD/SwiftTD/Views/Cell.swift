@@ -12,8 +12,6 @@ import SpriteKit
 class Cell: SKSpriteNode {
     var xPos: CGFloat!
     var yPos: CGFloat!
-    var xPosWithOffset: CGFloat!
-    var yPosWithOffset: CGFloat!
     var cSize: CGFloat!
     
     var isBlocked: Bool = false
@@ -24,12 +22,7 @@ class Cell: SKSpriteNode {
         self.init()
         
         self.cSize = size
-        
         self.xPos = x
         self.yPos = y
-        self.xPosWithOffset = x + size
-        self.yPosWithOffset = y + size
     }
-    
-    
 }
