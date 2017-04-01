@@ -88,7 +88,7 @@ class GameScene: SKScene {
             
             let closest = grid?.closestCell(x: touchX, y: touchY)
             
-            //if tower already on space
+            //if tower already on space, bail
             if(closest!.isBlocked){
                 movableNode?.removeFromParent()
                 movableNode = nil
@@ -96,7 +96,12 @@ class GameScene: SKScene {
             }
             
             //if in grid. set position to grid col/row
-            movableNode!.position = CGPoint(x: closest!.xPos, y: closest!.yPos)
+            
+            //use these to center tower in cell
+            let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
+            let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
+
+            movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight)
             movableNode = nil
             
             closest?.isBlocked = true
