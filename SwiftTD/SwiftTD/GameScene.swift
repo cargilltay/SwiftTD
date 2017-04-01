@@ -18,7 +18,7 @@ class GameScene: SKScene {
     //posisbly use self.frame.size.width
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
-
+    
     
     static let defaultScale: CGFloat = 0.0625
     
@@ -27,6 +27,7 @@ class GameScene: SKScene {
     var rockButton: SKSpriteNode!
     var background: SKSpriteNode!
     var movableNode : SKNode?
+    var grid: Grid?
     
     override func didMove(to: SKView) {
         game.setup()
@@ -47,10 +48,12 @@ class GameScene: SKScene {
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 150, y: 150)
         rockButton.zPosition = 100
+        rockButton.zPosition = 3
         self.addChild(rockButton)
         
         background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        background.zPosition = 1
         self.addChild(background)
     }
     
@@ -78,7 +81,7 @@ class GameScene: SKScene {
             let xInBounds = touchX < screenWidth! && touchX > 0
             
             //need to change 500 to bottom of grid
-            let yInBounds = touchY < screenHeight! && touchY > 500
+            let yInBounds = touchY < screenHeight! && touchY > grid!.baseOffset
             
             
             if(!xInBounds || !yInBounds){
@@ -88,9 +91,21 @@ class GameScene: SKScene {
                 return;
             }
             
+            let closest = grid?.closestCell(x: touchX, y: touchY)
+            
             //if in grid. set position to grid col/row
-            movableNode!.position = touch.location(in: self)
-            movableNode = nil
+            //now obvious way to access a 2d array of grid nodes.
+            if(!(closest!.isBlocked)){
+                
+                movableNode!.position = CGPoint(x: closest!.xPos, y: closest!.yPos)
+                movableNode = nil
+                
+                closest?.isBlocked = true
+                
+            }
+            
+            
+            
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -124,6 +139,7 @@ class GameScene: SKScene {
         }
         let monster = game.monsters[spawnedMonsterCount]
         monster.setScale(GameScene.defaultScale)
+        monster.zPosition = 5
         
         
         monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
@@ -134,7 +150,7 @@ class GameScene: SKScene {
         monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
         spawnedMonsterCount += 1
         
-    
+        
     }
     
     func drawGrid(){
@@ -142,15 +158,18 @@ class GameScene: SKScene {
         let gridCols = 10
         let blockSize = screenWidth! / CGFloat(gridRows)
         
-        if let grid = Grid(blockSize: blockSize, rows:gridRows, cols:gridCols) {
-            grid.position = CGPoint (x:frame.midX, y:frame.midY)
-            addChild(grid)
-            
-            let gamePiece = SKSpriteNode(imageNamed: "Spaceship")
-            gamePiece.setScale(GameScene.defaultScale)
-            gamePiece.position = grid.gridPosition(row: 1, col: 0)
-            grid.addChild(gamePiece)
-            
-        }
+        grid = Grid(blockSize: blockSize, rows:gridRows, cols:gridCols, baseOffset: 250)
+        //grid!.baseOffset = 250
+        grid!.position = CGPoint (x:frame.midX, y:grid!.baseOffset + grid!.texture!.size().height / 2)
+        grid?.zPosition = 2
+        
+        addChild(grid!)
+        
+        let gamePiece = SKSpriteNode(imageNamed: "Spaceship")
+        gamePiece.setScale(GameScene.defaultScale)
+        gamePiece.position = grid!.gridPosition(row: 1, col: 0)
+        grid!.addChild(gamePiece)
+        
+        
     }
 }
