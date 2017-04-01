@@ -88,16 +88,18 @@ class GameScene: SKScene {
             
             let closest = grid?.closestCell(x: touchX, y: touchY)
             
-            //if in grid. set position to grid col/row
-            if(!(closest!.isBlocked)){
-                
-                movableNode!.position = CGPoint(x: closest!.xPos, y: closest!.yPos)
+            //if tower already on space
+            if(closest!.isBlocked){
+                movableNode?.removeFromParent()
                 movableNode = nil
-                
-                closest?.isBlocked = true
-                
+                return;
             }
             
+            //if in grid. set position to grid col/row
+            movableNode!.position = CGPoint(x: closest!.xPos, y: closest!.yPos)
+            movableNode = nil
+            
+            closest?.isBlocked = true
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
