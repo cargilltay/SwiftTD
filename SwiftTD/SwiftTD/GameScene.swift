@@ -36,6 +36,10 @@ class GameScene: SKScene {
         
         drawMonsters()
         
+        //should move to action event of begin round
+        var solver = MazeSolverController(grid: grid!)
+        
+        grid!.solution = solver.solveMaze()
     }
     
     func setupUI(){
@@ -101,7 +105,7 @@ class GameScene: SKScene {
             let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
             let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
 
-            movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight)
+            movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
             movableNode = nil
             
             closest?.isBlocked = true
@@ -143,6 +147,7 @@ class GameScene: SKScene {
         monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
         self.addChild(monster)
         
+        //need to move to positions in grid.solution
         let moveTime = TimeInterval(2.0)
         monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
         

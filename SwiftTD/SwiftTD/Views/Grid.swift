@@ -15,6 +15,7 @@ class Grid:SKSpriteNode {
     var blockSize:CGFloat!
     var cells:[Cell] = []
     var baseOffset:CGFloat!
+    var solution: [[Bool]]!
     
     convenience init?(blockSize:CGFloat,rows:Int,cols:Int, baseOffset: CGFloat) {
         self.init()
@@ -28,6 +29,8 @@ class Grid:SKSpriteNode {
         self.rows = rows
         self.cols = cols
         self.isUserInteractionEnabled = true
+        
+        
     }
     
     func gridTexture(blockSize:CGFloat,rows:Int,cols:Int) -> SKTexture? {
@@ -61,9 +64,9 @@ class Grid:SKSpriteNode {
             bezierPath.addLine(to: CGPoint(x: size.width, y: y))
         }
         
-        for i in 0...rows{
-            for j in 0...cols{
-                self.cells.append(Cell(x: xPositions[i], y: yPositions[j], size: blockSize))
+        for i in 0...rows - 1{
+            for j in 0...cols - 1{
+                self.cells.append(Cell(x: xPositions[i], y: yPositions[j], size: blockSize, row: i, col: j))
             }
         }
         
