@@ -14,28 +14,32 @@ class GameViewController: UIViewController {
 
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    var scene: GameScene!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                //scene.scaleMode = .aspectFill
-                scene.scaleMode = SKSceneScaleMode.aspectFit
-                scene.anchorPoint = CGPoint(x: 0.0,y: 0.0)
-                //scene.scaleMode = SKSceneScaleMode.resizeFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            scene = GameScene(fileNamed: "GameScene")
+            // Set the scale mode to scale to fit the window
+            //scene.scaleMode = .aspectFill
+            scene.scaleMode = SKSceneScaleMode.aspectFit
+            scene.anchorPoint = CGPoint(x: 0.0,y: 0.0)
+            //scene.scaleMode = SKSceneScaleMode.resizeFill
+            
+            // Present the scene
+            view.presentScene(scene)
+            
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    @IBAction func beginRoundClick(_ sender: Any) {
+        scene.drawMonsters()
     }
 
     override var shouldAutorotate: Bool {
@@ -58,4 +62,6 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
 }

@@ -34,10 +34,10 @@ class GameScene: SKScene {
         
         drawGrid()
         
-        drawMonsters()
+        //drawMonsters()
         
         //should move to action event of begin round
-        var solver = MazeSolverController(grid: grid!)
+        let solver = MazeSolverController(grid: grid!)
         
         grid!.solution = solver.solveMaze()
     }
@@ -147,7 +147,10 @@ class GameScene: SKScene {
         monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
         self.addChild(monster)
         
+        
         //need to move to positions in grid.solution
+        
+        
         let moveTime = TimeInterval(2.0)
         monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
         

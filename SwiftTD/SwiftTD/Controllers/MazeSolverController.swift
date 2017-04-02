@@ -55,7 +55,7 @@ class MazeSolverController{
         
     }
     
-    func solveMaze() -> [[Bool]]{
+    func solveMaze() -> [Cell]{
         maze = generateMaze(); // Create Maze (1 = path, 2 = wall)
         for row in 0...maze.count - 1{
         //for (int row = 0; row < maze.length; row++){
@@ -83,7 +83,24 @@ class MazeSolverController{
         // If b is false, there is no solution to the maze
         
         
-        return correctPath
+        var path: [Cell] = []
+        
+        
+        //this is nasty but it works for now
+        for row in 0...correctPath.count - 1 {
+            for col in 0...correctPath[row].count - 1{
+                if(correctPath[row][col] == true){
+                    for c in grid.cells{
+                        if(c.rowNum == row && c.colNum == col){
+                            path.append(c)
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        return path
     }
     
     func recursiveSolve(x: Int, y: Int) -> Bool{

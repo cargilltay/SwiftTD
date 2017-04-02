@@ -433,6 +433,9 @@
                                 <rect key="frame" x="16" y="617" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Begin"/>
+                                <connections>
+                                    <action selector="beginRoundClick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7wW-w1-mBM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-Jf-y2t">
                                 <rect key="frame" x="290" y="617" width="69" height="30"/>

@@ -15,7 +15,7 @@ class Grid:SKSpriteNode {
     var blockSize:CGFloat!
     var cells:[Cell] = []
     var baseOffset:CGFloat!
-    var solution: [[Bool]]!
+    var solution: [Cell]!
     
     convenience init?(blockSize:CGFloat,rows:Int,cols:Int, baseOffset: CGFloat) {
         self.init()
