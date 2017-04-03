@@ -23,10 +23,8 @@ class GameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
             // Set the scale mode to scale to fit the window
-            //scene.scaleMode = .aspectFill
             scene.scaleMode = SKSceneScaleMode.aspectFit
             scene.anchorPoint = CGPoint(x: 0.0,y: 0.0)
-            //scene.scaleMode = SKSceneScaleMode.resizeFill
             
             // Present the scene
             view.presentScene(scene)

@@ -155,7 +155,7 @@ class GameScene: SKScene {
         }
         
         let monster = game.monsters[spawnedMonsterCount]
-        monster.setScale(GameScene.defaultScale)
+        //monster.setScale(GameScene.defaultScale)
         monster.zPosition = 5
         monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
         self.addChild(monster)
