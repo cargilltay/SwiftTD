@@ -14,6 +14,7 @@ class BaseMonster: SKSpriteNode {
     var hitPoints: Int = 0
     var isDead: Bool = false
     var clearedStage = false
+    var reachedEnd = false
     
     init(damage: Int, hitPoints: Int, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
@@ -23,13 +24,13 @@ class BaseMonster: SKSpriteNode {
     }
     
     func moveToCustom(x: CGFloat, y: CGFloat, timeToMove: TimeInterval){
-        let actionX = SKAction.moveTo(x: x, duration: timeToMove)
-        let actionY = SKAction.moveTo(y: y, duration: timeToMove)
-        actionX.timingMode = .easeInEaseOut
-        actionY.timingMode = .easeInEaseOut
-        //let move = SKAction.move(to: point, duration:2.0)
-        self.run(actionX)
-        self.run(actionY)
+        let action = SKAction.move(to: CGPoint(x: x, y: y), duration: timeToMove)
+        action.timingMode = .easeInEaseOut
+        
+        self.run(action) {
+            self.reachedEnd = true
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
