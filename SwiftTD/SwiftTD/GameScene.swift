@@ -34,8 +34,6 @@ class GameScene: SKScene {
         
         drawGrid()
         
-        //drawMonsters()
-        
         //should move to action event of begin round
         let solver = MazeSolverController(grid: grid!)
         
@@ -56,6 +54,21 @@ class GameScene: SKScene {
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         background.zPosition = 1
         self.addChild(background)
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
+        
+        for (index, monst) in game.monsters.enumerated(){
+            if (monst.isDead || monst.reachedEnd) {
+                monst.removeFromParent()
+                game.monsters.remove(at: index)
+            }
+        }
+        
+        if(game.monsters.count == 0){
+            spawnedMonsterCount = 0
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

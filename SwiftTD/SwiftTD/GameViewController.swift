@@ -39,6 +39,10 @@ class GameViewController: UIViewController {
         }
     }
     @IBAction func beginRoundClick(_ sender: Any) {
+        
+        //need to turn this button off while round in progress
+        scene.game.numMonsters = 10
+        scene.game.populateMinions()
         scene.drawMonsters()
     }
 
