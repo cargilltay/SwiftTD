@@ -9,6 +9,13 @@
 import Foundation
 import SpriteKit
 
+
+enum GameMode {
+    case PlayerTurn
+    case Defend
+    case Boss
+}
+
 class GameController {
     var level: Int = 1
     var lives: Int = 100
@@ -18,20 +25,50 @@ class GameController {
     var round: Int = 1
     var monsters: [BaseMonster] = []
     var towers: [BaseTower] = []
-    
+    var mode = GameMode.PlayerTurn
+    var solution: [Cell]!
+    var minionStartPosition: CGPoint!
+    var minionEndLocation: CGPoint!
     
     var time: Date = Date()
     //var difficulty
-    //var mode
-    func setup(){
-        self.populateMinions()
+    
+    func setSolution(solution: [Cell]){
+        self.solution = solution
+    }
+    
+    func setMinionStartAndEndLocation(start: CGPoint, end: CGPoint){
+        minionStartPosition = start
+        minionEndLocation = end
     }
     
     func populateMinions(){
-        //going to ahve to send monsters their stats dynamically eventually.
+        //going to have to send monsters their stats dynamically eventually.
         for _ in 1...self.numMonsters {
-            let m = BaseMonster(damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
             self.monsters.append(m)
         }
+    }
+    
+    func nextMode() {
+        //is players turn
+        if (self.mode != GameMode.PlayerTurn) {
+            self.mode = GameMode.PlayerTurn
+            
+            //enable tower placement
+            //$('#new-gem').removeAttr('disabled');
+            
+            //self.numTowerToPlace = 5;
+        } else {
+            self.mode = GameMode.Defend
+            self.populateMinions();
+            
+            //disable tower placement
+            //$('#new-gem').attr("disabled", "disabled");
+        }
+    }
+    
+    func nextRound(){
+        self.round += 1
     }
 }

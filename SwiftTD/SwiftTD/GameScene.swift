@@ -20,24 +20,15 @@ class GameScene: SKScene {
     
     static let defaultScale: CGFloat = 0.0625
     
-    var monsterTimer: Timer?
-    var spawnedMonsterCount: Int = 0
     var rockButton: SKSpriteNode!
     var background: SKSpriteNode!
     var movableNode : SKNode?
     var grid: Grid?
     
     override func didMove(to: SKView) {
-        game.setup()
-        
         setupUI()
         
         drawGrid()
-        
-        //should move to action event of begin round
-        let solver = MazeSolverController(grid: grid!)
-        
-        grid!.solution = solver.solveMaze()
     }
     
     func setupUI(){
@@ -56,18 +47,37 @@ class GameScene: SKScene {
         self.addChild(background)
     }
     
+    func moveMinions() {
+        if (game.monsters.count == 0) {
+            game.nextMode();
+        }
+        
+        for (index, m) in game.monsters.enumerated() {
+            //seperate dead/reach end for possible logic in future
+            if (m.isDead) {
+                print("dead")
+                m.removeFromParent()
+                game.monsters.remove(at: index)
+                return;
+            }
+            else if (m.reachedEnd) {
+                m.removeFromParent()
+                game.monsters.remove(at: index)
+                return;
+            }
+            if(m.parent == nil){
+                self.addChild(m)
+            }
+            m.updatePosition();
+        }
+    }
+
+    
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
-        for (index, monst) in game.monsters.enumerated(){
-            if (monst.isDead || monst.reachedEnd) {
-                monst.removeFromParent()
-                game.monsters.remove(at: index)
-            }
-        }
-        
-        if(game.monsters.count == 0){
-            spawnedMonsterCount = 0
+        if(game.mode == GameMode.Defend){
+            moveMinions()
         }
     }
     
@@ -140,36 +150,6 @@ class GameScene: SKScene {
         return rock
     }
     
-    func drawMonsters(){
-        //prevent timer being called twice
-        guard monsterTimer == nil else { return }
-        monsterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(drawMonster), userInfo: nil, repeats: true)
-    }
-    
-    @objc func drawMonster(){
-        if(spawnedMonsterCount == game.monsters.count){
-            guard monsterTimer != nil else { return }
-            monsterTimer?.invalidate()
-            monsterTimer = nil
-            return;
-        }
-        
-        let monster = game.monsters[spawnedMonsterCount]
-        //monster.setScale(GameScene.defaultScale)
-        monster.zPosition = 5
-        monster.position = CGPoint(x: screenWidth! / 2, y: screenHeight!)
-        self.addChild(monster)
-        
-        
-        //need to move to positions in grid.solution
-        
-        
-        let moveTime = TimeInterval(2.0)
-        monster.moveToCustom(x: screenWidth! / 2, y: 0.0, timeToMove: moveTime);
-        
-        spawnedMonsterCount += 1
-    }
-    
     func drawGrid(){
         let gridRows = 10
         let gridCols = 10
@@ -180,11 +160,5 @@ class GameScene: SKScene {
         grid?.zPosition = 2
         
         addChild(grid!)
-        
-        let gamePiece = SKSpriteNode(imageNamed: "Spaceship")
-        gamePiece.setScale(GameScene.defaultScale)
-        gamePiece.position = grid!.gridPosition(row: 1, col: 0)
-        grid!.addChild(gamePiece)
-        
     }
 }

@@ -18,7 +18,11 @@ class Cell: SKSpriteNode {
     
     var isBlocked: Bool = false
     
-    
+    convenience init(x: CGFloat, y: CGFloat){
+        self.init()
+        self.xPos = x
+        self.yPos = y
+    }
     
     convenience init(x: CGFloat, y: CGFloat, size: CGFloat, row: Int, col: Int){
         self.init()

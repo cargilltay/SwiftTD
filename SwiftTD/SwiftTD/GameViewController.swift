@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
+            
             // Set the scale mode to scale to fit the window
             scene.scaleMode = SKSceneScaleMode.aspectFit
             scene.anchorPoint = CGPoint(x: 0.0,y: 0.0)
@@ -39,9 +40,22 @@ class GameViewController: UIViewController {
     @IBAction func beginRoundClick(_ sender: Any) {
         
         //need to turn this button off while round in progress
-        scene.game.numMonsters = 10
-        scene.game.populateMinions()
-        scene.drawMonsters()
+        //scene.game.numMonsters = 10
+        //scene.game.populateMinions()
+        //scene.drawMonsters()
+        
+        let solver = MazeSolverController(grid: scene.grid!)
+        //scene.game.setSolution(solution: solver.solveMaze())
+        //test empty
+        scene.game.setSolution(solution: [])
+        
+        //this is not an ideal way to do this.
+        let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
+        let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
+        scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
+
+        scene.game.nextMode()
+        
     }
 
     override var shouldAutorotate: Bool {
