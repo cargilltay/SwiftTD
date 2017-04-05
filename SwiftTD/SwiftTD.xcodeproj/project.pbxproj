@@ -39,6 +39,8 @@
 		709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */; };
 		709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */; };
 		709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */; };
+		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
+		F14AE18A1E9554C000D57195 /* MonsterStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1891E9554C000D57195 /* MonsterStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerWaitingRoomViewController.swift; sourceTree = "<group>"; };
+		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
+		F14AE1891E9554C000D57195 /* MonsterStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 		701E168F1E666870007EEAD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F14AE1891E9554C000D57195 /* MonsterStats.swift */,
 				701E16901E666870007EEAD9 /* BaseMonster.swift */,
 				701E16911E666870007EEAD9 /* BaseProjectile.swift */,
 				701E16921E666870007EEAD9 /* BaseTower.swift */,
@@ -224,6 +229,7 @@
 				701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */,
 				70674CCC1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift */,
 				7048332D1E896AEE0085BC6B /* GameController.swift */,
+				F14AE1871E95548A00D57195 /* MonsterStatController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
 				701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
 				701E16A41E666FB1007EEAD9 /* MazeSolverController.swift in Sources */,
@@ -414,6 +421,7 @@
 				70674CCB1E6FC7D000A5BFB9 /* SwiftTDTextField.swift in Sources */,
 				701E16AD1E6BD6A1007EEAD9 /* GameModeViewController.swift in Sources */,
 				709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */,
+				F14AE18A1E9554C000D57195 /* MonsterStats.swift in Sources */,
 				709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */,
 				701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */,
 				701E16991E666870007EEAD9 /* BaseMonster.swift in Sources */,
