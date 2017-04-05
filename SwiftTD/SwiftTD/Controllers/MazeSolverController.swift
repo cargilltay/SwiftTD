@@ -13,18 +13,12 @@ class MazeSolverController{
     var grid: Grid
     var wasHere: [[Bool]]!
     var correctPath: [[Bool]]!
-    var startX: Int = 0
-    var startY: Int = 0
-    var endX: Int = 9
-    var endY: Int = 9
+    var startX: Int = 9
+    var startY: Int = 5
+    var endX: Int = 0
+    var endY: Int = 5
     var width: Int!
     var height: Int!
-    
-    
-    
-    //need:
-    //grid width/height
-    
     
     init(grid: Grid){
         self.grid = grid
@@ -33,22 +27,17 @@ class MazeSolverController{
         
         self.wasHere = Array(repeating: Array(repeating: false, count: grid.cols), count: grid.rows)
         self.correctPath = Array(repeating: Array(repeating: false, count: grid.cols), count: grid.rows)
-        //FIX ME
         
     }
     
-    //int[][] maze = new int[width][height]; // The maze
-    //boolean[][] wasHere = new boolean[width][height];
-    //boolean[][] correctPath = new boolean[width][height]; // The solution to the maze
-    //int startX, startY; // Starting X and Y values of maze
-    //int endX, endY;     // Ending X and Y values of maze
-    
     func generateMaze() -> [[Int]]{
         var m:[[Int]] = Array(repeating: Array(repeating: 0, count: grid.cols), count: grid.rows)
-        for c in grid.cells{
-            m[c.rowNum][c.colNum] = 1
-            if (c.isBlocked){
-                m[c.rowNum][c.colNum] = 2
+        for (index, _) in grid.cells.enumerated(){
+            for col in grid.cells[index]{
+                m[col.rowNum][col.colNum] = 1
+                if (col.isBlocked){
+                    m[col.rowNum][col.colNum] = 2
+                }
             }
         }
         return m
@@ -58,10 +47,8 @@ class MazeSolverController{
     func solveMaze() -> [Cell]{
         maze = generateMaze(); // Create Maze (1 = path, 2 = wall)
         for row in 0...maze.count - 1{
-        //for (int row = 0; row < maze.length; row++){
             // Sets boolean Arrays to default values
             for col in 0...maze[row].count - 1{
-            //for (int col = 0; col < maze[row].length; col++){
                 wasHere[row][col] = false;
                 correctPath[row][col] = false;
             }
@@ -90,16 +77,18 @@ class MazeSolverController{
         for row in 0...correctPath.count - 1 {
             for col in 0...correctPath[row].count - 1{
                 if(correctPath[row][col] == true){
-                    for c in grid.cells{
-                        if(c.rowNum == row && c.colNum == col){
-                            path.append(c)
+                    for (index, _) in grid.cells.enumerated(){
+                        for c in grid.cells[index]{
+                            if(c.rowNum == row && c.colNum == col){
+                                path.append(c)
+                            }
                         }
                     }
                 }
             }
         }
         
-        
+        path.reverse()
         return path
     }
     
@@ -120,7 +109,7 @@ class MazeSolverController{
                 return true;
             }
         }
-        if (x != width - 1){ // Checks if not on right edge
+        if (x != width){ // Checks if not on right edge
             if (recursiveSolve(x: x+1, y: y)) { // Recalls method one to the right
                 correctPath[x][y] = true;
                 return true;
@@ -132,7 +121,7 @@ class MazeSolverController{
                 return true;
             }
         }
-        if (y != height - 1){ // Checks if not on bottom edge
+        if (y != height){ // Checks if not on bottom edge
             if (recursiveSolve(x: x, y: y+1)) { // Recalls method one down
                 correctPath[x][y] = true;
                 return true;
