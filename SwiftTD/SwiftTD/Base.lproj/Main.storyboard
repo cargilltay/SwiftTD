@@ -190,6 +190,9 @@
                                     <constraint firstAttribute="height" constant="40" id="uX8-dq-XOX"/>
                                 </constraints>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <segue destination="5oF-Tb-no6" kind="show" id="fNk-Me-ljo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbC-Ib-c4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1956" y="991.75412293853083"/>
+            <point key="canvasLocation" x="-1956" y="931"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zJL-G6-IMa">
@@ -253,6 +256,9 @@
                                     <constraint firstAttribute="width" constant="150" id="kZm-um-ZMm"/>
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonAction:" destination="UqX-lc-V03" eventType="touchUpInside" id="55v-C7-Ukn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-KY-s2k" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
                                 <rect key="frame" x="113" y="324" width="150" height="40"/>
@@ -280,6 +286,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="9Jm-ma-6az" id="h5C-hH-h2I"/>
                         <outlet property="musicSlider" destination="Wwv-KY-s2k" id="GDR-3V-hIY"/>
                         <outlet property="soundEffectsSlider" destination="A1Z-m3-Db6" id="l1f-NQ-6bY"/>
                     </connections>
@@ -441,6 +448,9 @@
                                 <rect key="frame" x="290" y="617" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="UqX-lc-V03" kind="show" id="kYw-Rd-pi2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -474,6 +484,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="fNk-Me-ljo"/>
         <segue reference="uUg-Og-Q7A"/>
+        <segue reference="kYw-Rd-pi2"/>
     </inferredMetricsTieBreakers>
 </document>

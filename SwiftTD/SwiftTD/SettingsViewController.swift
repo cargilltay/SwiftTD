@@ -11,7 +11,13 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet weak var soundEffectsSlider: UISlider!
     @IBOutlet weak var musicSlider: UILabel!
-    
+    @IBOutlet weak var confirmButton: SwiftTDButton!
+   
+    @IBAction func confirmButtonAction(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
