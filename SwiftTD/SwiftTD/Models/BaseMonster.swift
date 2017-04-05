@@ -58,12 +58,11 @@ class BaseMonster: SKSpriteNode {
             self.reachedEnd = true
             return
         }
-        else if(self.destinations.count == 0){
-            //no points left so lets get to exit
-            let endCell = Cell(x: self.endLocation.x, y: self.endLocation.y)
-            destinations.append(endCell)
-        }
         
+        //no points left so lets get to exit
+        let endCell = Cell(x: self.endLocation.x, y: self.endLocation.y)
+        destinations.append(endCell)
+    
         var curDest = destinations[self.destination]
         
         if (curDest.xPos == self.position.x && curDest.yPos == self.position.y) {

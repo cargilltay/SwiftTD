@@ -47,10 +47,8 @@ class MazeSolverController{
     func solveMaze() -> [Cell]{
         maze = generateMaze(); // Create Maze (1 = path, 2 = wall)
         for row in 0...maze.count - 1{
-            //for (int row = 0; row < maze.length; row++){
             // Sets boolean Arrays to default values
             for col in 0...maze[row].count - 1{
-                //for (int col = 0; col < maze[row].length; col++){
                 wasHere[row][col] = false;
                 correctPath[row][col] = false;
             }
@@ -111,7 +109,7 @@ class MazeSolverController{
                 return true;
             }
         }
-        if (x != width - 1){ // Checks if not on right edge
+        if (x != width){ // Checks if not on right edge
             if (recursiveSolve(x: x+1, y: y)) { // Recalls method one to the right
                 correctPath[x][y] = true;
                 return true;
@@ -123,7 +121,7 @@ class MazeSolverController{
                 return true;
             }
         }
-        if (y != height - 1){ // Checks if not on bottom edge
+        if (y != height){ // Checks if not on bottom edge
             if (recursiveSolve(x: x, y: y+1)) { // Recalls method one down
                 correctPath[x][y] = true;
                 return true;
