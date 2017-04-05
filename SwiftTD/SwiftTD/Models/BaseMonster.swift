@@ -74,17 +74,28 @@ class BaseMonster: SKSpriteNode {
             
             curDest = destinations[self.destination]
         }
+        print(self.position.x)
         
         if (self.position.x < curDest.xPos) {
             self.position.x += self.speed
         } else if (self.position.x > curDest.xPos) {
-            self.position.x -= self.speed
+            if(self.position.x - curDest.xPos < self.speed){
+                self.position.x -= self.position.x - curDest.xPos
+            }
+            else{
+                self.position.x -= self.speed
+            }
         }
         
         if (self.position.y < curDest.yPos) {
             self.position.y += self.speed
         } else if (self.position.y > curDest.yPos) {
-            self.position.y -= self.speed
+            if(self.position.y - curDest.yPos < self.speed){
+                self.position.y -= self.position.y - curDest.yPos
+            }
+            else{
+                self.position.y -= self.speed
+            }
         }
         
     }

@@ -17,7 +17,6 @@ enum GameMode {
 }
 
 class GameController {
-    var level: Int = 1
     var lives: Int = 100
     var gold: Int = 0
     var score: Int = 0

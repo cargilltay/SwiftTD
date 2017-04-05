@@ -13,13 +13,15 @@ class Grid:SKSpriteNode {
     var rows:Int!
     var cols:Int!
     var blockSize:CGFloat!
-    var cells:[Cell] = []
+    var cells:[[Cell]]!
     var baseOffset:CGFloat!
     
     convenience init?(blockSize:CGFloat,rows:Int,cols:Int, baseOffset: CGFloat) {
         self.init()
         
         self.baseOffset = baseOffset
+        
+        self.cells = Array(repeating: Array(repeating: Cell(), count: cols), count: rows)
         let texture = gridTexture(blockSize: blockSize,rows: rows, cols:cols)
         self.texture = texture
         self.size = texture!.size()
@@ -28,6 +30,7 @@ class Grid:SKSpriteNode {
         self.rows = rows
         self.cols = cols
         self.isUserInteractionEnabled = true
+        
         
         
     }
@@ -65,7 +68,11 @@ class Grid:SKSpriteNode {
         
         for i in 0...rows - 1{
             for j in 0...cols - 1{
-                self.cells.append(Cell(x: xPositions[i], y: yPositions[j], size: blockSize, row: i, col: j))
+                //swapped i and j to make grid like so:
+                //row 2
+                //row 1
+                //row 0
+                self.cells[i][j] = Cell(x: xPositions[j], y: yPositions[i], size: blockSize, row: i, col: j)
             }
         }
         
@@ -82,16 +89,18 @@ class Grid:SKSpriteNode {
     func closestCell(x: CGFloat, y:CGFloat) -> Cell{
         var cell: Cell!
         
-        for c in self.cells{
-            let modx = x - (x.truncatingRemainder(dividingBy: c.cSize));
-            
-            let baseOffsetMod = baseOffset.truncatingRemainder(dividingBy: c.cSize)
-            let mody = y - ((y - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
-            
-            print("x:\(c.xPos)" + "y:\(c.yPos)")
-            if (c.xPos == modx && c.yPos == mody) {
-                cell = c;
-                break
+        for (index, _) in self.cells.enumerated(){
+            for c in self.cells[index]{
+                let modx = x - (x.truncatingRemainder(dividingBy: c.cSize));
+                
+                let baseOffsetMod = baseOffset.truncatingRemainder(dividingBy: c.cSize)
+                let mody = y - ((y - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
+                
+                print("x:\(c.xPos)" + "y:\(c.yPos)")
+                if (c.xPos == modx && c.yPos == mody) {
+                    cell = c;
+                    break
+                }
             }
         }
         
