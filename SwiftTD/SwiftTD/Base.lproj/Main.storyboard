@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHZ-to-DZx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHZ-to-DZx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drx-V6-cP4" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="364" width="150" height="40"/>
+                                <rect key="frame" x="113" y="320" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IBD-bQ-Uhx"/>
                                     <constraint firstAttribute="width" constant="150" id="Y7I-qt-DCm"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCY-aG-0iT" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="274" width="150" height="40"/>
+                                <rect key="frame" x="113" y="230" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0uw-Wm-9UW"/>
                                     <constraint firstAttribute="height" constant="40" id="lbs-nG-sPT"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zt-lW6" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="184" width="150" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="103-51-lqC"/>
                                     <constraint firstAttribute="height" constant="40" id="k4I-up-7JB"/>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZf-V6-zJt" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="274" width="150" height="40"/>
+                                <rect key="frame" x="113" y="230" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IZB-Y5-gBr"/>
                                     <constraint firstAttribute="width" constant="150" id="s6e-fm-FCA"/>
@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-7k-D7f" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="184" width="150" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fuv-2p-R5G"/>
                                     <constraint firstAttribute="width" constant="150" id="Zoq-cP-jUc"/>
@@ -153,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUG-Jk-cpN" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="274" width="150" height="40"/>
+                                <rect key="frame" x="113" y="230" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="76B-RU-0wU"/>
                                     <constraint firstAttribute="width" constant="150" id="gne-kT-F7k"/>
@@ -163,7 +163,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS3-ws-T0b" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="364" width="150" height="40"/>
+                                <rect key="frame" x="113" y="320" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FeP-fe-7Ni"/>
                                     <constraint firstAttribute="width" constant="150" id="Po1-ws-fte"/>
@@ -173,7 +173,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bX6-cV-GYJ" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="184" width="150" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="8HW-Jc-6mz"/>
                                     <constraint firstAttribute="height" constant="40" id="fSb-xC-MY2"/>
@@ -225,21 +225,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1Z-m3-Db6">
-                                <rect key="frame" x="111" y="394" width="154" height="41"/>
+                                <rect key="frame" x="111" y="350" width="154" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7y5-El-Qlv"/>
                                     <constraint firstAttribute="width" constant="150" id="EC5-qR-LlH"/>
                                 </constraints>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-24-6oz">
-                                <rect key="frame" x="111" y="254" width="154" height="41"/>
+                                <rect key="frame" x="111" y="210" width="154" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0mR-WY-KTQ"/>
                                     <constraint firstAttribute="width" constant="150" id="xSP-Gx-tqR"/>
                                 </constraints>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npq-Qs-0ok" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="184" width="150" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GeK-PL-l9z"/>
                                     <constraint firstAttribute="width" constant="150" id="OIK-Nt-nfl"/>
@@ -261,7 +261,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-KY-s2k" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="324" width="150" height="40"/>
+                                <rect key="frame" x="113" y="280" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Njb-8B-30e"/>
                                     <constraint firstAttribute="height" constant="40" id="yxV-Dd-5R0"/>
@@ -308,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-wW-yWn" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="184" width="155" height="40"/>
+                                <rect key="frame" x="110" y="140" width="155" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1y2-Th-I9G"/>
                                     <constraint firstAttribute="width" constant="155" id="xKL-k4-3dn"/>
@@ -319,7 +319,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-R5-ppa" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="274" width="155" height="40"/>
+                                <rect key="frame" x="110" y="230" width="155" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="WVA-4g-lOz"/>
                                     <constraint firstAttribute="height" constant="40" id="gEn-uB-YEh"/>
@@ -330,7 +330,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmT-8I-J5G" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="364" width="155" height="40"/>
+                                <rect key="frame" x="110" y="320" width="155" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="BlS-te-JaR"/>
                                     <constraint firstAttribute="height" constant="40" id="nVs-Wx-OJG"/>
@@ -371,7 +371,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqk-97-bHi" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="184" width="150" height="40"/>
+                                <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="9l6-ML-qe5"/>
                                     <constraint firstAttribute="height" constant="40" id="Vp4-Ne-fx8"/>
@@ -382,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-Mn-jti" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="274" width="150" height="40"/>
+                                <rect key="frame" x="113" y="230" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3JM-6Y-pth"/>
                                     <constraint firstAttribute="width" constant="150" id="sbu-hX-mEP"/>
@@ -393,7 +393,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKL-Xi-1Tg" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="364" width="150" height="40"/>
+                                <rect key="frame" x="113" y="320" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0RW-VB-zcc"/>
                                     <constraint firstAttribute="width" constant="150" id="0oq-Os-m04"/>
@@ -436,22 +436,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-WX-555">
-                                <rect key="frame" x="16" y="617" width="64" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9h-Y1-QWK" customClass="SwiftTDContainer" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Begin"/>
-                                <connections>
-                                    <action selector="beginRoundClick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7wW-w1-mBM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-Jf-y2t">
-                                <rect key="frame" x="290" y="617" width="69" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-WX-555">
+                                        <rect key="frame" x="8" y="37" width="64" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Begin"/>
+                                        <connections>
+                                            <action selector="beginRoundClick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7wW-w1-mBM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-Jf-y2t">
+                                        <rect key="frame" x="298" y="37" width="69" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="UqX-lc-V03" kind="show" id="kYw-Rd-pi2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Gc-hp-faL" customClass="SwiftTDContainer" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="UqX-lc-V03" kind="show" id="kYw-Rd-pi2"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lives:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0L-HN-2sn" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="45" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-3j-G1r" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                        <rect key="frame" x="309" y="46" width="58" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07i-EP-ui1" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="46" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -462,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2452" y="-206.44677661169416"/>
+            <point key="canvasLocation" x="2538.4000000000001" y="-87.706146926536732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GkY-xG-nB8">

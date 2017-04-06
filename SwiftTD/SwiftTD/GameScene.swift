@@ -36,7 +36,7 @@ class GameScene: SKScene {
         screenHeight = screenSize.height * 2
         
         rockButton = SKSpriteNode(imageNamed: "Rock")
-        rockButton.position = CGPoint(x: 150, y: 150)
+        rockButton.position = CGPoint(x: 150, y: 200)
         rockButton.zPosition = 100
         rockButton.zPosition = 3
         self.addChild(rockButton)
@@ -143,7 +143,7 @@ class GameScene: SKScene {
     func createRock() -> SKSpriteNode{
         let rock: SKSpriteNode!
         rock = SKSpriteNode(imageNamed: "Rock")
-        rock.position = CGPoint(x: 150, y: 150)
+        //rock.position = CGPoint(x: 300, y: 300)
         rock.zPosition = 100
         self.addChild(rock)
         
