@@ -33,8 +33,20 @@ class GameController {
     var time: Date = Date()
     //var difficulty
     
-    func setSolution(solution: [Cell]){
-        self.solution = solution
+    func setSolution(solution: [[Int]], grid: Grid){
+        var cells: [Cell] = []
+        
+        for row in 0...solution.count - 1{
+            for col in 0...solution[row].count-1{
+                if(solution[row][col] != 0){
+                    print("\(solution.count - row - 1) and \(col)")
+                    
+                    cells.append(grid.cells[row][col])
+                }
+            }
+        }
+        
+        self.solution = cells
     }
     
     func setMinionStartAndEndLocation(start: CGPoint, end: CGPoint){
@@ -44,6 +56,14 @@ class GameController {
     
     func populateMinions(){
         //going to have to send monsters their stats dynamically eventually.
+        
+        
+        //func convertDestination(destinations: [[Int]]) -> [Cell]{
+        
+            
+            //return cells
+        //}
+        
         for _ in 1...self.numMonsters {
             let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
             self.monsters.append(m)

@@ -9,125 +9,127 @@
 import Foundation
 
 class MazeSolverController{
-    var maze: [[Int]]!
-    var grid: Grid
-    var wasHere: [[Bool]]!
-    var correctPath: [[Bool]]!
-    var startX: Int = 9
-    var startY: Int = 5
-    var endX: Int = 0
-    var endY: Int = 5
+    var map: [[Int]]!
+    var TRIED:Int = 2;
+    var PATH:Int = 3;
+    
+    var grid: [[Int]]!
+    var startRow: Int = 10
+    var startCol: Int = 10
     var width: Int!
     var height: Int!
     
-    init(grid: Grid){
-        self.grid = grid
-        self.width = grid.rows
-        self.height = grid.cols
+    init(tempGrid: Grid){
+        //self.grid = grid
+        //self.width = grid.rows
+        //self.height = grid.cols
         
-        self.wasHere = Array(repeating: Array(repeating: false, count: grid.cols), count: grid.rows)
-        self.correctPath = Array(repeating: Array(repeating: false, count: grid.cols), count: grid.rows)
         
+       //self.maze = generateMaze()
+        self.grid = generateMaze(grid: tempGrid)
+        /*
+        self.grid = [
+        [ 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1 ],
+            [ 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1 ],
+            [ 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0 ],
+            [ 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1 ],
+            [ 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1 ],
+            [ 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ],
+            [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
+            [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+        ]
+         */
+        self.height = tempGrid.cols
+        self.width = tempGrid.rows
+        self.map = Array(repeating: Array(repeating: 0, count: width), count: height)
     }
     
-    func generateMaze() -> [[Int]]{
+    
+    func generateMaze(grid:Grid) -> [[Int]]{
         var m:[[Int]] = Array(repeating: Array(repeating: 0, count: grid.cols), count: grid.rows)
         for (index, _) in grid.cells.enumerated(){
             for col in grid.cells[index]{
                 m[col.rowNum][col.colNum] = 1
                 if (col.isBlocked){
-                    m[col.rowNum][col.colNum] = 2
+                    m[col.rowNum][col.colNum] = 0
                 }
             }
         }
         return m
         
     }
+ 
     
-    func solveMaze() -> [Cell]{
-        maze = generateMaze(); // Create Maze (1 = path, 2 = wall)
-        for row in 0...maze.count - 1{
-            // Sets boolean Arrays to default values
-            for col in 0...maze[row].count - 1{
-                wasHere[row][col] = false;
-                correctPath[row][col] = false;
-            }
-        }
-        let b = recursiveSolve(x: startX, y: startY);
-        print("MAZE")
-        print(maze)
-        print("----------------")
-        print("wasHere")
-        print(wasHere)
-        print("----------------")
-        print("correctPath")
-        print(correctPath)
-        print("----------------")
-        print("b")
-        print(b)
-        // Will leave you with a boolean array (correctPath)
-        // with the path indicated by true values.
-        // If b is false, there is no solution to the maze
-        
-        
-        var path: [Cell] = []
-        
-        
-        //this is nasty but it works for now
-        for row in 0...correctPath.count - 1 {
-            for col in 0...correctPath[row].count - 1{
-                if(correctPath[row][col] == true){
-                    for (index, _) in grid.cells.enumerated(){
-                        for c in grid.cells[index]{
-                            if(c.rowNum == row && c.colNum == col){
-                                path.append(c)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        path.reverse()
-        return path
+    
+    func solve() -> Bool{
+        return traverse(i: 0,j: 0);
     }
     
-    func recursiveSolve(x: Int, y: Int) -> Bool{
-        print(x)
-        if (x == endX && y == endY) {
-            return true; // If you reached the end
+    func traverse(i: Int, j: Int) -> Bool {
+        if (!isValid(i: i,j: j)) {
+            return false
         }
         
-        if (maze[x][y] == 2 || wasHere[x][y]){
-            return false;
+        if ( isEnd(i: i, j: j) ) {
+            map[i][j] = PATH
+            return true
+        } else {
+            map[i][j] = TRIED
         }
-        // If you are on a wall or already were here
-        wasHere[x][y] = true;
-        if (x != 0) {// Checks if not on left edge
-            if (recursiveSolve(x: x-1, y: y)) { // Recalls method one to the left
-                correctPath[x][y] = true; // Sets that path value to true;
-                return true;
-            }
+        
+        // North
+        if (traverse(i: i - 1, j: j)) {
+            map[i-1][j] = PATH
+            return true
         }
-        if (x != width){ // Checks if not on right edge
-            if (recursiveSolve(x: x+1, y: y)) { // Recalls method one to the right
-                correctPath[x][y] = true;
-                return true;
-            }
+        // East
+        if (traverse(i: i, j: j + 1)) {
+            map[i][j + 1] = PATH
+            return true
         }
-        if (y != 0){ // Checks if not on top edge
-            if (recursiveSolve(x: x, y: y-1)) { // Recalls method one up
-                correctPath[x][y] = true;
-                return true;
-            }
+        // South
+        if (traverse(i: i + 1, j: j)) {
+            map[i + 1][j] = PATH
+            return true
         }
-        if (y != height){ // Checks if not on bottom edge
-            if (recursiveSolve(x: x, y: y+1)) { // Recalls method one down
-                correctPath[x][y] = true;
-                return true;
-            }
+        // West
+        if (traverse(i: i, j: j - 1)) {
+            map[i][j - 1] = PATH
+            return true
         }
-        return false;
+        
+        return false
+    }
+    
+    func isEnd(i:Int, j:Int) -> Bool{
+        return i == height - 1 && j == width - 1
+    }
+    
+    func isValid(i:Int, j:Int) -> Bool{
+        if (inRange(i: i, j: j) && isOpen(i: i, j: j) && !isTried(i: i, j: j)) {
+            return true
+        }
+        return false
+    }
+    
+    func isOpen(i: Int, j:Int) -> Bool{
+        return grid[i][j] == 1
+    }
+    
+    func isTried(i:Int, j:Int) -> Bool{
+        return map[i][j] == TRIED
+    }
+    
+    func inRange(i:Int, j:Int) -> Bool{
+        return inHeight(i: i) && inWidth(j: j)
+    }
+    
+    func inHeight(i:Int) -> Bool{
+        return i >= 0 && i < height
+    }
+    
+    func inWidth(j:Int) -> Bool{
+        return j >= 0 && j < width
     }
     
 }
