@@ -230,6 +230,9 @@
                                     <constraint firstAttribute="height" constant="40" id="7y5-El-Qlv"/>
                                     <constraint firstAttribute="width" constant="150" id="EC5-qR-LlH"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeMusicVolume:" destination="UqX-lc-V03" eventType="valueChanged" id="8Vx-T5-p8O"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-24-6oz">
                                 <rect key="frame" x="111" y="210" width="154" height="41"/>
@@ -287,7 +290,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="9Jm-ma-6az" id="h5C-hH-h2I"/>
-                        <outlet property="musicSlider" destination="Wwv-KY-s2k" id="GDR-3V-hIY"/>
+                        <outlet property="musicSlider" destination="A1Z-m3-Db6" id="acH-Py-rhE"/>
                         <outlet property="soundEffectsSlider" destination="A1Z-m3-Db6" id="l1f-NQ-6bY"/>
                     </connections>
                 </viewController>
@@ -463,22 +466,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lives:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0L-HN-2sn" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                        <rect key="frame" x="154" y="45" width="67" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tub-KD-eDS" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-3j-G1r" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                        <rect key="frame" x="309" y="46" width="58" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abD-zs-enC">
+                                        <rect key="frame" x="289" y="7" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07i-EP-ui1" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="46" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-WE-4HV">
+                                        <rect key="frame" x="166" y="0.0" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -497,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2538.4000000000001" y="-87.706146926536732"/>
+            <point key="canvasLocation" x="2465" y="-162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GkY-xG-nB8">

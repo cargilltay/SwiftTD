@@ -10,13 +10,16 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var soundEffectsSlider: UISlider!
-    @IBOutlet weak var musicSlider: UILabel!
     @IBOutlet weak var confirmButton: SwiftTDButton!
    
+    @IBOutlet weak var musicSlider: UISlider!
     @IBAction func confirmButtonAction(_ sender: Any) {
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
         }
+    }
+    @IBAction func changeMusicVolume(_ sender: Any) {
+        musicMaker.player?.volume = musicSlider.value
     }
     override func viewDidLoad() {
         super.viewDidLoad()
