@@ -30,6 +30,8 @@
 		701E16AB1E6BD693007EEAD9 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16AA1E6BD693007EEAD9 /* MainMenuViewController.swift */; };
 		701E16AD1E6BD6A1007EEAD9 /* GameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16AC1E6BD6A1007EEAD9 /* GameModeViewController.swift */; };
 		70234F1E1E95C14600399374 /* SwiftTDContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70234F1D1E95C14600399374 /* SwiftTDContainer.swift */; };
+		70234F201E96D1F500399374 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70234F1F1E96D1F500399374 /* MusicController.swift */; };
+		70234F241E96D6DF00399374 /* naruto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70234F231E96D6DF00399374 /* naruto.mp3 */; };
 		7048332E1E896AEE0085BC6B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048332D1E896AEE0085BC6B /* GameController.swift */; };
 		704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */; };
 		706417BA1E8F5F8000104884 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706417B91E8F5F8000104884 /* Cell.swift */; };
@@ -91,6 +93,8 @@
 		701E16AA1E6BD693007EEAD9 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		701E16AC1E6BD6A1007EEAD9 /* GameModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeViewController.swift; sourceTree = "<group>"; };
 		70234F1D1E95C14600399374 /* SwiftTDContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDContainer.swift; sourceTree = "<group>"; };
+		70234F1F1E96D1F500399374 /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		70234F231E96D6DF00399374 /* naruto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = naruto.mp3; sourceTree = "<group>"; };
 		7048332D1E896AEE0085BC6B /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDTowerButton.swift; sourceTree = "<group>"; };
 		706417B91E8F5F8000104884 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		701E16251E6126B3007EEAD9 = {
 			isa = PBXGroup;
 			children = (
+				70234F231E96D6DF00399374 /* naruto.mp3 */,
 				701E16301E6126B3007EEAD9 /* SwiftTD */,
 				701E164B1E6126B3007EEAD9 /* SwiftTDTests */,
 				701E16561E6126B3007EEAD9 /* SwiftTDUITests */,
@@ -232,6 +237,7 @@
 				70674CCC1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift */,
 				7048332D1E896AEE0085BC6B /* GameController.swift */,
 				F14AE1871E95548A00D57195 /* MonsterStatController.swift */,
+				70234F1F1E96D1F500399374 /* MusicController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70234F241E96D6DF00399374 /* naruto.mp3 in Resources */,
 				701E163D1E6126B3007EEAD9 /* Main.storyboard in Resources */,
 				701E16341E6126B3007EEAD9 /* GameScene.sks in Resources */,
 				701E163F1E6126B3007EEAD9 /* Assets.xcassets in Resources */,
@@ -421,6 +428,7 @@
 				706417BA1E8F5F8000104884 /* Cell.swift in Sources */,
 				701E163A1E6126B3007EEAD9 /* GameViewController.swift in Sources */,
 				701E16A71E6BD665007EEAD9 /* SignInViewController.swift in Sources */,
+				70234F201E96D1F500399374 /* MusicController.swift in Sources */,
 				70674CCD1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift in Sources */,
 				70674CCB1E6FC7D000A5BFB9 /* SwiftTDTextField.swift in Sources */,
 				701E16AD1E6BD6A1007EEAD9 /* GameModeViewController.swift in Sources */,

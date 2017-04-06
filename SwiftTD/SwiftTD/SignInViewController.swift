@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var musicMaker:MusicController!
 
 class SignInViewController: UIViewController {
 
@@ -18,7 +19,9 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
-
+        
+        musicMaker = MusicController()
+        musicMaker.playSound()
         // Do any additional setup after loading the view.
     }
 
