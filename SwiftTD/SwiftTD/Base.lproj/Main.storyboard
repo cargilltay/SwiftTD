@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="tsf-2v-2GU">
             <objects>
-                <viewController id="5oF-Tb-no6" customClass="SignInViewController" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" id="5oF-Tb-no6" customClass="SignInViewController" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TMl-p5-2rU"/>
                         <viewControllerLayoutGuide type="bottom" id="gFd-1k-Njj"/>
@@ -122,18 +123,34 @@
                                     <segue destination="FGM-LG-RFY" kind="show" id="aHa-FZ-hfq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03D-ed-spz" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="113" y="355" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dmU-BX-rfx"/>
+                                    <constraint firstAttribute="height" constant="40" id="k8U-nL-iT0"/>
+                                </constraints>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="oIz-PU-iGS" eventType="touchUpInside" id="M9f-zZ-QE6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" identifier="MainMenu"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="03D-ed-spz" secondAttribute="trailing" constant="96" id="32X-Ff-8gk"/>
                             <constraint firstItem="hfW-7k-D7f" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="7j0-Pn-az6"/>
                             <constraint firstItem="vZf-V6-zJt" firstAttribute="top" secondItem="hfW-7k-D7f" secondAttribute="bottom" constant="50" id="CKw-Fv-qId"/>
                             <constraint firstItem="hfW-7k-D7f" firstAttribute="top" secondItem="MUI-Fb-vsd" secondAttribute="bottom" constant="120" id="G4P-v0-ECk"/>
+                            <constraint firstItem="03D-ed-spz" firstAttribute="leading" secondItem="3NQ-6A-KwF" secondAttribute="leadingMargin" constant="97" id="QHF-FU-UCC"/>
                             <constraint firstItem="vZf-V6-zJt" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="e8Z-K6-EK6"/>
+                            <constraint firstItem="03D-ed-spz" firstAttribute="top" secondItem="vZf-V6-zJt" secondAttribute="bottom" constant="41" id="lD3-tP-dLN"/>
+                            <constraint firstItem="LIE-Yq-jxu" firstAttribute="top" secondItem="03D-ed-spz" secondAttribute="bottom" constant="272" id="v6d-1v-s6Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k9f-qL-u9q"/>
                     <connections>
+                        <outlet property="logOutButton" destination="03D-ed-spz" id="4UD-P9-iUV"/>
                         <outlet property="playButton" destination="hfW-7k-D7f" id="7Lr-Sv-k1z"/>
                         <outlet property="settingsButton" destination="vZf-V6-zJt" id="BON-Pr-dX2"/>
                     </connections>
@@ -159,16 +176,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="76B-RU-0wU"/>
                                     <constraint firstAttribute="width" constant="150" id="gne-kT-F7k"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS3-ws-T0b" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="320" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="FeP-fe-7Ni"/>
-                                    <constraint firstAttribute="width" constant="150" id="Po1-ws-fte"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -200,17 +207,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JUG-Jk-cpN" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="O8k-DM-RwW"/>
-                            <constraint firstItem="MS3-ws-T0b" firstAttribute="top" secondItem="JUG-Jk-cpN" secondAttribute="bottom" constant="50" id="Pg9-np-r69"/>
                             <constraint firstItem="Izb-xH-aEw" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Sho-EB-RCl"/>
                             <constraint firstItem="bX6-cV-GYJ" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Wvq-W8-GSa"/>
                             <constraint firstItem="JUG-Jk-cpN" firstAttribute="top" secondItem="bX6-cV-GYJ" secondAttribute="bottom" constant="50" id="hYX-HN-v3A"/>
-                            <constraint firstItem="MS3-ws-T0b" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="jSr-Fz-aLg"/>
                             <constraint firstItem="bX6-cV-GYJ" firstAttribute="top" secondItem="b4H-5n-8eA" secondAttribute="bottom" constant="120" id="ufd-qy-bpd"/>
                             <constraint firstItem="efB-oF-LxF" firstAttribute="top" secondItem="Izb-xH-aEw" secondAttribute="bottom" constant="30" id="vlV-kb-mmU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordText" destination="MS3-ws-T0b" id="L0S-2a-tiY"/>
                         <outlet property="passwordText" destination="JUG-Jk-cpN" id="7ab-ST-RPi"/>
                         <outlet property="submitButton" destination="Izb-xH-aEw" id="ExR-vg-5NV"/>
                         <outlet property="userNameText" destination="bX6-cV-GYJ" id="e8N-D7-rlU"/>
