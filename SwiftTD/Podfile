@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SwiftTD' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SwiftTD
+pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  target 'SwiftTDTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SwiftTDUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
