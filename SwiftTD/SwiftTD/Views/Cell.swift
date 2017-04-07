@@ -17,6 +17,7 @@ class Cell: SKSpriteNode {
     var colNum: Int!
     
     var isBlocked: Bool = false
+    var hasTower: Bool = false
     
     convenience init(x: CGFloat, y: CGFloat){
         self.init()

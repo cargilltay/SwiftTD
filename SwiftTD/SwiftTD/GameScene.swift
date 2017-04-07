@@ -28,6 +28,7 @@ class GameScene: SKScene {
     var background: SKSpriteNode!
     var movableNode : SKNode?
     var towerCricle:SKShapeNode!
+    var towerDrag = false
     var grid: Grid?
     
     override func didMove(to: SKView) {
@@ -99,13 +100,14 @@ class GameScene: SKScene {
             }
             
             if towerButton.contains(location) {
+                towerDrag = true
                 movableNode = createTower()
                 movableNode!.position = location
             }
             
             if grid!.contains(location){
                 let closest = grid!.closestCell(x: location.x, y: location.y)
-                if(closest.isBlocked){
+                if(closest.isBlocked && closest.hasTower){
                     towerCricle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle, modify to tower radius
                     towerCricle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
                     towerCricle.strokeColor = SKColor.black
@@ -157,6 +159,10 @@ class GameScene: SKScene {
             movableNode = nil
             
             closest?.isBlocked = true
+            if(towerDrag){
+                closest?.hasTower = true
+                towerDrag = false
+            }
         }
     }
     
