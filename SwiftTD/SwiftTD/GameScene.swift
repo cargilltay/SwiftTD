@@ -190,7 +190,8 @@ class GameScene: SKScene {
     func drawGrid(){
         let gridRows = 10
         let gridCols = 10
-        let blockSize = screenWidth! / CGFloat(gridRows)
+        let marginOffset = CGFloat(32.0)
+        let blockSize = (screenWidth! - marginOffset) / CGFloat(gridRows)
         
         grid = Grid(blockSize: blockSize, rows:gridRows, cols:gridCols, baseOffset: 250)
         grid!.position = CGPoint (x:frame.midX, y:grid!.baseOffset + grid!.texture!.size().height / 2)
