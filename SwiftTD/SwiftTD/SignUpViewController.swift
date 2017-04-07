@@ -53,7 +53,6 @@ class SignUpViewController: UIViewController {
                 
                 if error == nil {
                     print("You have successfully signed up")
-                    //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
                     self.present(vc!, animated: true, completion: nil)
@@ -69,14 +68,5 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
