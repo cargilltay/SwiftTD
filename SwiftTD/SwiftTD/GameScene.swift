@@ -24,6 +24,7 @@ class GameScene: SKScene {
     static let defaultScale: CGFloat = 0.0625
     
     var rockButton: SKSpriteNode!
+    var towerButton: SKSpriteNode!
     var background: SKSpriteNode!
     var movableNode : SKNode?
     var towerCricle:SKShapeNode!
@@ -39,10 +40,14 @@ class GameScene: SKScene {
         screenWidth = screenSize.width * 2
         screenHeight = screenSize.height * 2
         
+        towerButton = SKSpriteNode(imageNamed: "Tower")
+        towerButton.position = CGPoint(x: 300, y: 200)
+        towerButton.zPosition = 100
+        self.addChild(towerButton)
+        
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 150, y: 200)
         rockButton.zPosition = 100
-        rockButton.zPosition = 3
         self.addChild(rockButton)
         
         background = SKSpriteNode(imageNamed: "Background")
@@ -93,10 +98,15 @@ class GameScene: SKScene {
                 movableNode!.position = location
             }
             
+            if towerButton.contains(location) {
+                movableNode = createTower()
+                movableNode!.position = location
+            }
+            
             if grid!.contains(location){
                 let closest = grid!.closestCell(x: location.x, y: location.y)
                 if(closest.isBlocked){
-                    towerCricle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle
+                    towerCricle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle, modify to tower radius
                     towerCricle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
                     towerCricle.strokeColor = SKColor.black
                     towerCricle.zPosition = 101
@@ -149,16 +159,28 @@ class GameScene: SKScene {
             closest?.isBlocked = true
         }
     }
+    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil {
             movableNode = nil
         }
     }
     
+    
+    //eventually pass type to this
+    func createTower() -> BaseTower{
+        let tower: BaseTower!
+        tower = BaseTower(radius: 100, texture: SKTexture(imageNamed: "Tower"), color: UIColor.black)
+        tower.zPosition = 100
+        self.addChild(tower)
+        
+        return tower
+    }
+
+    
     func createRock() -> SKSpriteNode{
         let rock: SKSpriteNode!
         rock = SKSpriteNode(imageNamed: "Rock")
-        //rock.position = CGPoint(x: 300, y: 300)
         rock.zPosition = 100
         self.addChild(rock)
         
