@@ -32,9 +32,9 @@
 		70234F1E1E95C14600399374 /* SwiftTDContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70234F1D1E95C14600399374 /* SwiftTDContainer.swift */; };
 		70234F201E96D1F500399374 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70234F1F1E96D1F500399374 /* MusicController.swift */; };
 		70234F241E96D6DF00399374 /* naruto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70234F231E96D6DF00399374 /* naruto.mp3 */; };
+		703995051E9826390033EFEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 703995041E9826390033EFEF /* GoogleService-Info.plist */; };
 		7048332E1E896AEE0085BC6B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048332D1E896AEE0085BC6B /* GameController.swift */; };
 		704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */; };
-		705E4ABD1E981A880002E03F /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 705E4ABC1E981A880002E03F /* GoogleService-Info (1).plist */; };
 		706417BA1E8F5F8000104884 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706417B91E8F5F8000104884 /* Cell.swift */; };
 		70674CC71E6FC79300A5BFB9 /* SwiftTDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CC61E6FC79300A5BFB9 /* SwiftTDLabel.swift */; };
 		70674CC91E6FC7A800A5BFB9 /* SwiftTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CC81E6FC7A800A5BFB9 /* SwiftTDButton.swift */; };
@@ -105,9 +105,9 @@
 		70234F1D1E95C14600399374 /* SwiftTDContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDContainer.swift; sourceTree = "<group>"; };
 		70234F1F1E96D1F500399374 /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		70234F231E96D6DF00399374 /* naruto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = naruto.mp3; sourceTree = "<group>"; };
+		703995041E9826390033EFEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7048332D1E896AEE0085BC6B /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDTowerButton.swift; sourceTree = "<group>"; };
-		705E4ABC1E981A880002E03F /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		706417B91E8F5F8000104884 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		70674CC61E6FC79300A5BFB9 /* SwiftTDLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDLabel.swift; sourceTree = "<group>"; };
 		70674CC81E6FC7A800A5BFB9 /* SwiftTDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDButton.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		701E16251E6126B3007EEAD9 = {
 			isa = PBXGroup;
 			children = (
-				705E4ABC1E981A880002E03F /* GoogleService-Info (1).plist */,
+				703995041E9826390033EFEF /* GoogleService-Info.plist */,
 				70234F231E96D6DF00399374 /* naruto.mp3 */,
 				701E16301E6126B3007EEAD9 /* SwiftTD */,
 				701E164B1E6126B3007EEAD9 /* SwiftTDTests */,
@@ -439,7 +439,7 @@
 				701E163F1E6126B3007EEAD9 /* Assets.xcassets in Resources */,
 				701E16421E6126B3007EEAD9 /* LaunchScreen.storyboard in Resources */,
 				701E16361E6126B3007EEAD9 /* Actions.sks in Resources */,
-				705E4ABD1E981A880002E03F /* GoogleService-Info (1).plist in Resources */,
+				703995051E9826390033EFEF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

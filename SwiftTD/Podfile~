@@ -6,6 +6,7 @@ target 'SwiftTD' do
   use_frameworks!
 
   # Pods for SwiftTD
+pod 'Firebase/Database'
 
   target 'SwiftTDTests' do
     inherit! :search_paths

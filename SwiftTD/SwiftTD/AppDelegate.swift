@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 let BACKGROUND_COLOR = UIColor.init(colorLiteralRed: 0.000, green: 0.369, blue:0.420, alpha: 1.0);
 
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
         return true
     }
 
