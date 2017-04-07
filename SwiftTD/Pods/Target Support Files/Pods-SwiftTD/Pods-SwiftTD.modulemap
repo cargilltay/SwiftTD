@@ -1,0 +1,6 @@
+framework module Pods_SwiftTD {
+  umbrella header "Pods-SwiftTD-umbrella.h"
+
+  export *
+  module * { export * }
+}
