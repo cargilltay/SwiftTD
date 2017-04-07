@@ -21,7 +21,8 @@ class SignInViewController: UIViewController {
         self.view.backgroundColor = BACKGROUND_COLOR
         
         musicMaker = MusicController()
-        musicMaker.playSound()
+        //shut off for development 
+        //musicMaker.playSound()
         // Do any additional setup after loading the view.
     }
 

@@ -12,6 +12,9 @@ import GameplayKit
 class GameScene: SKScene {
     let game: GameController = GameController()
     let screenSize = UIScreen.main.bounds
+    let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
+    let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
+    
     
     //no idea what this needs to be twice as large
     //posisbly use self.frame.size.width
@@ -23,6 +26,7 @@ class GameScene: SKScene {
     var rockButton: SKSpriteNode!
     var background: SKSpriteNode!
     var movableNode : SKNode?
+    var towerCricle:SKShapeNode!
     var grid: Grid?
     
     override func didMove(to: SKView) {
@@ -88,6 +92,18 @@ class GameScene: SKScene {
                 movableNode = createRock()
                 movableNode!.position = location
             }
+            
+            if grid!.contains(location){
+                let closest = grid!.closestCell(x: location.x, y: location.y)
+                if(closest.isBlocked){
+                    towerCricle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle
+                    towerCricle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
+                    towerCricle.strokeColor = SKColor.black
+                    towerCricle.zPosition = 101
+                    towerCricle.glowWidth = 1.0
+                    self.addChild(towerCricle)
+                }
+            }
         }
     }
     
@@ -125,8 +141,7 @@ class GameScene: SKScene {
             //if in grid. set position to grid col/row
             
             //use these to center tower in cell
-            let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
-            let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
+            
 
             movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
             movableNode = nil
