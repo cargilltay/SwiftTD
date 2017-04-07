@@ -35,16 +35,48 @@ class GameController {
     
     func setSolution(solution: [[Int]], grid: Grid){
         var cells: [Cell] = []
-        
+        var tempSolution: [[Int]] = solution
+        var count: Int = 0
+        var row: Int = 0
+        var col: Int = 0
         for row in 0...solution.count - 1{
             for col in 0...solution[row].count-1{
                 if(solution[row][col] != 0){
-                    print("\(solution.count - row - 1) and \(col)")
-                    
-                    cells.append(grid.cells[row][col])
-                }
+                    count += 1
+                    }
             }
         }
+        //print("count: \(count)")
+        if(tempSolution[row][col] == 2){
+            cells.append(grid.cells[tempSolution.count - 1][0])
+            count -= 1
+        
+        while (count != 0) {
+            //print("row: \(solution.count - row - 1) col: \(col) = \(tempSolution[row][col])")
+            tempSolution[row][col] = 0
+            //North
+            if(row != 0 && tempSolution[row-1][col] != 0){
+                row -= 1
+            }//South
+            else if(row+1 != tempSolution.count && tempSolution[row+1][col] != 0){
+                row += 1
+            }//West
+            else if(col != 0 && tempSolution[row][col-1] != 0){
+                col -= 1
+            }//East
+            else if(col+1 != tempSolution[row].count && tempSolution[row][col+1] != 0){
+                col += 1
+            }
+            cells.append(grid.cells[tempSolution.count - 1 - row][col])
+            count -= 1
+        }
+        }
+        /*
+                    if(solution[row][col] != 0){
+                        print("\(solution.count - row - 1) and \(col)")
+                        
+                        cells.append(grid.cells[solution.count - row - 1][col])
+                    }*/
         
         self.solution = cells
     }

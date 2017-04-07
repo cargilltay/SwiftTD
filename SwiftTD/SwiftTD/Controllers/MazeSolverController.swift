@@ -20,27 +20,11 @@ class MazeSolverController{
     var height: Int!
     
     init(tempGrid: Grid){
-        //self.grid = grid
-        //self.width = grid.rows
-        //self.height = grid.cols
-        
-        
-       //self.maze = generateMaze()
         self.grid = generateMaze(grid: tempGrid)
-        /*
-        self.grid = [
-        [ 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1 ],
-            [ 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1 ],
-            [ 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0 ],
-            [ 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1 ],
-            [ 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1 ],
-            [ 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ],
-            [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
-            [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
-        ]
-         */
         self.height = tempGrid.cols
+        print(height)
         self.width = tempGrid.rows
+        print(width)
         self.map = Array(repeating: Array(repeating: 0, count: width), count: height)
     }
     
@@ -49,9 +33,10 @@ class MazeSolverController{
         var m:[[Int]] = Array(repeating: Array(repeating: 0, count: grid.cols), count: grid.rows)
         for (index, _) in grid.cells.enumerated(){
             for col in grid.cells[index]{
-                m[col.rowNum][col.colNum] = 1
+                m[grid.cells.count - 1 - col.rowNum][col.colNum] = 1
                 if (col.isBlocked){
-                    m[col.rowNum][col.colNum] = 0
+                    print("blocked row:\(grid.cells.count - 1 - col.rowNum!) col:\(col.colNum!)")
+                    m[grid.cells.count - 1 - col.rowNum][col.colNum] = 0
                 }
             }
         }
@@ -76,26 +61,48 @@ class MazeSolverController{
         } else {
             map[i][j] = TRIED
         }
-        
-        // North
-        if (traverse(i: i - 1, j: j)) {
-            map[i-1][j] = PATH
-            return true
-        }
-        // East
-        if (traverse(i: i, j: j + 1)) {
-            map[i][j + 1] = PATH
-            return true
-        }
-        // South
-        if (traverse(i: i + 1, j: j)) {
-            map[i + 1][j] = PATH
-            return true
-        }
-        // West
-        if (traverse(i: i, j: j - 1)) {
-            map[i][j - 1] = PATH
-            return true
+        if(j>i){
+            // South
+            if (traverse(i: i + 1, j: j)) {
+                map[i + 1][j] = PATH
+                return true
+            }
+            // East
+            if (traverse(i: i, j: j + 1)) {
+                map[i][j + 1] = PATH
+                return true
+            }
+            // West
+            if (traverse(i: i, j: j - 1)) {
+                map[i][j - 1] = PATH
+                return true
+            }
+            // North
+            if (traverse(i: i - 1, j: j)) {
+                map[i-1][j] = PATH
+                return true
+            }
+        }else{
+            // East
+            if (traverse(i: i, j: j + 1)) {
+                map[i][j + 1] = PATH
+                return true
+            }
+            //South
+            if (traverse(i: i + 1, j: j)) {
+                map[i + 1][j] = PATH
+                return true
+            }
+            // North
+            if (traverse(i: i - 1, j: j)) {
+                map[i-1][j] = PATH
+                return true
+            }
+            // West
+            if (traverse(i: i, j: j - 1)) {
+                map[i][j - 1] = PATH
+                return true
+            }
         }
         
         return false
