@@ -70,7 +70,7 @@ class SignInViewController: UIViewController {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
-                    //Go to the HomeViewController if the login is sucessful
+                    //Go to the MainNav if the login is sucessful
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
                     self.present(vc!, animated: true, completion: nil)
                     
@@ -87,15 +87,5 @@ class SignInViewController: UIViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
