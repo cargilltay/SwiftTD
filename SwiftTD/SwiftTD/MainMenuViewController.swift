@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+var musicMaker:MusicController!
+
 class MainMenuViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
@@ -19,6 +21,11 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
+        
+        
+        musicMaker = MusicController()
+        //shut off for development
+        //musicMaker.playSound()
 
         // Do any additional setup after loading the view.
     }

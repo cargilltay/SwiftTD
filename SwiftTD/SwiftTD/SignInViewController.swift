@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 
 //need this here for some reason
-var musicMaker:MusicController!
 
 class SignInViewController: UIViewController {
 
@@ -25,9 +24,6 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
         
-        musicMaker = MusicController()
-        //shut off for development 
-        //musicMaker.playSound()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
         
