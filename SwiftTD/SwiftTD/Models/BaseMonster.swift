@@ -19,8 +19,9 @@ class BaseMonster: SKSpriteNode {
     var destination: Int = 0
     var startLocation: CGPoint!
     var endLocation: CGPoint!
+    var gold: Int = 0
     
-    init(startLocation: CGPoint, endLocation: CGPoint, pathSolution destinations: [Cell], damage: Int, hitPoints: Int, texture: SKTexture, color: UIColor) {
+    init(startLocation: CGPoint, endLocation: CGPoint, pathSolution destinations: [Cell], damage: Int, hitPoints: Int, gold: Int, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
         self.texture = texture
         self.damage = damage

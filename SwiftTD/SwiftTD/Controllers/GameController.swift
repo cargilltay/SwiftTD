@@ -96,7 +96,7 @@ class GameController {
         //}
         
         for _ in 1...self.numMonsters {
-            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
             self.monsters.append(m)
         }
     }
