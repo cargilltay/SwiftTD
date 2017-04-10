@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-//need this here for some reason
 
 class SignInViewController: UIViewController {
 
@@ -41,44 +40,35 @@ class SignInViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func loginAction(_ sender: AnyObject) {
+    @IBAction func fireBaseLogin(_ sender: AnyObject) {
         
         userNameField.text = "test@gmail.com"
         passWordField.text = "abcd1234"
         
-        if self.userNameField.text == "" || self.passWordField.text == "" {
+        if (self.userNameField.text == "" || self.passWordField.text == "") {
             
-            //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
+            alert.addAction(defaultAction)
             
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             
         } else {
             
             FIRAuth.auth()?.signIn(withEmail: self.userNameField.text!, password: self.passWordField.text!) { (user, error) in
                 
-                if error == nil {
-                    
-                    //Print into the console if successfully logged in
-                    print("You have successfully logged in")
-                    
-                    //Go to the MainNav if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
-                    self.present(vc!, animated: true, completion: nil)
+                if (error == nil) {
+                    let loadedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
+                    self.present(loadedViewController!, animated: true, completion: nil)
                     
                 } else {
-                    
-                    //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
+                    alert.addAction(defaultAction)
                     
-                    self.present(alertController, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }

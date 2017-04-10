@@ -37,33 +37,31 @@ class SignUpViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func createAccountAction(_ sender: AnyObject) {
+    @IBAction func fireBaseCreateAccount(_ sender: AnyObject) {
         
-        
-        if userNameText.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+        if (userNameText.text == "") {
+            let alert = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
+            alert.addAction(defaultAction)
             
-            present(alertController, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             
         } else {
             FIRAuth.auth()?.createUser(withEmail: userNameText.text!, password: passwordText.text!) { (user, error) in
                 
-                if error == nil {
-                    print("You have successfully signed up")
+                if (error == nil) {
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
-                    self.present(vc!, animated: true, completion: nil)
+                    let loadedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
+                    self.present(loadedViewController!, animated: true, completion: nil)
                     
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
+                    alert.addAction(defaultAction)
                     
-                    self.present(alertController, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }

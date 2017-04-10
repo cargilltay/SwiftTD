@@ -41,25 +41,13 @@ class GameViewController: UIViewController {
         
         //need to turn this button off while round in progress
         
-        //test grid blocking
-        
-        /*
-         scene.grid?.cells[0][0].isBlocked = true
-         scene.grid?.cells[0][1].isBlocked = true
-         scene.grid?.cells[0][2].isBlocked = true
-         scene.grid?.cells[0][3].isBlocked = true
-         scene.grid?.cells[0][4].isBlocked = true
-         scene.grid?.cells[0][5].isBlocked = true
-         scene.grid?.cells[0][6].isBlocked = true
-         scene.grid?.cells[0][7].isBlocked = true
-        */
-        
         let solver = MazeSolverController(tempGrid: scene.grid!)
-        var solution: Bool = solver.solve()
+        let solution: Bool = solver.solve()
         print("Solved: \(solution)")
         print(solver.map)
         
         scene.game.setSolution(solution: solver.map, grid: scene.grid!)
+        
         //test empty
         //scene.game.setSolution(solution: [])
         
