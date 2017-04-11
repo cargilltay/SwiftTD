@@ -27,7 +27,7 @@ class GameScene: SKScene {
     var towerButton: SKSpriteNode!
     var background: SKSpriteNode!
     var movableNode : SKNode?
-    var towerCricle:SKShapeNode!
+    var towerCircle:SKShapeNode!
     var towerDrag = false
     var grid: Grid?
     
@@ -35,11 +35,13 @@ class GameScene: SKScene {
         setupUI()
         
         drawGrid()
+        
     }
     
     func setupUI(){
         screenWidth = screenSize.width * 2
         screenHeight = screenSize.height * 2
+        self.isUserInteractionEnabled = true
         
         towerButton = SKSpriteNode(imageNamed: "Tower")
         towerButton.position = CGPoint(x: 300, y: 200)
@@ -92,8 +94,12 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissTowerPanel()
         if let touch = touches.first {
             let location = touch.location(in: self)
+            
+            
+            
             if rockButton.contains(location) {
                 movableNode = createRock()
                 movableNode!.position = location
@@ -108,14 +114,22 @@ class GameScene: SKScene {
             if grid!.contains(location){
                 let closest = grid!.closestCell(x: location.x, y: location.y)
                 if(closest.isBlocked && closest.hasTower){
-                    towerCricle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle, modify to tower radius
-                    towerCricle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
-                    towerCricle.strokeColor = SKColor.black
-                    towerCricle.zPosition = 101
-                    towerCricle.glowWidth = 1.0
-                    self.addChild(towerCricle)
+                    towerCircle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle, modify to tower radius
+                    towerCircle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
+                    towerCircle.strokeColor = SKColor.black
+                    towerCircle.zPosition = 101
+                    towerCircle.glowWidth = 1.0
+                    self.addChild(towerCircle)
                 }
             }
+            
+        }
+    }
+    
+    func dismissTowerPanel(){
+        if(towerCircle != nil){
+            towerCircle.removeFromParent()
+            towerCircle = nil
         }
     }
     

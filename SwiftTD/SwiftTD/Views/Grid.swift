@@ -29,7 +29,7 @@ class Grid:SKSpriteNode {
         self.blockSize = blockSize
         self.rows = rows
         self.cols = cols
-        self.isUserInteractionEnabled = true
+        self.isUserInteractionEnabled = false
         
         
         
