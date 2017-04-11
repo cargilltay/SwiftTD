@@ -435,7 +435,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "init(startLocation:endLocation:pathSolution:damage:hitPoints:texture:color:)"
+            landmarkName = "init(startLocation:endLocation:pathSolution:damage:hitPoints:gold:texture:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -451,7 +451,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "init(startLocation:endLocation:pathSolution:damage:hitPoints:texture:color:)"
+            landmarkName = "init(startLocation:endLocation:pathSolution:damage:hitPoints:gold:texture:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
