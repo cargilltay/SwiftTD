@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     var scene: GameScene!
+    var gameDifficulty: GameDifficulty!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
+            scene.game.difficulty = self.gameDifficulty
             
             // Set the scale mode to scale to fit the window
             scene.scaleMode = SKSceneScaleMode.aspectFit
@@ -83,5 +85,12 @@ class GameViewController: UIViewController {
         return true
     }
     
+    
+}
+
+extension GameViewController: DifficultyDelegate {
+    func updateDifficulty(difficulty:GameDifficulty) {
+        self.gameDifficulty = difficulty
+    }
     
 }

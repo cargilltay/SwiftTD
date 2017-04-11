@@ -411,6 +411,7 @@
                                 </constraints>
                                 <state key="normal" title="Easy"/>
                                 <connections>
+                                    <action selector="easyTapped:" destination="bUc-Vy-Ygh" eventType="touchUpInside" id="kzW-hC-5lP"/>
                                     <segue destination="BV1-FR-VrT" kind="show" id="qXy-DN-S21"/>
                                 </connections>
                             </button>
@@ -422,6 +423,7 @@
                                 </constraints>
                                 <state key="normal" title="Medium"/>
                                 <connections>
+                                    <action selector="mediumTapped:" destination="bUc-Vy-Ygh" eventType="touchUpInside" id="nhl-JD-Evn"/>
                                     <segue destination="BV1-FR-VrT" kind="show" id="uUg-Og-Q7A"/>
                                 </connections>
                             </button>
@@ -433,6 +435,7 @@
                                 </constraints>
                                 <state key="normal" title="Hard"/>
                                 <connections>
+                                    <action selector="hardTapped:" destination="bUc-Vy-Ygh" eventType="touchUpInside" id="KJ0-7G-D3V"/>
                                     <segue destination="BV1-FR-VrT" kind="show" id="OSe-xr-8GU"/>
                                 </connections>
                             </button>

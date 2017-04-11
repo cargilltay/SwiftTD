@@ -29,6 +29,7 @@ class GameController {
     var minionStartPosition: CGPoint!
     var minionEndLocation: CGPoint!
     var statController: MonsterStatController = MonsterStatController()
+    var difficulty: GameDifficulty!
     
     var time: Date = Date()
     //var difficulty
