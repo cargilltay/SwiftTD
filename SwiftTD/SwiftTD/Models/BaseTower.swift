@@ -9,21 +9,18 @@
 import UIKit
 import SpriteKit
 
-enum TowerType {
-    case Fire
-    case Water
-    case Earth
-    case Air
-}
-
 class BaseTower: SKSpriteNode {
     var projectiles: [BaseProjectile] = []
     var radius: Int = 100
     var targets: [BaseMonster] = []
+    var damage: CGFloat!
+    var cost: Int!
     
-    init(radius: Int, texture: SKTexture, color: UIColor) {
+    init(damage: CGFloat, cost: Int!, radius: Int, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
         self.radius = radius
+        self.damage = damage
+        self.cost = cost
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -43,6 +43,9 @@
 		709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */; };
 		709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */; };
 		709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */; };
+		70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED261E1E9D8E5400C99292 /* RockTower.swift */; };
+		70ED26211E9D8E6B00C99292 /* BasicTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26201E9D8E6B00C99292 /* BasicTower.swift */; };
+		70ED26231E9D936800C99292 /* TowerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26221E9D936800C99292 /* TowerFactory.swift */; };
 		A0B5497519498900B202D0F4 /* Pods_SwiftTDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */; };
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
@@ -116,6 +119,9 @@
 		709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerWaitingRoomViewController.swift; sourceTree = "<group>"; };
+		70ED261E1E9D8E5400C99292 /* RockTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockTower.swift; sourceTree = "<group>"; };
+		70ED26201E9D8E6B00C99292 /* BasicTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTower.swift; sourceTree = "<group>"; };
+		70ED26221E9D936800C99292 /* TowerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TowerFactory.swift; sourceTree = "<group>"; };
 		9D5452655E6281A001F9784B /* Pods-SwiftTDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
@@ -246,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				701E16981E666870007EEAD9 /* TestTower.swift */,
+				70ED261E1E9D8E5400C99292 /* RockTower.swift */,
+				70ED26201E9D8E6B00C99292 /* BasicTower.swift */,
 			);
 			path = TowerTypes;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				7048332D1E896AEE0085BC6B /* GameController.swift */,
 				F14AE1871E95548A00D57195 /* MonsterStatController.swift */,
 				70234F1F1E96D1F500399374 /* MusicController.swift */,
+				70ED26221E9D936800C99292 /* TowerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -602,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */,
 				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
 				701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
@@ -623,8 +633,10 @@
 				70674CCD1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift in Sources */,
 				70674CCB1E6FC7D000A5BFB9 /* SwiftTDTextField.swift in Sources */,
 				701E16AD1E6BD6A1007EEAD9 /* GameModeViewController.swift in Sources */,
+				70ED26231E9D936800C99292 /* TowerFactory.swift in Sources */,
 				709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */,
 				F14AE18A1E9554C000D57195 /* MonsterStats.swift in Sources */,
+				70ED26211E9D8E6B00C99292 /* BasicTower.swift in Sources */,
 				709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */,
 				701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */,
 				701E16991E666870007EEAD9 /* BaseMonster.swift in Sources */,

@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     let game: GameController = GameController()
+    let towerFactory: TowerFactory = TowerFactory()
     let screenSize = UIScreen.main.bounds
     let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
     let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
@@ -98,16 +99,16 @@ class GameScene: SKScene {
         if let touch = touches.first {
             let location = touch.location(in: self)
             
-            
-            
             if rockButton.contains(location) {
-                movableNode = createRock()
+                movableNode = createTower(type: TowerType.Rock)
                 movableNode!.position = location
             }
             
             if towerButton.contains(location) {
                 towerDrag = true
-                movableNode = createTower()
+                
+                //somehow send tower type here
+                movableNode = createTower(type: TowerType.Basic)
                 movableNode!.position = location
             }
             
@@ -165,10 +166,6 @@ class GameScene: SKScene {
             }
             
             //if in grid. set position to grid col/row
-            
-            //use these to center tower in cell
-            
-
             movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
             movableNode = nil
             
@@ -188,16 +185,15 @@ class GameScene: SKScene {
     
     
     //eventually pass type to this
-    func createTower() -> BaseTower{
-        let tower: BaseTower!
-        tower = BaseTower(radius: 100, texture: SKTexture(imageNamed: "Tower"), color: UIColor.black)
+    func createTower(type: TowerType) -> BaseTower{
+        let tower = towerFactory.createTower(type: type)
         tower.zPosition = 100
         self.addChild(tower)
         
         return tower
     }
 
-    
+    /*
     func createRock() -> SKSpriteNode{
         let rock: SKSpriteNode!
         rock = SKSpriteNode(imageNamed: "Rock")
@@ -206,6 +202,7 @@ class GameScene: SKScene {
         
         return rock
     }
+    */
     
     func drawGrid(){
         let gridRows = 10
