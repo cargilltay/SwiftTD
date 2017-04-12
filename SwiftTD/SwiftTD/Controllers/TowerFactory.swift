@@ -27,6 +27,10 @@ class TowerFactory {
             return RockTower()
         case .Basic:
             return BasicTower()
+        //case .Fire:
+        //case .Water:
+        //case .Earth:
+        //case .Air:
         default:
             return BasicTower()
         }

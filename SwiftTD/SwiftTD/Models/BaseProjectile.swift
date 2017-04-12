@@ -16,12 +16,14 @@ class BaseProjectile: SKSpriteNode {
     
     
     
-    init(damage: Int, speed: CGFloat, target: BaseMonster, texture: SKTexture, color: UIColor) {
+    init(damage: Int, speed: CGFloat, target: BaseMonster, position: CGPoint, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
-        
+        self.position = position
         self.damage = damage
         self.speed = speed
         self.target = target
+        
+        self.zPosition = 101
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,44 +32,44 @@ class BaseProjectile: SKSpriteNode {
     
     
     func checkHit () -> Bool {
-        let tarX = self.target.position.x;
-        let tarY = self.target.position.y;
-        let checkWithinPixelOffset:CGFloat = 10.0;
-        let isWithinOffsetOfX = (self.position.x >= tarX - checkWithinPixelOffset && self.position.x <= tarX + checkWithinPixelOffset) ? true : false;
-        let isWithinOffsetOfY = (self.position.y >= tarY - checkWithinPixelOffset && self.position.y <= tarY + checkWithinPixelOffset) ? true : false;
+        let tarX = self.target.position.x
+        let tarY = self.target.position.y
+        let checkWithinPixelOffset:CGFloat = 10.0
+        let isWithinOffsetOfX = (self.position.x >= tarX - checkWithinPixelOffset && self.position.x <= tarX + checkWithinPixelOffset) ? true : false
+        let isWithinOffsetOfY = (self.position.y >= tarY - checkWithinPixelOffset && self.position.y <= tarY + checkWithinPixelOffset) ? true : false
         
         //check if within offset
+        print(isWithinOffsetOfX)
         if (isWithinOffsetOfX && isWithinOffsetOfY) {
-            self.target.hitPoints -= self.damage;
-            self.hitTarget = true;
-            if (self.target.hitPoints == 0) {
+            self.target.hitPoints -= self.damage
+            self.hitTarget = true
+            self.removeFromParent()
+            if (self.target.hitPoints <= 0) {
+                    print("dead")
                     self.target.isDead = true;
+                    self.target.removeFromParent()
             }
-                return true;
-            }
-            return false;
+            return true
         }
-        
+        return false
+    }
+
+
     func updatePosition () {
-        //this.x += this.speed;
-        //this.y += this.speed;
-        
-        //console.log(this.target.pos.x)
-        //console.log(this.x)
         if (self.checkHit()) {
-            return;
+            return
         }
         
         if (self.position.x < self.target.position.x) {
-            self.position.x += self.speed;
+            self.position.x += self.speed
         } else if (self.position.x > self.target.position.x) {
-            self.position.x -= self.speed;
+            self.position.x -= self.speed
         }
         
         if (self.position.y < self.target.position.y) {
-            self.position.y += self.speed;
+            self.position.y += self.speed
         } else if (self.position.y > self.target.position.y) {
-            self.position.y -= self.speed;
+            self.position.y -= self.speed
         }
         
     }

@@ -84,6 +84,18 @@ class GameScene: SKScene {
             m.updatePosition();
         }
     }
+    
+    func moveProjectiles(){
+        for tower in game.towers{
+            for proj in tower.projectiles{
+                if(proj.parent == nil){
+                    self.addChild(proj)
+                }
+            }
+            tower.scanForTarget(targets: game.monsters)
+            tower.fireProjectiles()
+        }
+    }
 
     
     override func update(_ currentTime: TimeInterval) {
@@ -91,7 +103,10 @@ class GameScene: SKScene {
         
         if(game.mode == GameMode.Defend){
             moveMinions()
+            moveProjectiles()
         }
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -166,7 +181,11 @@ class GameScene: SKScene {
             }
             
             //if in grid. set position to grid col/row
-            movableNode!.position = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
+            let towerPosition = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
+            
+            movableNode!.position = towerPosition
+            
+            
             movableNode = nil
             
             closest?.isBlocked = true
@@ -187,8 +206,9 @@ class GameScene: SKScene {
     //eventually pass type to this
     func createTower(type: TowerType) -> BaseTower{
         let tower = towerFactory.createTower(type: type)
-        tower.zPosition = 100
         self.addChild(tower)
+        
+        game.towers.append(tower)
         
         return tower
     }
