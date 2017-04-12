@@ -12,11 +12,12 @@ import SpriteKit
 class RockTower: BaseTower {
     
     init() {
+        let towerType: TowerType = TowerType.Rock
         let towerTexture = SKTexture(imageNamed:"Rock")
         let radius: Int = 0
         let cost: Int = 10
-        let damage: CGFloat = 0
-        super.init(damage: damage, cost: cost, radius: radius, texture: towerTexture, color: UIColor.black)
+        let damage: Int = 0
+        super.init(type: towerType,  damage: damage, cost: cost, radius: radius, texture: towerTexture, color: UIColor.black)
     }
     
     required init?(coder aDecoder: NSCoder) {

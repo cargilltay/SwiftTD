@@ -13,16 +13,18 @@ class BaseTower: SKSpriteNode {
     var projectiles: [BaseProjectile] = []
     var radius: Int = 100
     var targets: [BaseMonster] = []
-    var damage: CGFloat!
+    var damage: Int!
     var cost: Int!
     var hasTarget = false
+    var type: TowerType!
+    var projectileFactory: ProjectileFactory = ProjectileFactory()
     
-    init(damage: CGFloat, cost: Int!, radius: Int, texture: SKTexture, color: UIColor) {
+    init(type: TowerType, damage: Int, cost: Int!, radius: Int, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
         self.radius = radius
         self.damage = damage
         self.cost = cost
-        
+        self.type = type
         self.zPosition = 100
     }
     
@@ -47,7 +49,8 @@ class BaseTower: SKSpriteNode {
             if(inXLeft && inXRight && inYDown && inYUp){
                 
                 //use factory here to generate projecile based on tower type
-                let proj = BaseProjectile(damage: 10, speed: 10, target: target, position: self.position, texture: SKTexture(imageNamed: "BasicArrow"), color: UIColor.black);
+                let proj = projectileFactory.createProjectile(tower: self, target: target)
+                //let proj = BaseProjectile(damage: 10, speed: 10, target: target, position: self.position, texture: SKTexture(imageNamed: "BasicArrow"), color: UIColor.black);
                 self.projectiles.append(proj);
                 
                 //proj.show();
