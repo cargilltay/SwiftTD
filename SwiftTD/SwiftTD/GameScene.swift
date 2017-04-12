@@ -147,7 +147,7 @@ class GameScene: SKScene {
             let touchX = touch.location(in: self).x
             let touchY = touch.location(in: self).y
             let xInBounds = touchX < screenWidth! && touchX > 0
-            let yInBounds = touchY < screenHeight! && touchY > grid!.baseOffset
+            let yInBounds = touchY < grid!.size.height + grid!.baseOffset && touchY > grid!.baseOffset
             
             //if not in bounds, bail
             if(!xInBounds || !yInBounds){
