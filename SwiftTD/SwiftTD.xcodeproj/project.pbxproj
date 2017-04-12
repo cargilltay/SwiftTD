@@ -22,7 +22,6 @@
 		701E169B1E666870007EEAD9 /* BaseTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16921E666870007EEAD9 /* BaseTower.swift */; };
 		701E169C1E666870007EEAD9 /* TestMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16941E666870007EEAD9 /* TestMonster.swift */; };
 		701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16961E666870007EEAD9 /* TestProjectile.swift */; };
-		701E169E1E666870007EEAD9 /* TestTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16981E666870007EEAD9 /* TestTower.swift */; };
 		701E16A21E666894007EEAD9 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A11E666894007EEAD9 /* Grid.swift */; };
 		701E16A41E666FB1007EEAD9 /* MazeSolverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */; };
 		701E16A71E6BD665007EEAD9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A61E6BD665007EEAD9 /* SignInViewController.swift */; };
@@ -46,6 +45,10 @@
 		70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED261E1E9D8E5400C99292 /* RockTower.swift */; };
 		70ED26211E9D8E6B00C99292 /* BasicTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26201E9D8E6B00C99292 /* BasicTower.swift */; };
 		70ED26231E9D936800C99292 /* TowerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26221E9D936800C99292 /* TowerFactory.swift */; };
+		70ED26251E9EDF2100C99292 /* FireTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26241E9EDF2100C99292 /* FireTower.swift */; };
+		70ED26271E9EDF4C00C99292 /* WaterTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26261E9EDF4C00C99292 /* WaterTower.swift */; };
+		70ED26291E9EDF5500C99292 /* EarthTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26281E9EDF5500C99292 /* EarthTower.swift */; };
+		70ED262B1E9EDF5F00C99292 /* AirTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED262A1E9EDF5F00C99292 /* AirTower.swift */; };
 		A0B5497519498900B202D0F4 /* Pods_SwiftTDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */; };
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
@@ -98,7 +101,6 @@
 		701E16921E666870007EEAD9 /* BaseTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTower.swift; sourceTree = "<group>"; };
 		701E16941E666870007EEAD9 /* TestMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMonster.swift; sourceTree = "<group>"; };
 		701E16961E666870007EEAD9 /* TestProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProjectile.swift; sourceTree = "<group>"; };
-		701E16981E666870007EEAD9 /* TestTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTower.swift; sourceTree = "<group>"; };
 		701E16A11E666894007EEAD9 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeSolverController.swift; sourceTree = "<group>"; };
 		701E16A61E6BD665007EEAD9 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,10 @@
 		70ED261E1E9D8E5400C99292 /* RockTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockTower.swift; sourceTree = "<group>"; };
 		70ED26201E9D8E6B00C99292 /* BasicTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTower.swift; sourceTree = "<group>"; };
 		70ED26221E9D936800C99292 /* TowerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TowerFactory.swift; sourceTree = "<group>"; };
+		70ED26241E9EDF2100C99292 /* FireTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireTower.swift; sourceTree = "<group>"; };
+		70ED26261E9EDF4C00C99292 /* WaterTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterTower.swift; sourceTree = "<group>"; };
+		70ED26281E9EDF5500C99292 /* EarthTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTower.swift; sourceTree = "<group>"; };
+		70ED262A1E9EDF5F00C99292 /* AirTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirTower.swift; sourceTree = "<group>"; };
 		9D5452655E6281A001F9784B /* Pods-SwiftTDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
@@ -251,9 +257,12 @@
 		701E16971E666870007EEAD9 /* TowerTypes */ = {
 			isa = PBXGroup;
 			children = (
-				701E16981E666870007EEAD9 /* TestTower.swift */,
 				70ED261E1E9D8E5400C99292 /* RockTower.swift */,
 				70ED26201E9D8E6B00C99292 /* BasicTower.swift */,
+				70ED26241E9EDF2100C99292 /* FireTower.swift */,
+				70ED26261E9EDF4C00C99292 /* WaterTower.swift */,
+				70ED26281E9EDF5500C99292 /* EarthTower.swift */,
+				70ED262A1E9EDF5F00C99292 /* AirTower.swift */,
 			);
 			path = TowerTypes;
 			sourceTree = "<group>";
@@ -612,7 +621,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */,
+				70ED26251E9EDF2100C99292 /* FireTower.swift in Sources */,
 				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
+				70ED26271E9EDF4C00C99292 /* WaterTower.swift in Sources */,
 				701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
 				701E16A41E666FB1007EEAD9 /* MazeSolverController.swift in Sources */,
@@ -624,11 +635,13 @@
 				701E16A21E666894007EEAD9 /* Grid.swift in Sources */,
 				709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */,
 				7048332E1E896AEE0085BC6B /* GameController.swift in Sources */,
+				70ED262B1E9EDF5F00C99292 /* AirTower.swift in Sources */,
 				701E169B1E666870007EEAD9 /* BaseTower.swift in Sources */,
 				701E169C1E666870007EEAD9 /* TestMonster.swift in Sources */,
 				706417BA1E8F5F8000104884 /* Cell.swift in Sources */,
 				701E163A1E6126B3007EEAD9 /* GameViewController.swift in Sources */,
 				701E16A71E6BD665007EEAD9 /* SignInViewController.swift in Sources */,
+				70ED26291E9EDF5500C99292 /* EarthTower.swift in Sources */,
 				70234F201E96D1F500399374 /* MusicController.swift in Sources */,
 				70674CCD1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift in Sources */,
 				70674CCB1E6FC7D000A5BFB9 /* SwiftTDTextField.swift in Sources */,
@@ -641,7 +654,6 @@
 				701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */,
 				701E16991E666870007EEAD9 /* BaseMonster.swift in Sources */,
 				701E16A91E6BD67D007EEAD9 /* SignUpViewController.swift in Sources */,
-				701E169E1E666870007EEAD9 /* TestTower.swift in Sources */,
 				70674CC91E6FC7A800A5BFB9 /* SwiftTDButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
