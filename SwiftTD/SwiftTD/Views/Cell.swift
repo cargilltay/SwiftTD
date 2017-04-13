@@ -15,6 +15,7 @@ class Cell: SKSpriteNode {
     var cSize: CGFloat!
     var rowNum: Int!
     var colNum: Int!
+    var tower: BaseTower!
     
     var isBlocked: Bool = false
     var hasTower: Bool = false

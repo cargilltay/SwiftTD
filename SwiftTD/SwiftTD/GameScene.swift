@@ -130,7 +130,7 @@ class GameScene: SKScene {
             if grid!.contains(location){
                 let closest = grid!.closestCell(x: location.x, y: location.y)
                 if(closest.isBlocked && closest.hasTower){
-                    towerCircle = SKShapeNode(circleOfRadius: 100 ) // Size of Circle, modify to tower radius
+                    towerCircle = SKShapeNode(circleOfRadius: CGFloat(closest.tower.radius) ) // Size of Circle, modify to tower radius
                     towerCircle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
                     towerCircle.strokeColor = SKColor.black
                     towerCircle.zPosition = 101
@@ -184,7 +184,7 @@ class GameScene: SKScene {
             let towerPosition = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
             
             movableNode!.position = towerPosition
-            
+            closest?.tower = movableNode as! BaseTower
             
             movableNode = nil
             

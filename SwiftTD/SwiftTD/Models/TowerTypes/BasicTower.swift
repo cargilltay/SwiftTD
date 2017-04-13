@@ -13,7 +13,7 @@ class BasicTower: BaseTower {
     init() {
         let towerType = TowerType.Basic
         let towerTexture = SKTexture(imageNamed: "Tower")
-        let radius: Int = 100
+        let radius: Int = 250
         let cost: Int = 40
         let damage: Int = 40
         super.init(type: towerType, damage: damage, cost: cost, radius: radius, texture: towerTexture, color: UIColor.black)

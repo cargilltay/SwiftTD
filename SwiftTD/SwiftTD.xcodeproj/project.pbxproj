@@ -21,7 +21,6 @@
 		701E169A1E666870007EEAD9 /* BaseProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16911E666870007EEAD9 /* BaseProjectile.swift */; };
 		701E169B1E666870007EEAD9 /* BaseTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16921E666870007EEAD9 /* BaseTower.swift */; };
 		701E169C1E666870007EEAD9 /* TestMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16941E666870007EEAD9 /* TestMonster.swift */; };
-		701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16961E666870007EEAD9 /* TestProjectile.swift */; };
 		701E16A21E666894007EEAD9 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A11E666894007EEAD9 /* Grid.swift */; };
 		701E16A41E666FB1007EEAD9 /* MazeSolverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */; };
 		701E16A71E6BD665007EEAD9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16A61E6BD665007EEAD9 /* SignInViewController.swift */; };
@@ -107,7 +106,6 @@
 		701E16911E666870007EEAD9 /* BaseProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProjectile.swift; sourceTree = "<group>"; };
 		701E16921E666870007EEAD9 /* BaseTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTower.swift; sourceTree = "<group>"; };
 		701E16941E666870007EEAD9 /* TestMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMonster.swift; sourceTree = "<group>"; };
-		701E16961E666870007EEAD9 /* TestProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProjectile.swift; sourceTree = "<group>"; };
 		701E16A11E666894007EEAD9 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		701E16A31E666FB1007EEAD9 /* MazeSolverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeSolverController.swift; sourceTree = "<group>"; };
 		701E16A61E6BD665007EEAD9 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 		701E16951E666870007EEAD9 /* ProjectileTypes */ = {
 			isa = PBXGroup;
 			children = (
-				701E16961E666870007EEAD9 /* TestProjectile.swift */,
 				70ED262E1E9EE0C000C99292 /* RockProjectile.swift */,
 				70ED26301E9EE0D200C99292 /* BasicProjectile.swift */,
 				70ED26321E9EE0DC00C99292 /* FireProjectile.swift */,
@@ -646,7 +643,6 @@
 				70ED26371E9EE0F100C99292 /* EarthProjectile.swift in Sources */,
 				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
 				70ED26271E9EDF4C00C99292 /* WaterTower.swift in Sources */,
-				701E169D1E666870007EEAD9 /* TestProjectile.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
 				70ED26391E9EE0FB00C99292 /* AirProjectile.swift in Sources */,
 				701E16A41E666FB1007EEAD9 /* MazeSolverController.swift in Sources */,

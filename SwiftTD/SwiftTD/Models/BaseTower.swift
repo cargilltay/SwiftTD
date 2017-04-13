@@ -13,10 +13,12 @@ class BaseTower: SKSpriteNode {
     var projectiles: [BaseProjectile] = []
     var radius: Int = 100
     var targets: [BaseMonster] = []
+    var tempTarget: BaseMonster!
     var damage: Int!
     var cost: Int!
     var hasTarget = false
     var type: TowerType!
+    var fireTimer : Timer?
     var projectileFactory: ProjectileFactory = ProjectileFactory()
     
     init(type: TowerType, damage: Int, cost: Int!, radius: Int, texture: SKTexture, color: UIColor) {
@@ -34,28 +36,46 @@ class BaseTower: SKSpriteNode {
         let halfTextureSize = (self.texture?.size().width)! / 2
         let halfRadius:CGFloat = CGFloat(self.radius) / 2.0
         
-        let xOffsetLeft = self.position.x - (halfTextureSize - halfRadius)
+        let xOffsetLeft = self.position.x - (halfRadius)
         let xOffsetRight = self.position.x + (halfTextureSize + halfRadius)
-        let yOffsetDown = self.position.y - (halfTextureSize - halfRadius)
+        let yOffsetDown = self.position.y - (halfRadius)
         let yOffsetUp = self.position.y + (halfTextureSize + halfRadius)
         
         
         for target in self.targets{
-            let inXLeft = (target.position.x >= xOffsetLeft)
-            let inXRight = (target.position.x <= xOffsetRight)
-            let inYDown = (target.position.y >= yOffsetDown)
-            let inYUp = (target.position.y <= yOffsetUp)
+            let inXLeft = (target.position.x >= xOffsetLeft) //40
+            let inXRight = (target.position.x <= xOffsetRight) //60
+            let inYDown = (target.position.y >= yOffsetDown) //40
+            let inYUp = (target.position.y <= yOffsetUp) //60
             
             if(inXLeft && inXRight && inYDown && inYUp){
-                
+                tempTarget = target
+                    if fireTimer == nil {
+                        fireTimer =  Timer.scheduledTimer(
+                            timeInterval: TimeInterval(0.5),
+                            target      : self,
+                            selector    : #selector(addProjectile),
+                            userInfo    : nil,
+                            repeats     : true)
+                    }
                 //use factory here to generate projecile based on tower type
-                let proj = projectileFactory.createProjectile(tower: self, target: target)
-                //let proj = BaseProjectile(damage: 10, speed: 10, target: target, position: self.position, texture: SKTexture(imageNamed: "BasicArrow"), color: UIColor.black);
-                self.projectiles.append(proj);
                 
-                //proj.show();
-                self.hasTarget = true;
             }
+        }
+    }
+    
+    @objc func addProjectile(){
+        let proj = projectileFactory.createProjectile(tower: self, target: tempTarget!)
+        self.projectiles.append(proj);
+        
+        //proj.show();
+        self.hasTarget = true;
+    }
+    
+    func stopTimer() {
+        if fireTimer != nil {
+            fireTimer?.invalidate()
+            fireTimer = nil
         }
     }
     
@@ -68,6 +88,7 @@ class BaseTower: SKSpriteNode {
                 proj.removeFromParent()
                 //self.target = nil
                 self.hasTarget = false
+                stopTimer()
             }
         }
     }
