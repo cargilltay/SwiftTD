@@ -25,7 +25,12 @@ class GameScene: SKScene {
     static let defaultScale: CGFloat = 0.0625
     
     var rockButton: SKSpriteNode!
-    var towerButton: SKSpriteNode!
+    var basicTowerButton: SKSpriteNode!
+    var waterTowerButton: SKSpriteNode!
+    var fireTowerButton: SKSpriteNode!
+    var earthTowerButton: SKSpriteNode!
+    var airTowerButton: SKSpriteNode!
+    
     var background: SKSpriteNode!
     var movableNode : SKNode?
     var towerCircle:SKShapeNode!
@@ -44,15 +49,37 @@ class GameScene: SKScene {
         screenHeight = screenSize.height * 2
         self.isUserInteractionEnabled = true
         
-        towerButton = SKSpriteNode(imageNamed: "Tower")
-        towerButton.position = CGPoint(x: 300, y: 200)
-        towerButton.zPosition = 100
-        self.addChild(towerButton)
         
         rockButton = SKSpriteNode(imageNamed: "Rock")
-        rockButton.position = CGPoint(x: 150, y: 200)
+        rockButton.position = CGPoint(x: 100, y: 200)
         rockButton.zPosition = 100
         self.addChild(rockButton)
+        
+        basicTowerButton = SKSpriteNode(imageNamed: "Tower")
+        basicTowerButton.position = CGPoint(x: 200, y: 200)
+        basicTowerButton.zPosition = 100
+        self.addChild(basicTowerButton)
+        
+        waterTowerButton = SKSpriteNode(imageNamed: "Tower")
+        waterTowerButton.position = CGPoint(x: 300, y: 200)
+        waterTowerButton.zPosition = 100
+        self.addChild(waterTowerButton)
+        
+        fireTowerButton = SKSpriteNode(imageNamed: "Tower")
+        fireTowerButton.position = CGPoint(x: 400, y: 200)
+        fireTowerButton.zPosition = 100
+        self.addChild(fireTowerButton)
+        
+        earthTowerButton = SKSpriteNode(imageNamed: "Tower")
+        earthTowerButton.position = CGPoint(x: 500, y: 200)
+        earthTowerButton.zPosition = 100
+        self.addChild(earthTowerButton)
+        
+        airTowerButton = SKSpriteNode(imageNamed: "Tower")
+        airTowerButton.position = CGPoint(x: 600, y: 200)
+        airTowerButton.zPosition = 100
+        self.addChild(airTowerButton)
+        
         
         background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
@@ -61,7 +88,7 @@ class GameScene: SKScene {
     }
     
     func moveMinions() {
-        if (game.monsters.count == 0) {
+        if (game.monsters.count == 0 && game.spawnTimer == nil) {
             game.nextMode();
         }
         
@@ -70,11 +97,17 @@ class GameScene: SKScene {
             if (m.isDead) {
                 print("dead")
                 m.removeFromParent()
+                m.innerHealthBar.removeFromParent()
+                m.outerHealthBar.removeFromParent()
                 game.monsters.remove(at: index)
                 return;
             }
             else if (m.reachedEnd) {
                 m.removeFromParent()
+                if(m.innerHealthBar != nil && m.outerHealthBar != nil){
+                    m.innerHealthBar.removeFromParent()
+                    m.outerHealthBar.removeFromParent()
+                }
                 game.monsters.remove(at: index)
                 return;
             }
@@ -101,6 +134,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
+        
         if(game.mode == GameMode.Defend){
             moveMinions()
             moveProjectiles()
@@ -119,11 +153,33 @@ class GameScene: SKScene {
                 movableNode!.position = location
             }
             
-            if towerButton.contains(location) {
+            if basicTowerButton.contains(location) {
                 towerDrag = true
-                
-                //somehow send tower type here
                 movableNode = createTower(type: TowerType.Basic)
+                movableNode!.position = location
+            }
+            
+            if waterTowerButton.contains(location) {
+                towerDrag = true
+                movableNode = createTower(type: TowerType.Water)
+                movableNode!.position = location
+            }
+            
+            if fireTowerButton.contains(location) {
+                towerDrag = true
+                movableNode = createTower(type: TowerType.Fire)
+                movableNode!.position = location
+            }
+            
+            if earthTowerButton.contains(location) {
+                towerDrag = true
+                movableNode = createTower(type: TowerType.Earth)
+                movableNode!.position = location
+            }
+            
+            if airTowerButton.contains(location) {
+                towerDrag = true
+                movableNode = createTower(type: TowerType.Air)
                 movableNode!.position = location
             }
             
@@ -202,8 +258,6 @@ class GameScene: SKScene {
         }
     }
     
-    
-    //eventually pass type to this
     func createTower(type: TowerType) -> BaseTower{
         let tower = towerFactory.createTower(type: type)
         self.addChild(tower)
@@ -212,17 +266,6 @@ class GameScene: SKScene {
         
         return tower
     }
-
-    /*
-    func createRock() -> SKSpriteNode{
-        let rock: SKSpriteNode!
-        rock = SKSpriteNode(imageNamed: "Rock")
-        rock.zPosition = 100
-        self.addChild(rock)
-        
-        return rock
-    }
-    */
     
     func drawGrid(){
         let gridRows = 10

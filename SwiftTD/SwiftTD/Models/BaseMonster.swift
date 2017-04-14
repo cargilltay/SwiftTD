@@ -21,6 +21,9 @@ class BaseMonster: SKSpriteNode {
     var endLocation: CGPoint!
     var gold: Int = 0
     
+    var outerHealthBar: SKShapeNode!
+    var innerHealthBar: SKShapeNode!
+    
     init(startLocation: CGPoint, endLocation: CGPoint, pathSolution destinations: [Cell], damage: Int, hitPoints: Int, gold: Int, texture: SKTexture, color: UIColor) {
         super.init(texture: texture, color: color, size: texture.size())
         self.texture = texture
@@ -33,26 +36,54 @@ class BaseMonster: SKSpriteNode {
         var modifiedStart = startLocation
         modifiedStart.y = modifiedStart.y - (modifiedStart.y).truncatingRemainder(dividingBy: self.speed)
         
-        //this speed thing might not be smooth. May need to set to physics body and apply force
-        //self.physicsBody = SKPhysicsBody()
         self.zPosition = 5
         self.position = modifiedStart
         
         self.startLocation = startLocation
         self.endLocation = endLocation
+        
+        
+        
     }
     
-    func moveToCustom(x: CGFloat, y: CGFloat, timeToMove: TimeInterval){
-        let action = SKAction.move(to: CGPoint(x: x, y: y), duration: timeToMove)
-        action.timingMode = .easeInEaseOut
-        
-        self.run(action) {
-            self.reachedEnd = true
+    func refreshHealthBars(innerSize: CGSize){
+        //SKShapeNodes persist if set twice. Need to nil each time we update shapes
+        if(innerHealthBar != nil  && outerHealthBar != nil){
+            innerHealthBar.removeFromParent()
+            innerHealthBar = nil
+            outerHealthBar.removeFromParent()
+            outerHealthBar = nil
         }
         
+        outerHealthBar = SKShapeNode(rectOf: CGSize(width: self.size.width, height: 10))
+        outerHealthBar.strokeColor = SKColor.black
+        outerHealthBar.fillColor = SKColor.red
+        outerHealthBar.zPosition = self.zPosition
+        outerHealthBar.glowWidth = 1.0
+        
+        innerHealthBar = SKShapeNode(rectOf: innerSize)
+        innerHealthBar.strokeColor = SKColor.black
+        innerHealthBar.fillColor = SKColor.green
+        innerHealthBar.zPosition = self.zPosition + 1
+        innerHealthBar.glowWidth = 1.0
+        
+        //outerHealthBar.addChild(innerHealthBar)
+        if(outerHealthBar.parent == nil && innerHealthBar.parent == nil){
+            self.parent?.addChild(outerHealthBar)
+            self.parent?.addChild(innerHealthBar)
+        }
+    }
+    
+    func updateHealth(){
+        let newWidth = (CGFloat(self.hitPoints) / 100) * self.size.width
+        let newHeight = CGFloat(10.0)
+        
+        refreshHealthBars(innerSize: CGSize(width: newWidth, height: newHeight))
     }
     
     func updatePosition(){
+        
+        updateHealthBarPositions()
         
         //hasReachEnd
         if(self.position.x == self.endLocation.x && self.position.y == self.endLocation.y){
@@ -98,6 +129,15 @@ class BaseMonster: SKSpriteNode {
             }
         }
         
+    }
+    
+    
+    func updateHealthBarPositions(){
+        if(isDead || reachedEnd || outerHealthBar == nil || innerHealthBar == nil){
+            return
+        }
+        outerHealthBar.position = CGPoint(x: self.position.x, y: self.position.y + self.size.height)
+        innerHealthBar.position = CGPoint(x: self.position.x - (self.size.width / 2), y: self.position.y + self.size.height)
     }
     
     required init?(coder aDecoder: NSCoder) {
