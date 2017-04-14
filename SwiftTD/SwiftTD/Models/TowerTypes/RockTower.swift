@@ -17,7 +17,8 @@ class RockTower: BaseTower {
         let radius: Int = 0
         let cost: Int = 10
         let damage: Int = 0
-        super.init(type: towerType,  damage: damage, cost: cost, radius: radius, texture: towerTexture, color: UIColor.black)
+        let fireRate: CGFloat = 0.5
+        super.init(type: towerType,  damage: damage, cost: cost, radius: radius, texture: towerTexture, fireRate: fireRate)
     }
     
     required init?(coder aDecoder: NSCoder) {

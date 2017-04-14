@@ -19,14 +19,16 @@ class BaseTower: SKSpriteNode {
     var hasTarget = false
     var type: TowerType!
     var fireTimer : Timer?
+    var fireRate: CGFloat!
     var projectileFactory: ProjectileFactory = ProjectileFactory()
     
-    init(type: TowerType, damage: Int, cost: Int!, radius: Int, texture: SKTexture, color: UIColor) {
-        super.init(texture: texture, color: color, size: texture.size())
+    init(type: TowerType, damage: Int, cost: Int!, radius: Int, texture: SKTexture, fireRate: CGFloat) {
+        super.init(texture: texture, color: UIColor.black, size: texture.size())
         self.radius = radius
         self.damage = damage
         self.cost = cost
         self.type = type
+        self.fireRate = fireRate
         self.zPosition = 100
     }
     
@@ -52,7 +54,7 @@ class BaseTower: SKSpriteNode {
                 tempTarget = target
                     if fireTimer == nil {
                         fireTimer =  Timer.scheduledTimer(
-                            timeInterval: TimeInterval(0.5), //set this based on fireRate
+                            timeInterval: TimeInterval(self.fireRate), //set this based on fireRate
                             target      : self,
                             selector    : #selector(addProjectile),
                             userInfo    : nil,
