@@ -111,6 +111,7 @@ class GameScene: SKScene {
                     m.innerHealthBar.removeFromParent()
                     m.outerHealthBar.removeFromParent()
                 }
+                game.lives -= 1
                 game.monsters.remove(at: index)
                 return;
             }
