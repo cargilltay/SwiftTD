@@ -21,6 +21,7 @@ class GameController {
     var gold: Int = 0
     var score: Int = 0
     var numMonsters: Int = 10
+    var numSpawnedMinions:Int = 0
     var round: Int = 1
     var monsters: [BaseMonster] = []
     var towers: [BaseTower] = []
@@ -108,10 +109,12 @@ class GameController {
     @objc func addMonster(){
         let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 100, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
         self.monsters.append(m)
+        numSpawnedMinions += 1
         
         
-        if(monsters.count == numMonsters){
+        if(numSpawnedMinions == numMonsters){
             stopTimer()
+            numSpawnedMinions = 0
         }
     }
     
