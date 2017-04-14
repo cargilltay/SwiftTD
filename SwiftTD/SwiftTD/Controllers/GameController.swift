@@ -101,7 +101,7 @@ class GameController {
     }
     
     @objc func addMonster(){
-        let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 100, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+        let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: monsterHealth, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
         self.monsters.append(m)
         numSpawnedMinions += 1
         
