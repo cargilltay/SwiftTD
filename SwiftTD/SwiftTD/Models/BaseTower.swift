@@ -43,28 +43,28 @@ class BaseTower: SKSpriteNode {
         
         
         for target in self.targets{
-            let inXLeft = (target.position.x >= xOffsetLeft) //40
-            let inXRight = (target.position.x <= xOffsetRight) //60
-            let inYDown = (target.position.y >= yOffsetDown) //40
-            let inYUp = (target.position.y <= yOffsetUp) //60
+            let inXLeft = (target.position.x >= xOffsetLeft)
+            let inXRight = (target.position.x <= xOffsetRight)
+            let inYDown = (target.position.y >= yOffsetDown)
+            let inYUp = (target.position.y <= yOffsetUp)
             
             if(inXLeft && inXRight && inYDown && inYUp){
                 tempTarget = target
                     if fireTimer == nil {
                         fireTimer =  Timer.scheduledTimer(
-                            timeInterval: TimeInterval(0.5),
+                            timeInterval: TimeInterval(0.5), //set this based on fireRate
                             target      : self,
                             selector    : #selector(addProjectile),
                             userInfo    : nil,
                             repeats     : true)
                     }
-                //use factory here to generate projecile based on tower type
                 
             }
         }
     }
     
     @objc func addProjectile(){
+        //use factory here to generate projecile based on tower type
         let proj = projectileFactory.createProjectile(tower: self, target: tempTarget!)
         self.projectiles.append(proj);
         
