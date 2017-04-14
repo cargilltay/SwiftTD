@@ -12,13 +12,13 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var gold: SwiftTDLabel!
-    @IBOutlet weak var lives: SwiftTDLabel!
-    @IBOutlet weak var level: SwiftTDLabel!
+    @IBOutlet weak var topPanel: UIView!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     var scene: GameScene!
     var gameDifficulty: GameDifficulty!
+    var panelController: GameTopPanelController?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class GameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
             scene.game.difficulty = self.gameDifficulty
+            scene.viewController = self
             
             // Set the scale mode to scale to fit the window
             scene.scaleMode = SKSceneScaleMode.aspectFit
@@ -42,12 +43,14 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
             
+            /*
             level.text = "Level: \(scene.game.round)"
             level.sizeToFit()
             gold.text = "Gold: \(scene.game.gold)"
             gold.sizeToFit()
             lives.text = "Lives: \(scene.game.lives)"
             lives.sizeToFit()
+            */
         }
     }
     @IBAction func beginRoundClick(_ sender: Any) {
@@ -69,12 +72,14 @@ class GameViewController: UIViewController {
         let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
         scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
         scene.game.nextMode()
-        level.text = "Level: \(scene.game.round)"
-        level.sizeToFit()
-        gold.text = "Gold: \(scene.game.gold)"
-        gold.sizeToFit()
-        lives.text = "Lives: \(scene.game.lives)"
-        lives.sizeToFit()
+        
+        
+        panelController?.levelLabel.text = "Level: \(scene.game.round)"
+        panelController?.levelLabel.sizeToFit()
+        panelController?.goldLabel.text = "Gold: \(scene.game.gold)"
+        panelController?.goldLabel.sizeToFit()
+        panelController?.livesLabel.text = "Lives: \(scene.game.lives)"
+        panelController?.livesLabel.sizeToFit()
 
     }
     
@@ -99,6 +104,35 @@ class GameViewController: UIViewController {
         return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TopPanelSegue" {
+            panelController = segue.destination as? GameTopPanelController
+            //panelController!.parent = self
+        }
+    }
+    
+    func showPanel(tower: BaseTower, yPos: CGFloat){
+        panelController?.typeLabel.text = "Type: \(tower.type)"
+        panelController?.typeLabel.sizeToFit()
+        panelController?.damageLabel.text = "Damage: \(tower.damage)"
+        panelController?.damageLabel.sizeToFit()
+        panelController?.killsLabel.text = "Kills:: \(-1)"
+        panelController?.killsLabel.sizeToFit()
+        panelController?.effectLabel.text = "Effect: TEST TEST TEST"
+        panelController?.effectLabel.sizeToFit()
+        
+        UIView.animate(withDuration: 1.0) {
+            self.topPanel.frame.origin.y = 40
+            //self.topPanel.frame.origin.y = yPos
+        }
+    }
+    
+    func hidePanel(){
+        UIView.animate(withDuration: 1.0) {
+            self.topPanel.frame.origin.y = -100
+            //self.topPanel.frame.origin.y = yPos
+        }
+    }
     
 }
 

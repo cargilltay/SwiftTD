@@ -15,6 +15,7 @@ class GameScene: SKScene {
     let screenSize = UIScreen.main.bounds
     let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
     let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
+    var viewController: GameViewController?
     
     
     //no idea what this needs to be twice as large
@@ -87,6 +88,7 @@ class GameScene: SKScene {
         background.zPosition = 1
         background.size = self.size
         self.addChild(background)
+        
         
     }
     
@@ -196,6 +198,7 @@ class GameScene: SKScene {
                     towerCircle.zPosition = 101
                     towerCircle.glowWidth = 1.0
                     self.addChild(towerCircle)
+                    viewController!.showPanel(tower: closest.tower, yPos: frame.height - viewController!.topPanel.frame.height)
                 }
             }
             
