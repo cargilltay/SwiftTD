@@ -81,10 +81,13 @@ class GameScene: SKScene {
         self.addChild(airTowerButton)
         
         
+        //var imageView   = UIImageView(frame: self.view.bounds);
         background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         background.zPosition = 1
+        background.size = self.size
         self.addChild(background)
+        
     }
     
     func moveMinions() {
