@@ -17,10 +17,11 @@ enum GameMode {
 }
 
 class GameController {
-    var lives: Int = 100
-    var gold: Int = 0
+    var lives: Int = 20
+    var gold: Int = 100
     var score: Int = 0
-    var numMonsters: Int = 10
+    var numMonsters: Int = 5
+    var monsterHealth: Int = 150
     var round: Int = 1
     var monsters: [BaseMonster] = []
     var towers: [BaseTower] = []
@@ -47,7 +48,6 @@ class GameController {
                     }
             }
         }
-        //print("count: \(count)")
         if(tempSolution[row][col] == 2){
             cells.append(grid.cells[tempSolution.count - 1][0])
             count -= 1
@@ -71,12 +71,6 @@ class GameController {
                 count -= 1
             }
         }
-        /*
-                    if(solution[row][col] != 0){
-                        print("\(solution.count - row - 1) and \(col)")
-                        
-                        cells.append(grid.cells[solution.count - row - 1][col])
-                    }*/
         
         self.solution = cells
     }
@@ -97,7 +91,8 @@ class GameController {
         //}
         
         for _ in 1...self.numMonsters {
-            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+            print("hi \(self.round) \(self.monsterHealth)")
+            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 1, hitPoints: self.monsterHealth, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
             self.monsters.append(m)
         }
     }
@@ -121,6 +116,11 @@ class GameController {
     }
     
     func nextRound(){
+        self.numMonsters+=1
         self.round += 1
+        
+        self.monsterHealth = 5
+        self.monsterHealth = (((self.round / 3) * 10)/2) + monsterHealth
+        
     }
 }

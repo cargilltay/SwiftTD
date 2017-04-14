@@ -12,6 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var gold: SwiftTDLabel!
+    @IBOutlet weak var lives: SwiftTDLabel!
+    @IBOutlet weak var level: SwiftTDLabel!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     var scene: GameScene!
@@ -39,6 +42,13 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
             
+            level.text = "Level: \(scene.game.round)"
+            level.sizeToFit()
+            gold.text = "Gold: \(scene.game.gold)"
+            gold.sizeToFit()
+            lives.text = "Lives: \(scene.game.lives)"
+            lives.sizeToFit()
+            
         }
     }
     @IBAction func beginRoundClick(_ sender: Any) {
@@ -59,7 +69,12 @@ class GameViewController: UIViewController {
         let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
         let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
         scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
-        
+        level.text = "Level: \(scene.game.round)"
+        level.sizeToFit()
+        gold.text = "Gold: \(scene.game.gold)"
+        gold.sizeToFit()
+        lives.text = "Lives: \(scene.game.lives)"
+        lives.sizeToFit()
         scene.game.nextMode()
         
     }
