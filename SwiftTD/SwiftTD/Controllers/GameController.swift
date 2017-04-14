@@ -58,16 +58,16 @@ class GameController {
         while (count != 0) {
                 tempSolution[row][col] = 0
                 //North
-                if(row != 0 && tempSolution[row-1][col] != 0){
+                if(row != 0 && tempSolution[row-1][col] == 3){
                     row -= 1
                 }//South
-                else if(row+1 != tempSolution.count && tempSolution[row+1][col] != 0){
+                else if(row+1 != tempSolution.count && tempSolution[row+1][col] == 3){
                     row += 1
                 }//West
-                else if(col != 0 && tempSolution[row][col-1] != 0){
+                else if(col != 0 && tempSolution[row][col-1] == 3){
                 col -= 1
                 }//East
-                else if(col+1 != tempSolution[row].count && tempSolution[row][col+1] != 0){
+                else if(col+1 != tempSolution[row].count && tempSolution[row][col+1] == 3){
                     col += 1
                 }
                 cells.append(grid.cells[tempSolution.count - 1 - row][col])
