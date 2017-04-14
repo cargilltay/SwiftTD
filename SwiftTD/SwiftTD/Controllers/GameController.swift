@@ -20,10 +20,10 @@ class GameController {
     var lives: Int = 20
     var gold: Int = 100
     var score: Int = 0
-    var numMonsters: Int = 5
+    var numMonsters: Int = 4
     var numSpawnedMinions:Int = 0
     var monsterHealth: Int = 150
-    var round: Int = 1
+    var round: Int = 0
     var monsters: [BaseMonster] = []
     var towers: [BaseTower] = []
     var mode = GameMode.PlayerTurn
@@ -129,7 +129,7 @@ class GameController {
             //self.numTowerToPlace = 5;
         } else {
             self.mode = GameMode.Defend
-            
+            self.nextRound()
             
             self.populateMinions();
             
@@ -139,11 +139,10 @@ class GameController {
     }
     
     func nextRound(){
-        self.numMonsters+=1
+        self.numMonsters += 1
         self.round += 1
-        
-        self.monsterHealth = 5
-        self.monsterHealth = (((self.round / 3) * 10)/2) + monsterHealth
+        self.monsterHealth += (((self.round / 3) * 10)*2)
+        print("MonsterHealth = \(self.monsterHealth)")
         
     }
 }

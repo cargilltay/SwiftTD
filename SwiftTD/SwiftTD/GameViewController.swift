@@ -69,14 +69,14 @@ class GameViewController: UIViewController {
         let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
         let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
         scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
+        scene.game.nextMode()
         level.text = "Level: \(scene.game.round)"
         level.sizeToFit()
         gold.text = "Gold: \(scene.game.gold)"
         gold.sizeToFit()
         lives.text = "Lives: \(scene.game.lives)"
         lives.sizeToFit()
-        scene.game.nextMode()
-        
+
     }
     
     override var shouldAutorotate: Bool {
