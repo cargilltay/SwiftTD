@@ -48,7 +48,6 @@ class GameViewController: UIViewController {
             gold.sizeToFit()
             lives.text = "Lives: \(scene.game.lives)"
             lives.sizeToFit()
-            
         }
     }
     @IBAction func beginRoundClick(_ sender: Any) {
