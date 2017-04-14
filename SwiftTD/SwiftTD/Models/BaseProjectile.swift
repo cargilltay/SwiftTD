@@ -42,6 +42,7 @@ class BaseProjectile: SKSpriteNode {
         print(isWithinOffsetOfX)
         if (isWithinOffsetOfX && isWithinOffsetOfY) {
             self.target.hitPoints -= self.damage
+            self.target.updateHealth()
             self.hitTarget = true
             self.removeFromParent()
             if (self.target.hitPoints <= 0) {

@@ -97,11 +97,17 @@ class GameScene: SKScene {
             if (m.isDead) {
                 print("dead")
                 m.removeFromParent()
+                m.innerHealthBar.removeFromParent()
+                m.outerHealthBar.removeFromParent()
                 game.monsters.remove(at: index)
                 return;
             }
             else if (m.reachedEnd) {
                 m.removeFromParent()
+                if(m.innerHealthBar != nil && m.outerHealthBar != nil){
+                    m.innerHealthBar.removeFromParent()
+                    m.outerHealthBar.removeFromParent()
+                }
                 game.monsters.remove(at: index)
                 return;
             }
