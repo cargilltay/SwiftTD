@@ -88,7 +88,7 @@ class GameScene: SKScene {
     }
     
     func moveMinions() {
-        if (game.monsters.count == 0) {
+        if (game.monsters.count == 0 && game.spawnTimer == nil) {
             game.nextMode();
         }
         
@@ -127,6 +127,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+        
         
         if(game.mode == GameMode.Defend){
             moveMinions()

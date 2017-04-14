@@ -30,6 +30,8 @@ class GameController {
     var minionEndLocation: CGPoint!
     var statController: MonsterStatController = MonsterStatController()
     var difficulty: GameDifficulty!
+
+    var spawnTimer : Timer?
     
     var time: Date = Date()
     //var difficulty
@@ -88,17 +90,35 @@ class GameController {
     
     func populateMinions(){
         //going to have to send monsters their stats dynamically eventually.
-        
-        
-        //func convertDestination(destinations: [[Int]]) -> [Cell]{
-        
-            
-            //return cells
-        //}
-        
+
         for _ in 1...self.numMonsters {
-            let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
-            self.monsters.append(m)
+            if spawnTimer == nil {
+                spawnTimer =  Timer.scheduledTimer(
+                    timeInterval: TimeInterval(0.5), //set this based on fireRate
+                    target      : self,
+                    selector    : #selector(addMonster),
+                    userInfo    : nil,
+                    repeats     : true)
+            }
+            
+            
+        }
+    }
+    
+    @objc func addMonster(){
+        let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: 2, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+        self.monsters.append(m)
+        
+        
+        if(monsters.count == numMonsters){
+            stopTimer()
+        }
+    }
+    
+    func stopTimer() {
+        if spawnTimer != nil {
+            spawnTimer?.invalidate()
+            spawnTimer = nil
         }
     }
     
@@ -113,6 +133,8 @@ class GameController {
             //self.numTowerToPlace = 5;
         } else {
             self.mode = GameMode.Defend
+            
+            
             self.populateMinions();
             
             //disable tower placement
