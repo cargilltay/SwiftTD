@@ -22,7 +22,24 @@ class GameTopPanelController: UIViewController {
     @IBOutlet weak var deleteButton: SwiftTDButton!
     @IBOutlet weak var deleteTower: SwiftTDButton!
     
-    func setLabels(){
+    var towerToDelete: BaseTower!
+    var towerIndex: Int!
+    var gameController: GameController!
+    var viewController: GameViewController!
+    
+    func setDeleteTower(tower: BaseTower, gameController: GameController, viewController: GameViewController){
+        self.towerToDelete = tower
+        self.gameController = gameController
+        self.viewController = viewController
+    }
+    @IBAction func deleteTower(_ sender: Any) {
         
+        //sommehow need to pop it from game.towers array too
+        viewController.hidePanel()
+        
+        viewController.scene.towerCircle.removeFromParent()
+        viewController.scene.towerCircle = nil
+        towerToDelete.removeFromParent()
+        towerToDelete = nil
     }
 }

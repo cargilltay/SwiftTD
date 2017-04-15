@@ -123,6 +123,8 @@ class GameViewController: UIViewController {
         panelController?.effectLabel.text = "Effect: \(tower.effectText!)"
         panelController?.effectLabel.sizeToFit()
         
+        panelController?.setDeleteTower(tower: tower, gameController: scene.game, viewController: self)
+        
         UIView.animate(withDuration: 1.0) {
             self.topPanel.frame.origin.y = 40
             //self.topPanel.frame.origin.y = yPos

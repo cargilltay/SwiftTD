@@ -601,6 +601,9 @@
                                         <rect key="frame" x="308" y="135" width="59" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteTower:" destination="7gy-DU-rqt" eventType="touchUpInside" id="IZP-Ne-clq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
