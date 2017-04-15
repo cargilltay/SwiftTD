@@ -116,7 +116,7 @@ class GameViewController: UIViewController {
     func showPanel(tower: BaseTower, yPos: CGFloat){
         panelController?.typeLabel.text = "Type: \(tower.type.rawValue)"
         panelController?.typeLabel.sizeToFit()
-        panelController?.damageLabel.text = "Damage: \(tower.damage)"
+        panelController?.damageLabel.text = "Damage: \(tower.damage!)"
         panelController?.damageLabel.sizeToFit()
         panelController?.killsLabel.text = "Kills:: \(tower.kills)"
         panelController?.killsLabel.sizeToFit()
