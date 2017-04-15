@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum TowerType {
+enum TowerType:String {
     case Rock
     case Basic
     case Fire
@@ -17,6 +17,7 @@ enum TowerType {
     case Earth
     case Air
 }
+
 
 class TowerFactory {
     

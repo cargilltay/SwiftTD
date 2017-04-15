@@ -112,13 +112,13 @@ class GameViewController: UIViewController {
     }
     
     func showPanel(tower: BaseTower, yPos: CGFloat){
-        panelController?.typeLabel.text = "Type: \(tower.type)"
+        panelController?.typeLabel.text = "Type: \(tower.type.rawValue)"
         panelController?.typeLabel.sizeToFit()
         panelController?.damageLabel.text = "Damage: \(tower.damage)"
         panelController?.damageLabel.sizeToFit()
-        panelController?.killsLabel.text = "Kills:: \(-1)"
+        panelController?.killsLabel.text = "Kills:: \(tower.kills)"
         panelController?.killsLabel.sizeToFit()
-        panelController?.effectLabel.text = "Effect: TEST TEST TEST"
+        panelController?.effectLabel.text = "Effect: \(tower.effectText!)"
         panelController?.effectLabel.sizeToFit()
         
         UIView.animate(withDuration: 1.0) {
@@ -129,7 +129,7 @@ class GameViewController: UIViewController {
     
     func hidePanel(){
         UIView.animate(withDuration: 1.0) {
-            self.topPanel.frame.origin.y = -100
+            self.topPanel.frame.origin.y = -150
             //self.topPanel.frame.origin.y = yPos
         }
     }

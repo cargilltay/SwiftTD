@@ -18,7 +18,10 @@ class FireTower: BaseTower {
         let cost: Int = 50
         let damage: Int = 40
         let fireRate: CGFloat = 0.5
+        let effectText:String = "Used For walling"
+        
         super.init(type: towerType,  damage: damage, cost: cost, radius: radius, texture: towerTexture, fireRate: fireRate)
+        super.setEffect(text: effectText)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -25,7 +25,7 @@ class MainMenuViewController: UIViewController {
         
         musicMaker = MusicController()
         //shut off for development
-        musicMaker.playSound()
+        //musicMaker.playSound()
 
         // Do any additional setup after loading the view.
     }

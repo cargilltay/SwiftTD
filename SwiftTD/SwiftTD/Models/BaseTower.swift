@@ -16,11 +16,13 @@ class BaseTower: SKSpriteNode {
     var tempTarget: BaseMonster!
     var damage: Int!
     var cost: Int!
+    var kills: Int = 0
     var hasTarget = false
     var type: TowerType!
     var fireTimer : Timer?
     var fireRate: CGFloat!
     var projectileFactory: ProjectileFactory = ProjectileFactory()
+    var effectText: String!
     
     init(type: TowerType, damage: Int, cost: Int!, radius: Int, texture: SKTexture, fireRate: CGFloat) {
         super.init(texture: texture, color: UIColor.black, size: texture.size())
@@ -30,6 +32,7 @@ class BaseTower: SKSpriteNode {
         self.type = type
         self.fireRate = fireRate
         self.zPosition = 100
+        self.kills = 0
     }
     
     func scanForTarget(targets: [BaseMonster]){
@@ -90,9 +93,15 @@ class BaseTower: SKSpriteNode {
                 proj.removeFromParent()
                 //self.target = nil
                 self.hasTarget = false
+                self.kills += 1
                 stopTimer()
             }
         }
+    }
+    
+    //send funciton to this
+    func setEffect(text: String){
+        self.effectText = text
     }
     
     required init?(coder aDecoder: NSCoder) {

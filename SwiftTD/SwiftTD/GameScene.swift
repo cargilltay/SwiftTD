@@ -207,6 +207,7 @@ class GameScene: SKScene {
     
     func dismissTowerPanel(){
         if(towerCircle != nil){
+            viewController!.hidePanel()
             towerCircle.removeFromParent()
             towerCircle = nil
         }
