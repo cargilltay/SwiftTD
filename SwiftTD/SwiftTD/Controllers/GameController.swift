@@ -18,7 +18,7 @@ enum GameMode {
 
 class GameController {
     var lives: Int = 20
-    var gold: Int = 100
+    var gold: Int = 200
     var score: Int = 0
     var numMonsters: Int = 4
     var numSpawnedMinions:Int = 0

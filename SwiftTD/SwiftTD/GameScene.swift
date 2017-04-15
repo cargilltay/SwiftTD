@@ -31,7 +31,7 @@ class GameScene: SKScene {
     var fireTowerButton: SKSpriteNode!
     var earthTowerButton: SKSpriteNode!
     var airTowerButton: SKSpriteNode!
-    
+    var nodeType: TowerType!
     var background: SKSpriteNode!
     var movableNode : SKNode?
     var towerCircle:SKShapeNode!
@@ -105,6 +105,7 @@ class GameScene: SKScene {
                 m.innerHealthBar.removeFromParent()
                 m.outerHealthBar.removeFromParent()
                 game.monsters.remove(at: index)
+                game.gold += 10
                 return;
             }
             else if (m.reachedEnd) {
@@ -146,7 +147,6 @@ class GameScene: SKScene {
             moveProjectiles()
         }
         
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -155,38 +155,62 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             
             if rockButton.contains(location) {
+                if(game.gold < 10){
+                    return
+                }
                 movableNode = createTower(type: TowerType.Rock)
                 movableNode!.position = location
+                nodeType = TowerType.Rock
             }
             
             if basicTowerButton.contains(location) {
+                if(game.gold < 40){
+                    return
+                }
                 towerDrag = true
                 movableNode = createTower(type: TowerType.Basic)
                 movableNode!.position = location
+                nodeType = TowerType.Basic
             }
             
             if waterTowerButton.contains(location) {
+                if(game.gold < 40){
+                    return
+                }
                 towerDrag = true
                 movableNode = createTower(type: TowerType.Water)
                 movableNode!.position = location
+                nodeType = TowerType.Water
             }
             
             if fireTowerButton.contains(location) {
+                if(game.gold < 50){
+                    return
+                }
                 towerDrag = true
                 movableNode = createTower(type: TowerType.Fire)
                 movableNode!.position = location
+                nodeType = TowerType.Fire
             }
             
             if earthTowerButton.contains(location) {
+                if(game.gold < 40){
+                    return
+                }
                 towerDrag = true
                 movableNode = createTower(type: TowerType.Earth)
                 movableNode!.position = location
+                nodeType = TowerType.Earth
             }
             
             if airTowerButton.contains(location) {
+                if(game.gold < 30){
+                    return
+                }
                 towerDrag = true
                 movableNode = createTower(type: TowerType.Air)
                 movableNode!.position = location
+                nodeType = TowerType.Air
             }
             
             if grid!.contains(location){
@@ -249,7 +273,30 @@ class GameScene: SKScene {
             
             movableNode!.position = towerPosition
             closest?.tower = movableNode as! BaseTower
-            
+            if(nodeType == TowerType.Water){
+                print("water")
+                game.gold -= 40
+            }
+            if(nodeType == TowerType.Earth){
+                print("earth")
+                game.gold -= 40
+            }
+            if(nodeType == TowerType.Fire){
+                print("fire")
+                game.gold -= 50
+            }
+            if(nodeType == TowerType.Air){
+                print("air")
+                game.gold -= 30
+            }
+            if(nodeType == TowerType.Rock){
+                print("rock")
+                game.gold -= 10
+            }
+            if(nodeType == TowerType.Basic){
+                print("basic")
+                game.gold -= 40
+            }
             movableNode = nil
             
             closest?.isBlocked = true

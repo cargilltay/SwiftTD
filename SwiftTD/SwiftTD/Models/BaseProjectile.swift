@@ -39,7 +39,7 @@ class BaseProjectile: SKSpriteNode {
         let isWithinOffsetOfY = (self.position.y >= tarY - checkWithinPixelOffset && self.position.y <= tarY + checkWithinPixelOffset) ? true : false
         
         //check if within offset
-        print(isWithinOffsetOfX)
+        //print(isWithinOffsetOfX)
         if (isWithinOffsetOfX && isWithinOffsetOfY) {
             self.target.hitPoints -= self.damage
             self.target.updateHealth()

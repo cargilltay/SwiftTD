@@ -42,7 +42,7 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
-            
+            updateLabels()
             /*
             level.text = "Level: \(scene.game.round)"
             level.sizeToFit()
@@ -72,19 +72,11 @@ class GameViewController: UIViewController {
         let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
         scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
         scene.game.nextMode()
-        
-        
-        panelController?.levelLabel.text = "Level: \(scene.game.round)"
-        panelController?.levelLabel.sizeToFit()
-        panelController?.goldLabel.text = "Gold: \(scene.game.gold)"
-        panelController?.goldLabel.sizeToFit()
-        panelController?.livesLabel.text = "Lives: \(scene.game.lives)"
-        panelController?.livesLabel.sizeToFit()
-
+        updateLabels()
     }
     
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -109,6 +101,16 @@ class GameViewController: UIViewController {
             panelController = segue.destination as? GameTopPanelController
             //panelController!.parent = self
         }
+    }
+    
+    func updateLabels(){
+        panelController?.levelLabel.text = "Level: \(scene.game.round)"
+        panelController?.levelLabel.sizeToFit()
+        panelController?.goldLabel.text = "Gold: \(scene.game.gold)"
+        panelController?.goldLabel.sizeToFit()
+        panelController?.livesLabel.text = "Lives: \(scene.game.lives)"
+        panelController?.livesLabel.sizeToFit()
+
     }
     
     func showPanel(tower: BaseTower, yPos: CGFloat){
