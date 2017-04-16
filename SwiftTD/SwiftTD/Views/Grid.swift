@@ -71,7 +71,7 @@ class Grid:SKSpriteNode {
                 //swapped i and j to make grid like so:
                 //row 2
                 //row 1
-                
+                //row 0
                 self.cells[i][j] = Cell(x: xPositions[j], y: yPositions[i], size: blockSize, row: i, col: j)
             }
         }

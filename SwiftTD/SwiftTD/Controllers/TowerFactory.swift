@@ -18,6 +18,14 @@ enum TowerType:String {
     case Air
 }
 
+let TowerPrice:[TowerType:Int] = [
+    TowerType.Rock: 10,
+    TowerType.Basic: 40,
+    TowerType.Fire: 40,
+    TowerType.Water: 50,
+    TowerType.Earth: 40,
+    TowerType.Air: 30
+]
 
 class TowerFactory {
     

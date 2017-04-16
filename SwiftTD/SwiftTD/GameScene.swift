@@ -13,8 +13,8 @@ class GameScene: SKScene {
     let game: GameController = GameController()
     let towerFactory: TowerFactory = TowerFactory()
     let screenSize = UIScreen.main.bounds
-    let TowerHeight = SKSpriteNode(imageNamed: "Rock").size.height
-    let TowerWidth = SKSpriteNode(imageNamed: "Rock").size.width
+    let TowerHeight = SKSpriteNode(imageNamed: "Tower").size.height
+    let TowerWidth = SKSpriteNode(imageNamed: "Tower").size.width
     var viewController: GameViewController?
     
     
@@ -50,35 +50,72 @@ class GameScene: SKScene {
         screenHeight = screenSize.height * 2
         self.isUserInteractionEnabled = true
         
+        //need to add gold coins
         
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 100, y: 200)
         rockButton.zPosition = 100
+        let rockPrice = SKLabelNode(fontNamed: "Chalkduster")
+        rockPrice.text = "\(String(describing: TowerPrice[TowerType.Rock]!))"
+        rockPrice.color = UIColor.black
+        rockPrice.position = CGPoint(x: 100, y: 125)
+        rockPrice.zPosition = 100
+        self.addChild(rockPrice)
         self.addChild(rockButton)
         
         basicTowerButton = SKSpriteNode(imageNamed: "Tower")
         basicTowerButton.position = CGPoint(x: 200, y: 200)
         basicTowerButton.zPosition = 100
+        let basicPrice = SKLabelNode(fontNamed: "Chalkduster")
+        basicPrice.text = "\(String(describing: TowerPrice[TowerType.Basic]!))"
+        basicPrice.color = UIColor.black
+        basicPrice.position = CGPoint(x: 200, y: 125)
+        basicPrice.zPosition = 100
+        self.addChild(basicPrice)
         self.addChild(basicTowerButton)
         
         waterTowerButton = SKSpriteNode(imageNamed: "Tower")
         waterTowerButton.position = CGPoint(x: 300, y: 200)
         waterTowerButton.zPosition = 100
+        let waterPrice = SKLabelNode(fontNamed: "Chalkduster")
+        waterPrice.text = "\(String(describing: TowerPrice[TowerType.Water]!))"
+        waterPrice.color = UIColor.black
+        waterPrice.position = CGPoint(x: 300, y: 125)
+        waterPrice.zPosition = 100
+        self.addChild(waterPrice)
         self.addChild(waterTowerButton)
         
         fireTowerButton = SKSpriteNode(imageNamed: "Tower")
         fireTowerButton.position = CGPoint(x: 400, y: 200)
         fireTowerButton.zPosition = 100
+        let firePrice = SKLabelNode(fontNamed: "Chalkduster")
+        firePrice.text = "\(String(describing: TowerPrice[TowerType.Fire]!))"
+        firePrice.color = UIColor.black
+        firePrice.position = CGPoint(x: 400, y: 125)
+        firePrice.zPosition = 100
+        self.addChild(firePrice)
         self.addChild(fireTowerButton)
         
         earthTowerButton = SKSpriteNode(imageNamed: "Tower")
         earthTowerButton.position = CGPoint(x: 500, y: 200)
         earthTowerButton.zPosition = 100
+        let earthPrice = SKLabelNode(fontNamed: "Chalkduster")
+        earthPrice.text = "\(String(describing: TowerPrice[TowerType.Earth]!))"
+        earthPrice.color = UIColor.black
+        earthPrice.position = CGPoint(x: 500, y: 125)
+        earthPrice.zPosition = 100
+        self.addChild(earthPrice)
         self.addChild(earthTowerButton)
         
         airTowerButton = SKSpriteNode(imageNamed: "Tower")
         airTowerButton.position = CGPoint(x: 600, y: 200)
         airTowerButton.zPosition = 100
+        let airPrice = SKLabelNode(fontNamed: "Chalkduster")
+        airPrice.text = "\(String(describing: TowerPrice[TowerType.Air]!))"
+        airPrice.color = UIColor.black
+        airPrice.position = CGPoint(x: 600, y: 125)
+        airPrice.zPosition = 100
+        self.addChild(airPrice)
         self.addChild(airTowerButton)
         
         
@@ -155,7 +192,7 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             
             if rockButton.contains(location) {
-                if(game.gold < 10){
+                if(game.gold < TowerPrice[TowerType.Rock]!){
                     return
                 }
                 movableNode = createTower(type: TowerType.Rock)
@@ -164,7 +201,7 @@ class GameScene: SKScene {
             }
             
             if basicTowerButton.contains(location) {
-                if(game.gold < 40){
+                if(game.gold < TowerPrice[TowerType.Basic]!){
                     return
                 }
                 towerDrag = true
@@ -174,7 +211,7 @@ class GameScene: SKScene {
             }
             
             if waterTowerButton.contains(location) {
-                if(game.gold < 40){
+                if(game.gold < TowerPrice[TowerType.Water]!){
                     return
                 }
                 towerDrag = true
@@ -184,7 +221,7 @@ class GameScene: SKScene {
             }
             
             if fireTowerButton.contains(location) {
-                if(game.gold < 50){
+                if(game.gold < TowerPrice[TowerType.Fire]!){
                     return
                 }
                 towerDrag = true
@@ -194,7 +231,7 @@ class GameScene: SKScene {
             }
             
             if earthTowerButton.contains(location) {
-                if(game.gold < 40){
+                if(game.gold < TowerPrice[TowerType.Earth]!){
                     return
                 }
                 towerDrag = true
@@ -204,7 +241,7 @@ class GameScene: SKScene {
             }
             
             if airTowerButton.contains(location) {
-                if(game.gold < 30){
+                if(game.gold < TowerPrice[TowerType.Air]!){
                     return
                 }
                 towerDrag = true
@@ -217,7 +254,7 @@ class GameScene: SKScene {
                 let closest = grid!.closestCell(x: location.x, y: location.y)
                 if(closest.isBlocked && closest.hasTower){
                     towerCircle = SKShapeNode(circleOfRadius: CGFloat(closest.tower.radius) ) // Size of Circle, modify to tower radius
-                    towerCircle.position = CGPoint(x: closest.xPos +  TowerWidth , y: closest.yPos +  TowerHeight)
+                    towerCircle.position = CGPoint(x: closest.xPos +  (TowerWidth / 2) , y: closest.yPos +  (TowerHeight / 2))
                     towerCircle.strokeColor = SKColor.black
                     towerCircle.zPosition = 101
                     towerCircle.glowWidth = 1.0
@@ -269,7 +306,7 @@ class GameScene: SKScene {
             }
             
             //if in grid. set position to grid col/row
-            let towerPosition = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
+            let towerPosition = CGPoint(x: closest!.xPos + (TowerWidth / 2), y: closest!.yPos + (TowerHeight / 2) )
             let snapSound = SKAction.playSoundFileNamed("snapSound.mp3", waitForCompletion: false)
             run(snapSound)
             
@@ -277,27 +314,27 @@ class GameScene: SKScene {
             closest?.tower = movableNode as! BaseTower
             if(nodeType == TowerType.Water){
                 print("water")
-                game.gold -= 40
+                game.gold -= TowerPrice[TowerType.Water]!
             }
             if(nodeType == TowerType.Earth){
                 print("earth")
-                game.gold -= 40
+                game.gold -= TowerPrice[TowerType.Earth]!
             }
             if(nodeType == TowerType.Fire){
                 print("fire")
-                game.gold -= 50
+                game.gold -= TowerPrice[TowerType.Fire]!
             }
             if(nodeType == TowerType.Air){
                 print("air")
-                game.gold -= 30
+                game.gold -= TowerPrice[TowerType.Air]!
             }
             if(nodeType == TowerType.Rock){
                 print("rock")
-                game.gold -= 10
+                game.gold -= TowerPrice[TowerType.Rock]!
             }
             if(nodeType == TowerType.Basic){
                 print("basic")
-                game.gold -= 40
+                game.gold -= TowerPrice[TowerType.Basic]!
             }
             movableNode = nil
             viewController?.updateLabels()
