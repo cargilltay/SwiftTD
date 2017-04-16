@@ -270,6 +270,8 @@ class GameScene: SKScene {
             
             //if in grid. set position to grid col/row
             let towerPosition = CGPoint(x: closest!.xPos + TowerWidth, y: closest!.yPos + TowerHeight )
+            let snapSound = SKAction.playSoundFileNamed("snapSound.mp3", waitForCompletion: false)
+            run(snapSound)
             
             movableNode!.position = towerPosition
             closest?.tower = movableNode as! BaseTower
@@ -298,6 +300,8 @@ class GameScene: SKScene {
                 game.gold -= 40
             }
             movableNode = nil
+            viewController?.updateLabels()
+            
             
             closest?.isBlocked = true
             if(towerDrag){

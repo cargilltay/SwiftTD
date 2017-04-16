@@ -56,6 +56,7 @@
 		70ED26371E9EE0F100C99292 /* EarthProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26361E9EE0F100C99292 /* EarthProjectile.swift */; };
 		70ED26391E9EE0FB00C99292 /* AirProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26381E9EE0FB00C99292 /* AirProjectile.swift */; };
 		70ED263B1EA140F100C99292 /* GameTopPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED263A1EA140F100C99292 /* GameTopPanelController.swift */; };
+		70ED263D1EA2EB8D00C99292 /* snapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */; };
 		A0B5497519498900B202D0F4 /* Pods_SwiftTDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */; };
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
@@ -142,6 +143,7 @@
 		70ED26361E9EE0F100C99292 /* EarthProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthProjectile.swift; sourceTree = "<group>"; };
 		70ED26381E9EE0FB00C99292 /* AirProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirProjectile.swift; sourceTree = "<group>"; };
 		70ED263A1EA140F100C99292 /* GameTopPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTopPanelController.swift; sourceTree = "<group>"; };
+		70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snapSound.mp3; sourceTree = "<group>"; };
 		9D5452655E6281A001F9784B /* Pods-SwiftTDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				703995041E9826390033EFEF /* GoogleService-Info.plist */,
 				70234F231E96D6DF00399374 /* naruto.mp3 */,
+				70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */,
 				701E16301E6126B3007EEAD9 /* SwiftTD */,
 				701E164B1E6126B3007EEAD9 /* SwiftTDTests */,
 				701E16561E6126B3007EEAD9 /* SwiftTDUITests */,
@@ -478,6 +481,7 @@
 				701E163F1E6126B3007EEAD9 /* Assets.xcassets in Resources */,
 				701E16421E6126B3007EEAD9 /* LaunchScreen.storyboard in Resources */,
 				701E16361E6126B3007EEAD9 /* Actions.sks in Resources */,
+				70ED263D1EA2EB8D00C99292 /* snapSound.mp3 in Resources */,
 				703995051E9826390033EFEF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
