@@ -36,7 +36,6 @@ class GameController {
     var spawnTimer : Timer?
     
     var time: Date = Date()
-    //var difficulty
     
     func setSolution(solution: [[Int]], grid: Grid){
         var cells: [Cell] = []
@@ -122,19 +121,11 @@ class GameController {
         //is players turn
         if (self.mode != GameMode.PlayerTurn) {
             self.mode = GameMode.PlayerTurn
-            
-            //enable tower placement
-            //$('#new-gem').removeAttr('disabled');
-            
-            //self.numTowerToPlace = 5;
         } else {
             self.mode = GameMode.Defend
             self.nextRound()
             
             self.populateMinions();
-            
-            //disable tower placement
-            //$('#new-gem').attr("disabled", "disabled");
         }
     }
     

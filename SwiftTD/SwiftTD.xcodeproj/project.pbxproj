@@ -57,6 +57,7 @@
 		70ED26391E9EE0FB00C99292 /* AirProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26381E9EE0FB00C99292 /* AirProjectile.swift */; };
 		70ED263B1EA140F100C99292 /* GameTopPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED263A1EA140F100C99292 /* GameTopPanelController.swift */; };
 		70ED263D1EA2EB8D00C99292 /* snapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */; };
+		70ED26411EA4878C00C99292 /* GameOverModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26401EA4878C00C99292 /* GameOverModal.swift */; };
 		A0B5497519498900B202D0F4 /* Pods_SwiftTDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */; };
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
@@ -144,6 +145,7 @@
 		70ED26381E9EE0FB00C99292 /* AirProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirProjectile.swift; sourceTree = "<group>"; };
 		70ED263A1EA140F100C99292 /* GameTopPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTopPanelController.swift; sourceTree = "<group>"; };
 		70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snapSound.mp3; sourceTree = "<group>"; };
+		70ED26401EA4878C00C99292 /* GameOverModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverModal.swift; path = Views/GameOverModal.swift; sourceTree = "<group>"; };
 		9D5452655E6281A001F9784B /* Pods-SwiftTDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */,
 				709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */,
 				70ED263A1EA140F100C99292 /* GameTopPanelController.swift */,
+				70ED26401EA4878C00C99292 /* GameOverModal.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				70ED26371E9EE0F100C99292 /* EarthProjectile.swift in Sources */,
 				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
 				70ED263B1EA140F100C99292 /* GameTopPanelController.swift in Sources */,
+				70ED26411EA4878C00C99292 /* GameOverModal.swift in Sources */,
 				70ED26271E9EDF4C00C99292 /* WaterTower.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
 				70ED26391E9EE0FB00C99292 /* AirProjectile.swift in Sources */,

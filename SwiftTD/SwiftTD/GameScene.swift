@@ -80,9 +80,9 @@ class GameScene: SKScene {
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 100, y: 200)
         rockButton.zPosition = 100
-        let rockPrice = SKLabelNode(fontNamed: "Chalkduster")
+        let rockPrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         rockPrice.text = "\(String(describing: TowerPrice[TowerType.Rock]!))"
-        rockPrice.color = UIColor.black
+        rockPrice.fontColor = UIColor.black
         rockPrice.position = CGPoint(x: 100, y: 125)
         rockPrice.zPosition = 100
         self.addChild(rockPrice)
@@ -91,9 +91,9 @@ class GameScene: SKScene {
         basicTowerButton = SKSpriteNode(imageNamed: "Tower")
         basicTowerButton.position = CGPoint(x: 200, y: 200)
         basicTowerButton.zPosition = 100
-        let basicPrice = SKLabelNode(fontNamed: "Chalkduster")
+        let basicPrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         basicPrice.text = "\(String(describing: TowerPrice[TowerType.Basic]!))"
-        basicPrice.color = UIColor.black
+        basicPrice.fontColor = UIColor.black
         basicPrice.position = CGPoint(x: 200, y: 125)
         basicPrice.zPosition = 100
         self.addChild(basicPrice)
@@ -102,9 +102,9 @@ class GameScene: SKScene {
         waterTowerButton = SKSpriteNode(imageNamed: "WaterTower")
         waterTowerButton.position = CGPoint(x: 300, y: 200)
         waterTowerButton.zPosition = 100
-        let waterPrice = SKLabelNode(fontNamed: "Chalkduster")
+        let waterPrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         waterPrice.text = "\(String(describing: TowerPrice[TowerType.Water]!))"
-        waterPrice.color = UIColor.black
+        waterPrice.fontColor = UIColor.black
         waterPrice.position = CGPoint(x: 300, y: 125)
         waterPrice.zPosition = 100
         self.addChild(waterPrice)
@@ -113,9 +113,9 @@ class GameScene: SKScene {
         fireTowerButton = SKSpriteNode(imageNamed: "FireTower")
         fireTowerButton.position = CGPoint(x: 400, y: 200)
         fireTowerButton.zPosition = 100
-        let firePrice = SKLabelNode(fontNamed: "Chalkduster")
+        let firePrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         firePrice.text = "\(String(describing: TowerPrice[TowerType.Fire]!))"
-        firePrice.color = UIColor.black
+        firePrice.fontColor = UIColor.black
         firePrice.position = CGPoint(x: 400, y: 125)
         firePrice.zPosition = 100
         self.addChild(firePrice)
@@ -124,9 +124,9 @@ class GameScene: SKScene {
         earthTowerButton = SKSpriteNode(imageNamed: "EarthTower")
         earthTowerButton.position = CGPoint(x: 500, y: 200)
         earthTowerButton.zPosition = 100
-        let earthPrice = SKLabelNode(fontNamed: "Chalkduster")
+        let earthPrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         earthPrice.text = "\(String(describing: TowerPrice[TowerType.Earth]!))"
-        earthPrice.color = UIColor.black
+        earthPrice.fontColor = UIColor.black
         earthPrice.position = CGPoint(x: 500, y: 125)
         earthPrice.zPosition = 100
         self.addChild(earthPrice)
@@ -135,9 +135,9 @@ class GameScene: SKScene {
         airTowerButton = SKSpriteNode(imageNamed: "AirTower")
         airTowerButton.position = CGPoint(x: 600, y: 200)
         airTowerButton.zPosition = 100
-        let airPrice = SKLabelNode(fontNamed: "Chalkduster")
+        let airPrice = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
         airPrice.text = "\(String(describing: TowerPrice[TowerType.Air]!))"
-        airPrice.color = UIColor.black
+        airPrice.fontColor = UIColor.black
         airPrice.position = CGPoint(x: 600, y: 125)
         airPrice.zPosition = 100
         self.addChild(airPrice)
@@ -156,6 +156,7 @@ class GameScene: SKScene {
     
     func moveMinions() {
         if (game.monsters.count == 0 && game.spawnTimer == nil) {
+            
             game.nextMode();
         }
         
@@ -178,6 +179,18 @@ class GameScene: SKScene {
                 }
                 game.lives -= 1
                 game.monsters.remove(at: index)
+                viewController?.updateLabels()
+                
+                if(game.lives == 0){
+                    let modalVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameOver")
+                    modalVC?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+                    let pauseAction = SKAction.run {
+                        self.view?.isPaused = true
+                    }
+                    self.run(pauseAction)
+                    viewController?.present(modalVC!, animated: true, completion: nil)
+                 }
+                
                 return;
             }
             if(m.parent == nil){

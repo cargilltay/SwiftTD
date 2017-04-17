@@ -518,6 +518,47 @@
             </objects>
             <point key="canvasLocation" x="3391.1999999999998" y="-83.208395802098963"/>
         </scene>
+        <!--Game Over Modal-->
+        <scene sceneID="X4h-OG-X1r">
+            <objects>
+                <viewController storyboardIdentifier="GameOver" id="beg-iR-Tsd" customClass="GameOverModal" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfb-IH-8qj"/>
+                        <viewControllerLayoutGuide type="bottom" id="S21-fb-Bf7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zuz-Nk-Hlp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uky-DS-nVF" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="136" y="203" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1z3-Li-WzD" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="136" y="260" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="oIz-PU-iGS" kind="show" id="Gn7-mY-TRO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u6-wL-kHL" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="136" y="318" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Leaderboard"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="GameOver"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bvl-YN-aX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4272.8000000000002" y="-83.208395802098963"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIF-Sd-2bk">
             <objects>
@@ -540,6 +581,10 @@
         <scene sceneID="TbW-jf-sh5">
             <objects>
                 <viewController id="7gy-DU-rqt" customClass="GameTopPanelController" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6yC-uF-l88"/>
+                        <viewControllerLayoutGuide type="bottom" id="ioZ-wr-tQ7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="72z-4r-G7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -631,5 +676,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="kYw-Rd-pi2"/>
         <segue reference="uUg-Og-Q7A"/>
+        <segue reference="Gn7-mY-TRO"/>
     </inferredMetricsTieBreakers>
 </document>
