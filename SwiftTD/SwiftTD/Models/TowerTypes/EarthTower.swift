@@ -13,7 +13,7 @@ import SpriteKit
 class EarthTower: BaseTower {
     init() {
         let towerType = TowerType.Earth
-        let towerTexture = SKTexture(imageNamed: "Tower")
+        let towerTexture = SKTexture(imageNamed: "EarthTower")
         let radius: Int = 100
         let cost: Int = 40
         let damage: Int = 50

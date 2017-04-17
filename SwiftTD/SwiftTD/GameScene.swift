@@ -99,7 +99,7 @@ class GameScene: SKScene {
         self.addChild(basicPrice)
         self.addChild(basicTowerButton)
         
-        waterTowerButton = SKSpriteNode(imageNamed: "Tower")
+        waterTowerButton = SKSpriteNode(imageNamed: "WaterTower")
         waterTowerButton.position = CGPoint(x: 300, y: 200)
         waterTowerButton.zPosition = 100
         let waterPrice = SKLabelNode(fontNamed: "Chalkduster")
@@ -110,7 +110,7 @@ class GameScene: SKScene {
         self.addChild(waterPrice)
         self.addChild(waterTowerButton)
         
-        fireTowerButton = SKSpriteNode(imageNamed: "Tower")
+        fireTowerButton = SKSpriteNode(imageNamed: "FireTower")
         fireTowerButton.position = CGPoint(x: 400, y: 200)
         fireTowerButton.zPosition = 100
         let firePrice = SKLabelNode(fontNamed: "Chalkduster")
@@ -121,7 +121,7 @@ class GameScene: SKScene {
         self.addChild(firePrice)
         self.addChild(fireTowerButton)
         
-        earthTowerButton = SKSpriteNode(imageNamed: "Tower")
+        earthTowerButton = SKSpriteNode(imageNamed: "EarthTower")
         earthTowerButton.position = CGPoint(x: 500, y: 200)
         earthTowerButton.zPosition = 100
         let earthPrice = SKLabelNode(fontNamed: "Chalkduster")
@@ -132,7 +132,7 @@ class GameScene: SKScene {
         self.addChild(earthPrice)
         self.addChild(earthTowerButton)
         
-        airTowerButton = SKSpriteNode(imageNamed: "Tower")
+        airTowerButton = SKSpriteNode(imageNamed: "AirTower")
         airTowerButton.position = CGPoint(x: 600, y: 200)
         airTowerButton.zPosition = 100
         let airPrice = SKLabelNode(fontNamed: "Chalkduster")
@@ -332,6 +332,8 @@ class GameScene: SKScene {
             
             //if in grid. set position to grid col/row
             let towerPosition = CGPoint(x: closest!.xPos + (TowerWidth / 2), y: closest!.yPos + (TowerHeight / 2) )
+            
+            
             let snapSound = SKAction.playSoundFileNamed("snapSound.mp3", waitForCompletion: false)
             run(snapSound)
             

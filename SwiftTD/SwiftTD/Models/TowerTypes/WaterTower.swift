@@ -13,7 +13,7 @@ import SpriteKit
 class WaterTower: BaseTower {
     init() {
         let towerType = TowerType.Water
-        let towerTexture = SKTexture(imageNamed: "Tower")
+        let towerTexture = SKTexture(imageNamed: "WaterTower")
         let radius: Int = 100
         let cost: Int = 40
         let damage: Int = 40

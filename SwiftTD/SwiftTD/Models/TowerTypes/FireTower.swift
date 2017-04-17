@@ -13,7 +13,7 @@ import SpriteKit
 class FireTower: BaseTower {
     init() {
         let towerType = TowerType.Fire
-        let towerTexture = SKTexture(imageNamed: "Tower")
+        let towerTexture = SKTexture(imageNamed: "FireTower")
         let radius: Int = 100
         let cost: Int = 50
         let damage: Int = 40
