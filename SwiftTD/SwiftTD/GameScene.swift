@@ -51,6 +51,31 @@ class GameScene: SKScene {
         self.isUserInteractionEnabled = true
         
         //need to add gold coins
+        let goldCoin1 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin1.zPosition = 100
+        goldCoin1.position = CGPoint(x: 60, y: 140)
+        let goldCoin2 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin2.zPosition = 100
+        goldCoin2.position = CGPoint(x: 160, y: 140)
+        let goldCoin3 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin3.zPosition = 100
+        goldCoin3.position = CGPoint(x: 260, y: 140)
+        let goldCoin4 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin4.zPosition = 100
+        goldCoin4.position = CGPoint(x: 360, y: 140)
+        let goldCoin5 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin5.zPosition = 100
+        goldCoin5.position = CGPoint(x: 460, y: 140)
+        let goldCoin6 = SKSpriteNode(imageNamed: "GoldCoin")
+        goldCoin6.zPosition = 100
+        goldCoin6.position = CGPoint(x: 560, y: 140)
+        self.addChild(goldCoin1)
+        self.addChild(goldCoin2)
+        self.addChild(goldCoin3)
+        self.addChild(goldCoin4)
+        self.addChild(goldCoin5)
+        self.addChild(goldCoin6)
+        
         
         rockButton = SKSpriteNode(imageNamed: "Rock")
         rockButton.position = CGPoint(x: 100, y: 200)
