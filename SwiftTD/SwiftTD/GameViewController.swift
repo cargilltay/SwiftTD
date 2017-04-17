@@ -57,6 +57,10 @@ class GameViewController: UIViewController {
         
         //need to turn this button off while round in progress
         
+        if(scene.game.mode == GameMode.Defend){
+            return
+        }
+        
         let solver = MazeSolverController(tempGrid: scene.grid!)
         let solution: Bool = solver.solve()
         print("Solved: \(solution)")
