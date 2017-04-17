@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+var currentUser: String!
 
 class SignInViewController: UIViewController {
 
@@ -42,7 +43,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func fireBaseLogin(_ sender: AnyObject) {
         
-        userNameField.text = "test@gmail.com"
+        userNameField.text = "test5@gmail.com"
         passWordField.text = "abcd1234"
         
         if (self.userNameField.text == "" || self.passWordField.text == "") {
@@ -60,6 +61,9 @@ class SignInViewController: UIViewController {
                 
                 if (error == nil) {
                     let loadedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
+                    //print(FIRAuth.auth()?.currentUser?.displayName)
+                    //print(FIRAuth.auth()?.currentUser?.email)
+                    currentUser = FIRAuth.auth()?.currentUser?.displayName
                     self.present(loadedViewController!, animated: true, completion: nil)
                     
                 } else {

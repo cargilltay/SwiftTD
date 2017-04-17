@@ -54,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zt-lW6" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zt-lW6" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
                                 <rect key="frame" x="113" y="140" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="103-51-lqC"/>
@@ -171,12 +171,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUG-Jk-cpN" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="230" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="76B-RU-0wU"/>
-                                    <constraint firstAttribute="width" constant="150" id="gne-kT-F7k"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUG-Jk-cpN" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="113" y="268" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -215,27 +212,32 @@
                                     <segue destination="5oF-Tb-no6" kind="show" id="RIU-WH-1lQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spl-rM-Er5" customClass="SwiftTDTextField" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="113" y="212" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="myy-Ls-uYI" firstAttribute="leading" secondItem="Hhl-TM-iTk" secondAttribute="leadingMargin" constant="96" id="Iea-et-QJ2"/>
                             <constraint firstItem="Izb-xH-aEw" firstAttribute="top" secondItem="myy-Ls-uYI" secondAttribute="bottom" constant="16" id="Ke9-BZ-rn9"/>
-                            <constraint firstItem="JUG-Jk-cpN" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="O8k-DM-RwW"/>
                             <constraint firstItem="Izb-xH-aEw" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Sho-EB-RCl"/>
                             <constraint firstItem="Izb-xH-aEw" firstAttribute="top" secondItem="myy-Ls-uYI" secondAttribute="bottom" constant="16" id="VdG-WP-OLJ"/>
                             <constraint firstItem="bX6-cV-GYJ" firstAttribute="centerX" secondItem="Hhl-TM-iTk" secondAttribute="centerX" id="Wvq-W8-GSa"/>
                             <constraint firstItem="Izb-xH-aEw" firstAttribute="top" secondItem="myy-Ls-uYI" secondAttribute="bottom" constant="16" id="dBk-hV-t57"/>
-                            <constraint firstItem="JUG-Jk-cpN" firstAttribute="top" secondItem="bX6-cV-GYJ" secondAttribute="bottom" constant="50" id="hYX-HN-v3A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="myy-Ls-uYI" secondAttribute="trailing" constant="97" id="k28-Hu-d4z"/>
-                            <constraint firstItem="myy-Ls-uYI" firstAttribute="top" secondItem="JUG-Jk-cpN" secondAttribute="bottom" constant="281" id="nqo-QW-w65"/>
                             <constraint firstItem="bX6-cV-GYJ" firstAttribute="top" secondItem="b4H-5n-8eA" secondAttribute="bottom" constant="120" id="ufd-qy-bpd"/>
                             <constraint firstItem="efB-oF-LxF" firstAttribute="top" secondItem="Izb-xH-aEw" secondAttribute="bottom" constant="20" id="vlV-kb-mmU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailText" destination="spl-rM-Er5" id="NJb-AA-9gd"/>
                         <outlet property="passwordText" destination="JUG-Jk-cpN" id="7ab-ST-RPi"/>
                         <outlet property="submitButton" destination="Izb-xH-aEw" id="ExR-vg-5NV"/>
-                        <outlet property="userNameText" destination="bX6-cV-GYJ" id="e8N-D7-rlU"/>
+                        <outlet property="userNameText" destination="bX6-cV-GYJ" id="vBW-02-ECv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbC-Ib-c4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -674,8 +676,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kYw-Rd-pi2"/>
-        <segue reference="uUg-Og-Q7A"/>
+        <segue reference="1Ge-YC-Hn2"/>
         <segue reference="Gn7-mY-TRO"/>
+        <segue reference="uUg-Og-Q7A"/>
     </inferredMetricsTieBreakers>
 </document>

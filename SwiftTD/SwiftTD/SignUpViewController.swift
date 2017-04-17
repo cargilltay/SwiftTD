@@ -13,10 +13,11 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var userNameText: SwiftTDTextField!
     @IBOutlet weak var submitButton: SwiftTDButton!
     @IBOutlet weak var passwordText: SwiftTDTextField!
-    @IBOutlet weak var userNameText: SwiftTDTextField!
     @IBOutlet weak var confirmPasswordText: SwiftTDTextField!
+    @IBOutlet weak var emailText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = BACKGROUND_COLOR
@@ -39,8 +40,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func fireBaseCreateAccount(_ sender: AnyObject) {
         
-        if (userNameText.text == "") {
-            let alert = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+        if (emailText.text == "" || userNameText.text == "") {
+            let alert = UIAlertController(title: "Error", message: "Please enter your username, email, and password", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(defaultAction)
@@ -48,10 +49,25 @@ class SignUpViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             
         } else {
-            FIRAuth.auth()?.createUser(withEmail: userNameText.text!, password: passwordText.text!) { (user, error) in
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: passwordText.text!) { (user, error) in
                 
                 if (error == nil) {
+                    let changeRequest = user?.profileChangeRequest()
                     
+                    changeRequest?.displayName = self.userNameText.text
+                    changeRequest?.commitChanges { error in
+                        if error != nil {
+                            // An error happened.
+                            let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                            
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alert.addAction(defaultAction)
+                            
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            // Profile updated.
+                        }
+                    }
                     let loadedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainMenuNav")
                     self.present(loadedViewController!, animated: true, completion: nil)
                     
