@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var BlockedPanel: UIView!
     @IBOutlet weak var topPanel: UIView!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -65,6 +66,7 @@ class GameViewController: UIViewController {
         let solution: Bool = solver.solve()
         print("Solved: \(solution)")
         if(solution){
+            hideBlockedPanel()
             print(solver.map)
         
             scene.game.setSolution(solution: solver.map, grid: scene.grid!)
@@ -80,7 +82,7 @@ class GameViewController: UIViewController {
             updateLabels()
         }
         else{
-            //showBlockedPanel()
+            showBlockedPanel()
         }
     }
     
@@ -140,9 +142,24 @@ class GameViewController: UIViewController {
         }
     }
     
+    func showBlockedPanel(){
+        UIView.animate(withDuration: 1.0) {
+            self.BlockedPanel.frame.origin.y = 30
+            //self.topPanel.frame.origin.y = yPos
+        }
+
+    }
+    func hideBlockedPanel(){
+        UIView.animate(withDuration: 1.0) {
+            self.BlockedPanel.frame.origin.y = -250
+            //self.topPanel.frame.origin.y = yPos
+        }
+    }
+
+    
     func hidePanel(){
         UIView.animate(withDuration: 1.0) {
-            self.topPanel.frame.origin.y = -150
+            self.topPanel.frame.origin.y = -140
             //self.topPanel.frame.origin.y = yPos
         }
     }
