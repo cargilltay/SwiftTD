@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var BlockedPanel: UIView!
     @IBOutlet weak var topPanel: UIView!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -64,19 +65,25 @@ class GameViewController: UIViewController {
         let solver = MazeSolverController(tempGrid: scene.grid!)
         let solution: Bool = solver.solve()
         print("Solved: \(solution)")
-        print(solver.map)
+        if(solution){
+            hideBlockedPanel()
+            print(solver.map)
         
-        scene.game.setSolution(solution: solver.map, grid: scene.grid!)
+            scene.game.setSolution(solution: solver.map, grid: scene.grid!)
         
-        //test empty
-        //scene.game.setSolution(solution: [])
+            //test empty
+            //scene.game.setSolution(solution: [])
         
-        //this is not an ideal way to do this.
-        let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
-        let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
-        scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
-        scene.game.nextMode()
-        updateLabels()
+            //this is not an ideal way to do this.
+            let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
+            let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
+            scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
+            scene.game.nextMode()
+            updateLabels()
+        }
+        else{
+            showBlockedPanel()
+        }
     }
     
     override var shouldAutorotate: Bool {
@@ -136,6 +143,21 @@ class GameViewController: UIViewController {
             //self.topPanel.frame.origin.y = yPos
         }
     }
+    
+    func showBlockedPanel(){
+        UIView.animate(withDuration: 1.0) {
+            self.BlockedPanel.frame.origin.y = 30
+            //self.topPanel.frame.origin.y = yPos
+        }
+
+    }
+    func hideBlockedPanel(){
+        UIView.animate(withDuration: 1.0) {
+            self.BlockedPanel.frame.origin.y = -250
+            //self.topPanel.frame.origin.y = yPos
+        }
+    }
+
     
     func hidePanel(){
         UIView.animate(withDuration: 1.0) {
