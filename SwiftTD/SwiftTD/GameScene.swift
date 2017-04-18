@@ -171,6 +171,7 @@ class GameScene: SKScene {
                 game.monsters.remove(at: index)
                 game.gold += 10
                 game.score += 10
+                viewController!.updateLabels()
                 return;
             }
             else if (m.reachedEnd) {
@@ -185,8 +186,11 @@ class GameScene: SKScene {
                 
                 if(game.lives == 0){
                     //push score to firebase
-                    let newEntry: LeaderBoardEntry = LeaderBoardEntry(userName: currentUser, score: game.score)
-                    fireBaseController.addLeaderboardEntry(entry: newEntry)
+                    
+                    if(game.score > 0){
+                        let newEntry: LeaderBoardEntry = LeaderBoardEntry(userName: currentUser, score: game.score)
+                        fireBaseController.addLeaderboardEntry(entry: newEntry)
+                    }
                     
                     //load game over modal
                     let modalVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameOver")
