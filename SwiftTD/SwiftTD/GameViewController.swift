@@ -79,6 +79,9 @@ class GameViewController: UIViewController {
             scene.game.nextMode()
             updateLabels()
         }
+        else{
+            //showBlockedPanel()
+        }
     }
     
     override var shouldAutorotate: Bool {
