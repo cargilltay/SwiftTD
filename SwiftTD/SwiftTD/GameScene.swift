@@ -169,6 +169,7 @@ class GameScene: SKScene {
                 m.outerHealthBar.removeFromParent()
                 game.monsters.remove(at: index)
                 game.gold += 10
+                viewController!.updateLabels()
                 return;
             }
             else if (m.reachedEnd) {
