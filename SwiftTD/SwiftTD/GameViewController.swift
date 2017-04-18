@@ -64,19 +64,21 @@ class GameViewController: UIViewController {
         let solver = MazeSolverController(tempGrid: scene.grid!)
         let solution: Bool = solver.solve()
         print("Solved: \(solution)")
-        print(solver.map)
+        if(solution){
+            print(solver.map)
         
-        scene.game.setSolution(solution: solver.map, grid: scene.grid!)
+            scene.game.setSolution(solution: solver.map, grid: scene.grid!)
         
-        //test empty
-        //scene.game.setSolution(solution: [])
+            //test empty
+            //scene.game.setSolution(solution: [])
         
-        //this is not an ideal way to do this.
-        let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
-        let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
-        scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
-        scene.game.nextMode()
-        updateLabels()
+            //this is not an ideal way to do this.
+            let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
+            let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
+            scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
+            scene.game.nextMode()
+            updateLabels()
+        }
     }
     
     override var shouldAutorotate: Bool {
