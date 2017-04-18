@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701D7C211EA5A80E00951C01 /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D7C201EA5A80E00951C01 /* FireBaseController.swift */; };
 		701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16311E6126B3007EEAD9 /* AppDelegate.swift */; };
 		701E16341E6126B3007EEAD9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 701E16331E6126B3007EEAD9 /* GameScene.sks */; };
 		701E16361E6126B3007EEAD9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 701E16351E6126B3007EEAD9 /* Actions.sks */; };
@@ -58,6 +59,7 @@
 		70ED263B1EA140F100C99292 /* GameTopPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED263A1EA140F100C99292 /* GameTopPanelController.swift */; };
 		70ED263D1EA2EB8D00C99292 /* snapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */; };
 		70ED26411EA4878C00C99292 /* GameOverModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26401EA4878C00C99292 /* GameOverModal.swift */; };
+		70ED26471EA550D000C99292 /* LeaderBoardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26461EA550D000C99292 /* LeaderBoardEntry.swift */; };
 		A0B5497519498900B202D0F4 /* Pods_SwiftTDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */; };
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
@@ -89,6 +91,7 @@
 		55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F1B6A78147F53BAE7F477A /* Pods-SwiftTDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDTests/Pods-SwiftTDTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65B48267BFC4D3C4DC86D412 /* Pods-SwiftTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTD.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTD/Pods-SwiftTD.release.xcconfig"; sourceTree = "<group>"; };
+		701D7C201EA5A80E00951C01 /* FireBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseController.swift; sourceTree = "<group>"; };
 		701E162E1E6126B3007EEAD9 /* SwiftTD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701E16311E6126B3007EEAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		701E16331E6126B3007EEAD9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		70ED263A1EA140F100C99292 /* GameTopPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTopPanelController.swift; sourceTree = "<group>"; };
 		70ED263C1EA2EB8D00C99292 /* snapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snapSound.mp3; sourceTree = "<group>"; };
 		70ED26401EA4878C00C99292 /* GameOverModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverModal.swift; path = Views/GameOverModal.swift; sourceTree = "<group>"; };
+		70ED26461EA550D000C99292 /* LeaderBoardEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardEntry.swift; sourceTree = "<group>"; };
 		9D5452655E6281A001F9784B /* Pods-SwiftTDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 		701E168F1E666870007EEAD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				70ED26461EA550D000C99292 /* LeaderBoardEntry.swift */,
 				F14AE1891E9554C000D57195 /* MonsterStats.swift */,
 				701E16901E666870007EEAD9 /* BaseMonster.swift */,
 				701E16911E666870007EEAD9 /* BaseProjectile.swift */,
@@ -301,6 +306,7 @@
 				70234F1F1E96D1F500399374 /* MusicController.swift */,
 				70ED26221E9D936800C99292 /* TowerFactory.swift */,
 				70ED262C1E9EE05C00C99292 /* ProjectileFactory.swift */,
+				701D7C201EA5A80E00951C01 /* FireBaseController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				70ED26371E9EE0F100C99292 /* EarthProjectile.swift in Sources */,
 				F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */,
 				70ED263B1EA140F100C99292 /* GameTopPanelController.swift in Sources */,
+				701D7C211EA5A80E00951C01 /* FireBaseController.swift in Sources */,
 				70ED26411EA4878C00C99292 /* GameOverModal.swift in Sources */,
 				70ED26271E9EDF4C00C99292 /* WaterTower.swift in Sources */,
 				704833301E899C9B0085BC6B /* SwiftTDTowerButton.swift in Sources */,
@@ -668,6 +675,7 @@
 				7048332E1E896AEE0085BC6B /* GameController.swift in Sources */,
 				70ED262F1E9EE0C000C99292 /* RockProjectile.swift in Sources */,
 				70ED262B1E9EDF5F00C99292 /* AirTower.swift in Sources */,
+				70ED26471EA550D000C99292 /* LeaderBoardEntry.swift in Sources */,
 				701E169B1E666870007EEAD9 /* BaseTower.swift in Sources */,
 				701E169C1E666870007EEAD9 /* TestMonster.swift in Sources */,
 				706417BA1E8F5F8000104884 /* Cell.swift in Sources */,

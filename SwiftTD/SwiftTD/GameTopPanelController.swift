@@ -16,6 +16,7 @@ class GameTopPanelController: UIViewController {
     @IBOutlet weak var levelLabel: SwiftTDLabel!
     @IBOutlet weak var typeLabel: SwiftTDLabel!
 
+    @IBOutlet weak var scoreLabel: SwiftTDLabel!
     @IBOutlet weak var damageLabel: SwiftTDLabel!
     @IBOutlet weak var killsLabel: SwiftTDLabel!
     @IBOutlet weak var effectLabel: SwiftTDLabel!

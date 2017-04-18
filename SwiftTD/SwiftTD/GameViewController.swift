@@ -114,6 +114,8 @@ class GameViewController: UIViewController {
         panelController?.goldLabel.sizeToFit()
         panelController?.livesLabel.text = "Lives: \(scene.game.lives)"
         panelController?.livesLabel.sizeToFit()
+        panelController?.scoreLabel.text = "Score: \(scene.game.score)"
+        panelController?.scoreLabel.sizeToFit()
 
     }
     
@@ -137,7 +139,7 @@ class GameViewController: UIViewController {
     
     func hidePanel(){
         UIView.animate(withDuration: 1.0) {
-            self.topPanel.frame.origin.y = -150
+            self.topPanel.frame.origin.y = -120
             //self.topPanel.frame.origin.y = yPos
         }
     }

@@ -12,6 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     let game: GameController = GameController()
     let towerFactory: TowerFactory = TowerFactory()
+    let fireBaseController: FireBaseController = FireBaseController()
     let screenSize = UIScreen.main.bounds
     let TowerHeight = SKSpriteNode(imageNamed: "Tower").size.height
     let TowerWidth = SKSpriteNode(imageNamed: "Tower").size.width
@@ -169,6 +170,7 @@ class GameScene: SKScene {
                 m.outerHealthBar.removeFromParent()
                 game.monsters.remove(at: index)
                 game.gold += 10
+                game.score += 10
                 return;
             }
             else if (m.reachedEnd) {
@@ -182,6 +184,11 @@ class GameScene: SKScene {
                 viewController?.updateLabels()
                 
                 if(game.lives == 0){
+                    //push score to firebase
+                    let newEntry: LeaderBoardEntry = LeaderBoardEntry(userName: currentUser, score: game.score)
+                    fireBaseController.addLeaderboardEntry(entry: newEntry)
+                    
+                    //load game over modal
                     let modalVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameOver")
                     modalVC?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
                     let pauseAction = SKAction.run {
