@@ -42,6 +42,8 @@
 		709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */; };
 		709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */; };
 		709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */; };
+		70D029141EA6B51800F81635 /* LeaderboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D029131EA6B51800F81635 /* LeaderboardController.swift */; };
+		70D029161EA7067900F81635 /* SwiftTDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D029151EA7067900F81635 /* SwiftTDCell.swift */; };
 		70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED261E1E9D8E5400C99292 /* RockTower.swift */; };
 		70ED26211E9D8E6B00C99292 /* BasicTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26201E9D8E6B00C99292 /* BasicTower.swift */; };
 		70ED26231E9D936800C99292 /* TowerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED26221E9D936800C99292 /* TowerFactory.swift */; };
@@ -132,6 +134,8 @@
 		709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerWaitingRoomViewController.swift; sourceTree = "<group>"; };
+		70D029131EA6B51800F81635 /* LeaderboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderboardController.swift; path = Controllers/LeaderboardController.swift; sourceTree = "<group>"; };
+		70D029151EA7067900F81635 /* SwiftTDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDCell.swift; sourceTree = "<group>"; };
 		70ED261E1E9D8E5400C99292 /* RockTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockTower.swift; sourceTree = "<group>"; };
 		70ED26201E9D8E6B00C99292 /* BasicTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTower.swift; sourceTree = "<group>"; };
 		70ED26221E9D936800C99292 /* TowerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TowerFactory.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 				7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */,
 				70234F1D1E95C14600399374 /* SwiftTDContainer.swift */,
 				706417B91E8F5F8000104884 /* Cell.swift */,
+				70D029151EA7067900F81635 /* SwiftTDCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */,
 				70ED263A1EA140F100C99292 /* GameTopPanelController.swift */,
 				70ED26401EA4878C00C99292 /* GameOverModal.swift */,
+				70D029131EA6B51800F81635 /* LeaderboardController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D029161EA7067900F81635 /* SwiftTDCell.swift in Sources */,
 				70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */,
 				70ED26251E9EDF2100C99292 /* FireTower.swift in Sources */,
 				70ED26371E9EE0F100C99292 /* EarthProjectile.swift in Sources */,
@@ -695,6 +702,7 @@
 				70ED26211E9D8E6B00C99292 /* BasicTower.swift in Sources */,
 				709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */,
 				701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */,
+				70D029141EA6B51800F81635 /* LeaderboardController.swift in Sources */,
 				701E16991E666870007EEAD9 /* BaseMonster.swift in Sources */,
 				701E16A91E6BD67D007EEAD9 /* SignUpViewController.swift in Sources */,
 				70ED26331E9EE0DC00C99292 /* FireProjectile.swift in Sources */,

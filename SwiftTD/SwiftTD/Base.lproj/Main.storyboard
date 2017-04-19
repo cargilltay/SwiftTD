@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZf-V6-zJt" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="230" width="150" height="40"/>
+                                <rect key="frame" x="113" y="322" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Qi-Bn-42R"/>
                                     <constraint firstAttribute="width" constant="150" id="s6e-fm-FCA"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-7k-D7f" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="140" width="150" height="40"/>
+                                <rect key="frame" x="113" y="184" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Zoq-cP-jUc"/>
                                     <constraint firstAttribute="height" constant="40" id="kbE-mM-csV"/>
@@ -123,8 +123,16 @@
                                     <segue destination="FGM-LG-RFY" kind="show" id="aHa-FZ-hfq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-7z-qLq" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="113" y="259" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Leaderboard"/>
+                                <connections>
+                                    <segue destination="EUT-ri-hxy" kind="show" id="t8P-BL-P9V"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03D-ed-spz" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="113" y="320" width="150" height="40"/>
+                                <rect key="frame" x="113" y="407" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Meg-1k-hti"/>
                                     <constraint firstAttribute="height" constant="40" id="QT0-LZ-SI7"/>
@@ -139,11 +147,11 @@
                         <accessibility key="accessibilityConfiguration" identifier="MainMenu"/>
                         <constraints>
                             <constraint firstItem="hfW-7k-D7f" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="7j0-Pn-az6"/>
-                            <constraint firstItem="vZf-V6-zJt" firstAttribute="top" secondItem="hfW-7k-D7f" secondAttribute="bottom" constant="50" id="CKw-Fv-qId"/>
+                            <constraint firstItem="vZf-V6-zJt" firstAttribute="top" secondItem="hfW-7k-D7f" secondAttribute="bottom" constant="98" id="CKw-Fv-qId"/>
                             <constraint firstItem="hfW-7k-D7f" firstAttribute="top" secondItem="MUI-Fb-vsd" secondAttribute="bottom" constant="120" id="G4P-v0-ECk"/>
                             <constraint firstItem="03D-ed-spz" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="PED-ST-wLb"/>
                             <constraint firstItem="vZf-V6-zJt" firstAttribute="centerX" secondItem="3NQ-6A-KwF" secondAttribute="centerX" id="e8Z-K6-EK6"/>
-                            <constraint firstItem="03D-ed-spz" firstAttribute="top" secondItem="vZf-V6-zJt" secondAttribute="bottom" constant="50" id="w9V-4x-HCO"/>
+                            <constraint firstItem="03D-ed-spz" firstAttribute="top" secondItem="vZf-V6-zJt" secondAttribute="bottom" constant="45" id="w9V-4x-HCO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k9f-qL-u9q"/>
@@ -327,6 +335,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqe-fR-Z0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39" y="970"/>
+        </scene>
+        <!--Leaderboard Controller-->
+        <scene sceneID="2kw-Z2-2Rh">
+            <objects>
+                <tableViewController id="EUT-ri-hxy" customClass="LeaderboardController" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YDg-uW-veh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z2U-Tw-2Ni">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2U-Tw-2Ni" id="wGw-o9-gh1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FancyCell" rowHeight="77" id="fYG-E6-uNY" customClass="SwiftTDCell" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYG-E6-uNY" id="G0H-hf-QL2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sft-56-aP8" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="28" width="171" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-gv-vTM" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                            <rect key="frame" x="196" y="28" width="171" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="sft-56-aP8" id="ZSF-Kc-ID9"/>
+                                    <outlet property="score" destination="QSv-gv-vTM" id="TX8-WG-Hrf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EUT-ri-hxy" id="dgh-za-4iq"/>
+                            <outlet property="delegate" destination="EUT-ri-hxy" id="VXW-7a-F55"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDe-hR-PLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="968.36581709145435"/>
         </scene>
         <!--Game Mode View Controller-->
         <scene sceneID="YzQ-7p-Dhe">
@@ -723,7 +787,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1Ge-YC-Hn2"/>
         <segue reference="uUg-Og-Q7A"/>
-        <segue reference="kYw-Rd-pi2"/>
     </inferredMetricsTieBreakers>
 </document>

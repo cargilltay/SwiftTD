@@ -598,11 +598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTD/AppDelegate.swift"
-            timestampString = "513202543.712075"
+            timestampString = "514261350.420223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
