@@ -244,6 +244,7 @@ class GameScene: SKScene {
                 if(game.gold < TowerPrice[TowerType.Rock]!){
                     return
                 }
+                towerDrag = true
                 movableNode = createTower(type: TowerType.Rock)
                 movableNode!.position = location
                 nodeType = TowerType.Rock
