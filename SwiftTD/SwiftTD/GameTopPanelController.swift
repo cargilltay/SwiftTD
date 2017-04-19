@@ -44,6 +44,7 @@ class GameTopPanelController: UIViewController {
             let tClosest = viewController.scene.grid!.closestCell(x: tower.position.x, y: tower.position.y)
             if(tClosest.xPos == closest.xPos && tClosest.yPos == closest.yPos){
                 viewController.scene.game.towers.remove(at: index)
+                break
             }
         }
         
