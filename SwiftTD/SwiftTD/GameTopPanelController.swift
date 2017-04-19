@@ -35,7 +35,18 @@ class GameTopPanelController: UIViewController {
     }
     @IBAction func deleteTower(_ sender: Any) {
         
-        //sommehow need to pop it from game.towers array too
+        let closest = viewController.scene.grid!.closestCell(x: towerToDelete.position.x, y: towerToDelete.position.y)
+        
+        closest.isBlocked = false
+        closest.hasTower = false
+        
+        for (index,tower) in viewController.scene.game.towers.enumerated().reversed(){
+            let tClosest = viewController.scene.grid!.closestCell(x: tower.position.x, y: tower.position.y)
+            if(tClosest.xPos == closest.xPos && tClosest.yPos == closest.yPos){
+                viewController.scene.game.towers.remove(at: index)
+            }
+        }
+        
         viewController.hidePanel()
         
         viewController.scene.towerCircle.removeFromParent()
