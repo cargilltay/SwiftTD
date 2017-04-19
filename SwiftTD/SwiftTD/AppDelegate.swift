@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-let BACKGROUND_COLOR = UIColor.init(colorLiteralRed: 0.000, green: 0.369, blue:0.420, alpha: 1.0);
+let BACKGROUND_COLOR = hexStringToUIColor(hex: "#00796B")
 
 let FOREGROUND_COLOR = UIColor.init(colorLiteralRed: 0.937, green: 0.820, blue:0.576, alpha: 1.0);
 
@@ -23,6 +23,29 @@ let THEME_COLOR4 = UIColor.init(colorLiteralRed:0.576, green:0.596, blue:0.329,
                                 alpha:1.00) // Greenish Tan
 let THEME_COLOR5 = UIColor.init(colorLiteralRed:0.251, green:0.286, blue:0.141,
                                 alpha:1.00) // Army Green
+
+func hexStringToUIColor (hex:String) -> UIColor {
+    var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    
+    if (cString.hasPrefix("#")) {
+        cString.remove(at: cString.startIndex)
+    }
+    
+    if ((cString.characters.count) != 6) {
+        return UIColor.gray
+    }
+    
+    var rgbValue:UInt32 = 0
+    Scanner(string: cString).scanHexInt32(&rgbValue)
+    
+    return UIColor(
+        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+        alpha: CGFloat(1.0)
+    )
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
