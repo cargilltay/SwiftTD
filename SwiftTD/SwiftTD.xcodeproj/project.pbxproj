@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7010D9031EA995640080C256 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7010D9021EA995640080C256 /* Social.framework */; };
 		701D7C211EA5A80E00951C01 /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D7C201EA5A80E00951C01 /* FireBaseController.swift */; };
 		701E16321E6126B3007EEAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E16311E6126B3007EEAD9 /* AppDelegate.swift */; };
 		701E16341E6126B3007EEAD9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 701E16331E6126B3007EEAD9 /* GameScene.sks */; };
@@ -93,6 +94,7 @@
 		55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F1B6A78147F53BAE7F477A /* Pods-SwiftTDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDTests/Pods-SwiftTDTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65B48267BFC4D3C4DC86D412 /* Pods-SwiftTD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTD.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTD/Pods-SwiftTD.release.xcconfig"; sourceTree = "<group>"; };
+		7010D9021EA995640080C256 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		701D7C201EA5A80E00951C01 /* FireBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseController.swift; sourceTree = "<group>"; };
 		701E162E1E6126B3007EEAD9 /* SwiftTD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701E16311E6126B3007EEAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010D9031EA995640080C256 /* Social.framework in Frameworks */,
 				E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +354,7 @@
 		8FBCE612A522E78DD48C21E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7010D9021EA995640080C256 /* Social.framework */,
 				55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */,
 				D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */,
 				2F1C91540D88C78509541B42 /* Pods_SwiftTDUITests.framework */,
