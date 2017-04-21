@@ -42,7 +42,6 @@
 		70674CCD1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70674CCC1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift */; };
 		709A7FDB1E6BD6D100CCCDA1 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */; };
 		709A7FDD1E6BD6EB00CCCDA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */; };
-		709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */; };
 		70D029141EA6B51800F81635 /* LeaderboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D029131EA6B51800F81635 /* LeaderboardController.swift */; };
 		70D029161EA7067900F81635 /* SwiftTDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D029151EA7067900F81635 /* SwiftTDCell.swift */; };
 		70ED261F1E9D8E5400C99292 /* RockTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ED261E1E9D8E5400C99292 /* RockTower.swift */; };
@@ -135,7 +134,6 @@
 		70674CCC1E6FC9FB00A5BFB9 /* MultiplayerConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerConnectionManager.swift; sourceTree = "<group>"; };
 		709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerWaitingRoomViewController.swift; sourceTree = "<group>"; };
 		70D029131EA6B51800F81635 /* LeaderboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderboardController.swift; path = Controllers/LeaderboardController.swift; sourceTree = "<group>"; };
 		70D029151EA7067900F81635 /* SwiftTDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDCell.swift; sourceTree = "<group>"; };
 		70ED261E1E9D8E5400C99292 /* RockTower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockTower.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				701E16AC1E6BD6A1007EEAD9 /* GameModeViewController.swift */,
 				709A7FDA1E6BD6D100CCCDA1 /* DifficultyViewController.swift */,
 				709A7FDC1E6BD6EB00CCCDA1 /* SettingsViewController.swift */,
-				709A7FDE1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift */,
 				70ED263A1EA140F100C99292 /* GameTopPanelController.swift */,
 				70ED26401EA4878C00C99292 /* GameOverModal.swift */,
 				70D029131EA6B51800F81635 /* LeaderboardController.swift */,
@@ -682,7 +679,6 @@
 				70674CC71E6FC79300A5BFB9 /* SwiftTDLabel.swift in Sources */,
 				701E16AB1E6BD693007EEAD9 /* MainMenuViewController.swift in Sources */,
 				701E16A21E666894007EEAD9 /* Grid.swift in Sources */,
-				709A7FDF1E6BD71600CCCDA1 /* MultiplayerWaitingRoomViewController.swift in Sources */,
 				7048332E1E896AEE0085BC6B /* GameController.swift in Sources */,
 				70ED262F1E9EE0C000C99292 /* RockProjectile.swift in Sources */,
 				70ED262B1E9EDF5F00C99292 /* AirTower.swift in Sources */,

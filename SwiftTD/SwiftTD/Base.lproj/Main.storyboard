@@ -118,9 +118,9 @@
                                     <constraint firstAttribute="width" constant="150" id="Zoq-cP-jUc"/>
                                     <constraint firstAttribute="height" constant="40" id="kbE-mM-csV"/>
                                 </constraints>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" title="New Game"/>
                                 <connections>
-                                    <segue destination="FGM-LG-RFY" kind="show" id="aHa-FZ-hfq"/>
+                                    <segue destination="bUc-Vy-Ygh" kind="show" id="ygO-Oo-iAk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-7z-qLq" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
@@ -392,69 +392,6 @@
             </objects>
             <point key="canvasLocation" x="900" y="968.36581709145435"/>
         </scene>
-        <!--Game Mode View Controller-->
-        <scene sceneID="YzQ-7p-Dhe">
-            <objects>
-                <viewController id="FGM-LG-RFY" customClass="GameModeViewController" customModule="SwiftTD" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="q8R-l5-kir"/>
-                        <viewControllerLayoutGuide type="bottom" id="WW7-4g-5TX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Z4f-su-1Yx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-wW-yWn" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="184" width="155" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1y2-Th-I9G"/>
-                                    <constraint firstAttribute="width" constant="155" id="xKL-k4-3dn"/>
-                                </constraints>
-                                <state key="normal" title="New Game"/>
-                                <connections>
-                                    <segue destination="bUc-Vy-Ygh" kind="show" id="dFr-7X-hhh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-R5-ppa" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="274" width="155" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="WVA-4g-lOz"/>
-                                    <constraint firstAttribute="height" constant="40" id="gEn-uB-YEh"/>
-                                </constraints>
-                                <state key="normal" title="Resume Game"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="fpt-5K-mjJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmT-8I-J5G" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="110" y="364" width="155" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="BlS-te-JaR"/>
-                                    <constraint firstAttribute="height" constant="40" id="nVs-Wx-OJG"/>
-                                </constraints>
-                                <state key="normal" title="New Multiplayer Game"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AmT-8I-J5G" firstAttribute="top" secondItem="gh8-R5-ppa" secondAttribute="bottom" constant="50" id="8GU-5C-Q8r"/>
-                            <constraint firstItem="rOd-wW-yWn" firstAttribute="top" secondItem="q8R-l5-kir" secondAttribute="bottom" constant="120" id="JjE-bA-nu7"/>
-                            <constraint firstItem="rOd-wW-yWn" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="Rw7-nh-tEI"/>
-                            <constraint firstItem="AmT-8I-J5G" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="Utg-nI-6jr"/>
-                            <constraint firstItem="gh8-R5-ppa" firstAttribute="top" secondItem="rOd-wW-yWn" secondAttribute="bottom" constant="50" id="m6p-oh-ZNH"/>
-                            <constraint firstItem="gh8-R5-ppa" firstAttribute="centerX" secondItem="Z4f-su-1Yx" secondAttribute="centerX" id="xWm-CN-y4s"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="newGameButton" destination="rOd-wW-yWn" id="7e7-lz-WdF"/>
-                        <outlet property="newMultiplayerGameButton" destination="AmT-8I-J5G" id="0fV-1d-boM"/>
-                        <outlet property="resumeGameButton" destination="gh8-R5-ppa" id="hD2-af-wOR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qkY-sQ-zVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="163.26836581709148"/>
-        </scene>
         <!--Difficulty View Controller-->
         <scene sceneID="bJr-2R-GGO">
             <objects>
@@ -522,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG4-IY-8d4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3391.1999999999998" y="658.92053973013503"/>
+            <point key="canvasLocation" x="1930" y="161"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -588,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3391.1999999999998" y="-83.208395802098963"/>
+            <point key="canvasLocation" x="3006" y="162"/>
         </scene>
         <!--Game Over Modal-->
         <scene sceneID="X4h-OG-X1r">
@@ -623,7 +560,7 @@
                                 <state key="normal" title="Leaderboard"/>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-Xq-Qru">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Share" id="52U-xP-z5Q">
@@ -640,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvl-YN-aX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4289" y="-101"/>
+            <point key="canvasLocation" x="4132" y="162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIF-Sd-2bk">
@@ -761,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTY-jN-cPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3389.5999999999999" y="-624.28785607196403"/>
+            <point key="canvasLocation" x="3006" y="-315"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M73-of-X6d">
@@ -794,11 +731,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9c-CT-aA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4290" y="-574"/>
+            <point key="canvasLocation" x="4132" y="-281"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ge-YC-Hn2"/>
-        <segue reference="uUg-Og-Q7A"/>
+        <segue reference="OSe-xr-8GU"/>
+        <segue reference="kYw-Rd-pi2"/>
     </inferredMetricsTieBreakers>
 </document>
