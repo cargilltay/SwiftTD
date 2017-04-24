@@ -146,7 +146,7 @@ class GameViewController: UIViewController {
     
     func showBlockedPanel(){
         UIView.animate(withDuration: 1.0) {
-            self.BlockedPanel.frame.origin.y = 30
+            self.BlockedPanel.frame.origin.y = 40
             //self.topPanel.frame.origin.y = yPos
         }
 
