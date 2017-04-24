@@ -96,14 +96,15 @@ class Grid:SKSpriteNode {
                 let baseOffsetMod = baseOffset.truncatingRemainder(dividingBy: c.cSize)
                 let mody = y - ((y - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
                 
-                print("x:\(c.xPos)" + "y:\(c.yPos)")
+                //print("x:\(c.xPos)" + "y:\(c.yPos)")
                 if (c.xPos == modx && c.yPos == mody) {
                     cell = c;
+                    
                     break
                 }
             }
         }
-        
+        print("Daniel \(cell.xPos), \(cell.yPos)")
         return cell
     }
     
