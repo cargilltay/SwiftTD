@@ -99,7 +99,6 @@ class Grid:SKSpriteNode {
                 //print("x:\(c.xPos)" + "y:\(c.yPos)")
                 if (c.xPos == modx && c.yPos == mody) {
                     cell = c;
-                    
                     break
                 }
             }

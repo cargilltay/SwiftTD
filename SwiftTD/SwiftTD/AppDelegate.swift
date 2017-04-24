@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 
-let BACKGROUND_COLOR = hexStringToUIColor(hex: "#00796B")
+let BACKGROUND_COLOR = hexStringToUIColor(hex: "#669999")
 
-let FOREGROUND_COLOR = UIColor.init(colorLiteralRed: 0.937, green: 0.820, blue:0.576, alpha: 1.0);
+let FOREGROUND_COLOR = hexStringToUIColor(hex: "#FFBB00")
+    //UIColor.init(colorLiteralRed: 0.937, green: 0.820, blue:0.576, alpha: 1.0);
 
 let THEME_COLOR1 = UIColor.init(colorLiteralRed:0.000, green:0.157, blue:0.216,
                                 alpha:1.00)  // DARK BLUE
