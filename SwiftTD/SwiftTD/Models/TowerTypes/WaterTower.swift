@@ -14,7 +14,7 @@ class WaterTower: BaseTower {
     init() {
         let towerType = TowerType.Water
         let towerTexture = SKTexture(imageNamed: "WaterTower")
-        let radius: Int = 100
+        let radius: Int = 200
         let cost: Int = 40
         let damage: Int = 40
         let fireRate: CGFloat = 0.5

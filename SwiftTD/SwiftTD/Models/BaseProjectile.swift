@@ -41,6 +41,7 @@ class BaseProjectile: SKSpriteNode {
         //check if within offset
         //print(isWithinOffsetOfX)
         if (isWithinOffsetOfX && isWithinOffsetOfY) {
+            self.projectileEffect()
             self.target.hitPoints -= self.damage
             self.target.updateHealth()
             self.hitTarget = true
@@ -55,6 +56,9 @@ class BaseProjectile: SKSpriteNode {
         return false
     }
 
+    func projectileEffect(){
+        return;
+    }
 
     func updatePosition () {
         if (self.checkHit()) {

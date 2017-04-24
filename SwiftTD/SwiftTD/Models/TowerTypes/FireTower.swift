@@ -14,7 +14,7 @@ class FireTower: BaseTower {
     init() {
         let towerType = TowerType.Fire
         let towerTexture = SKTexture(imageNamed: "FireTower")
-        let radius: Int = 100
+        let radius: Int = 200
         let cost: Int = 50
         let damage: Int = 40
         let fireRate: CGFloat = 0.5
