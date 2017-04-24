@@ -10,6 +10,12 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
+protocol GameScoreDelegate {
+    func acceptGameScore(score: Int)
+}
+
+
 class GameViewController: UIViewController {
     
     @IBOutlet weak var BlockedPanel: UIView!
@@ -19,6 +25,7 @@ class GameViewController: UIViewController {
     var scene: GameScene!
     var gameDifficulty: GameDifficulty!
     var panelController: GameTopPanelController?
+    var delegate:GameScoreDelegate?
 
     
     override func viewDidLoad() {
@@ -86,6 +93,18 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? GameOverModal{
+            self.delegate = dest
+            self.delegate?.acceptGameScore(score: self.scene.game.score)
+        }
+        
+        if segue.identifier == "TopPanelSegue" {
+            panelController = segue.destination as? GameTopPanelController
+            //panelController!.parent = self
+        }
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -106,13 +125,7 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TopPanelSegue" {
-            panelController = segue.destination as? GameTopPanelController
-            //panelController!.parent = self
-        }
-    }
+  
     
     func updateLabels(){
         panelController?.levelLabel.text = "Level: \(scene.game.round)"

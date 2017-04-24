@@ -19,6 +19,13 @@ class AirProjectile: BaseProjectile {
         super.init(damage: damage, speed: speed, target: target, position: position, texture: projTexture, color: UIColor.black)
     }
     
+    override func projectileEffect() {
+        //if(!target.hasEffect){
+        //    target.hasEffect = true;
+            //add air logic here
+       //}
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

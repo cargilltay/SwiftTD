@@ -20,6 +20,8 @@ class BaseMonster: SKSpriteNode {
     var startLocation: CGPoint!
     var endLocation: CGPoint!
     var gold: Int = 0
+    var hasFireEffect: Bool = false
+    var hasWaterEffect: Bool = false
     
     var outerHealthBar: SKShapeNode!
     var innerHealthBar: SKShapeNode!

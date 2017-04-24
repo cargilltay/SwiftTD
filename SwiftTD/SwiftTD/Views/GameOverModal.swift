@@ -12,6 +12,8 @@ import Social
 
 class GameOverModal: UIViewController {
     
+    var score: Int!
+    
     @IBAction func showShareOptions(_ sender: Any) {
         //need to dismiss the popover
         
@@ -26,7 +28,7 @@ class GameOverModal: UIViewController {
                 let twitterComposeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                 
                 // Set the score as the default post message.
-                twitterComposeVC?.setInitialText("HELLO WORLD")
+                twitterComposeVC?.setInitialText("I Got A New SwiftTD Score of: \(self.score!)")
                     
                 self.present(twitterComposeVC!, animated: true, completion: nil)
             }
@@ -41,7 +43,7 @@ class GameOverModal: UIViewController {
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
                 let facebookComposeVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
-                facebookComposeVC?.setInitialText("HELLO WORLD")
+                facebookComposeVC?.setInitialText("I Got A New SwiftTD Score of: \(self.score!)")
                 
                 self.present(facebookComposeVC!, animated: true, completion: nil)
             }
@@ -52,7 +54,7 @@ class GameOverModal: UIViewController {
         
         // Configure a new action to show the UIActivityViewController
         let moreAction = UIAlertAction(title: "More", style: UIAlertActionStyle.default) { (action) -> Void in
-            let activityViewController = UIActivityViewController(activityItems: ["HELLO WORLD"], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: ["I Got A New SwiftTD Score of: \(self.score!)"], applicationActivities: nil)
             
             activityViewController.excludedActivityTypes = [UIActivityType.mail]
             
@@ -96,4 +98,11 @@ class GameOverModal: UIViewController {
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
     }
+}
+
+extension GameOverModal: GameScoreDelegate {
+    func acceptGameScore(score: Int){
+        self.score = score
+    }
+    
 }
