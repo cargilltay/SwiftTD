@@ -14,7 +14,7 @@ class MazeSolverController{
     var PATH:Int = 3;
     
     var grid: [[Int]]!
-    var startRow: Int = 0
+    var startRow: Int = 10
     var startCol: Int = 10
     var width: Int!
     var height: Int!

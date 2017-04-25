@@ -32,7 +32,7 @@ class GameController {
     var minionEndLocation: CGPoint!
     var statController: MonsterStatController = MonsterStatController()
     var difficulty: GameDifficulty!
-
+    var difficultyModifier: Int! = 1
     var spawnTimer : Timer?
     
     var time: Date = Date()
@@ -132,7 +132,7 @@ class GameController {
     func nextRound(){
         self.numMonsters += 1
         self.round += 1
-        self.monsterHealth += (((self.round / 3) * 10)*4)
+        self.monsterHealth += ((self.round / 3) * 40) * difficultyModifier
         print("MonsterHealth = \(self.monsterHealth)")
         
     }
