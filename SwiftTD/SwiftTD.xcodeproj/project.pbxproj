@@ -66,6 +66,7 @@
 		E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */; };
 		F14AE1881E95548A00D57195 /* MonsterStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1871E95548A00D57195 /* MonsterStatController.swift */; };
 		F14AE18A1E9554C000D57195 /* MonsterStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AE1891E9554C000D57195 /* MonsterStats.swift */; };
+		F1DCB35F1EB008BD00FB3871 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DCB35E1EB008BD00FB3871 /* UserNotifications.framework */; };
 		F66D6AF34476ED2031961E44 /* Pods_SwiftTDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1C91540D88C78509541B42 /* Pods_SwiftTDUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,8 @@
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
 		F14AE1891E9554C000D57195 /* MonsterStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStats.swift; sourceTree = "<group>"; };
+		F1DCB35D1EB0071E00FB3871 /* SwiftTD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTD.entitlements; sourceTree = "<group>"; };
+		F1DCB35E1EB008BD00FB3871 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		FFCA5B72014B884CBAA53BCF /* Pods-SwiftTDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DCB35F1EB008BD00FB3871 /* UserNotifications.framework in Frameworks */,
 				7010D9031EA995640080C256 /* Social.framework in Frameworks */,
 				E0DC5D055D53D0FAAC49AF54 /* Pods_SwiftTD.framework in Frameworks */,
 			);
@@ -218,6 +222,7 @@
 		701E16301E6126B3007EEAD9 /* SwiftTD */ = {
 			isa = PBXGroup;
 			children = (
+				F1DCB35D1EB0071E00FB3871 /* SwiftTD.entitlements */,
 				701E16A51E6BCB21007EEAD9 /* ViewControllers */,
 				701E169F1E666894007EEAD9 /* Controllers */,
 				701E16A01E666894007EEAD9 /* Views */,
@@ -351,6 +356,7 @@
 		8FBCE612A522E78DD48C21E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1DCB35E1EB008BD00FB3871 /* UserNotifications.framework */,
 				7010D9021EA995640080C256 /* Social.framework */,
 				55EA06DA28369B5CEF8C44C3 /* Pods_SwiftTD.framework */,
 				D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */,
@@ -451,6 +457,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WYKTC24XLQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					701E16471E6126B3007EEAD9 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -859,6 +873,7 @@
 			baseConfigurationReference = 12C066FA80310F4CD65BD19C /* Pods-SwiftTD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftTD/SwiftTD.entitlements;
 				DEVELOPMENT_TEAM = WYKTC24XLQ;
 				INFOPLIST_FILE = SwiftTD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -873,6 +888,7 @@
 			baseConfigurationReference = 65B48267BFC4D3C4DC86D412 /* Pods-SwiftTD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftTD/SwiftTD.entitlements;
 				DEVELOPMENT_TEAM = WYKTC24XLQ;
 				INFOPLIST_FILE = SwiftTD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
