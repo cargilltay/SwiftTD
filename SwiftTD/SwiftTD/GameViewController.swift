@@ -146,6 +146,7 @@ class GameViewController: UIViewController {
         panelController?.damageLabel.sizeToFit()
         panelController?.killsLabel.text = "Kills:: \(tower.kills)"
         panelController?.killsLabel.sizeToFit()
+        panelController?.effectLabel.numberOfLines = 0
         panelController?.effectLabel.text = "Effect: \(tower.effectText!)"
         panelController?.effectLabel.sizeToFit()
         

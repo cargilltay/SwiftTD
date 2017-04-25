@@ -60,13 +60,13 @@ class BaseMonster: SKSpriteNode {
         outerHealthBar = SKShapeNode(rectOf: CGSize(width: self.size.width, height: 10))
         outerHealthBar.strokeColor = SKColor.black
         outerHealthBar.fillColor = SKColor.red
-        outerHealthBar.zPosition = self.zPosition
+        outerHealthBar.zPosition = 110
         outerHealthBar.glowWidth = 1.0
         
         innerHealthBar = SKShapeNode(rectOf: innerSize)
         innerHealthBar.strokeColor = SKColor.black
         innerHealthBar.fillColor = SKColor.green
-        innerHealthBar.zPosition = self.zPosition + 1
+        innerHealthBar.zPosition = 111
         innerHealthBar.glowWidth = 1.0
         
         //outerHealthBar.addChild(innerHealthBar)
@@ -88,7 +88,7 @@ class BaseMonster: SKSpriteNode {
         updateHealthBarPositions()
         
         //hasReachEnd
-        if(self.position.x == self.endLocation.x && self.position.y == self.endLocation.y){
+        if(self.position.x == self.endLocation.x + 37.5 && self.position.y == self.endLocation.y + 37.5){
             self.reachedEnd = true
             return
         }
@@ -98,8 +98,10 @@ class BaseMonster: SKSpriteNode {
         destinations.append(endCell)
     
         var curDest = destinations[self.destination]
+        let xWithOffset = curDest.xPos + CGFloat(37.5)
+        let yWithOffset = curDest.yPos + CGFloat(37.5)
         
-        if (curDest.xPos == self.position.x && curDest.yPos == self.position.y) {
+        if (xWithOffset == self.position.x && yWithOffset == self.position.y) {
             self.destination += 1
             if(self.destination == self.destinations.count){
                 return
@@ -109,22 +111,22 @@ class BaseMonster: SKSpriteNode {
         }
         //print(self.position.x)
         
-        if (self.position.x < curDest.xPos) {
+        if (self.position.x < xWithOffset) {
             self.position.x += self.speed
-        } else if (self.position.x > curDest.xPos) {
-            if(self.position.x - curDest.xPos < self.speed){
-                self.position.x -= self.position.x - curDest.xPos
+        } else if (self.position.x > xWithOffset) {
+            if(self.position.x - xWithOffset < self.speed){
+                self.position.x -= self.position.x - xWithOffset
             }
             else{
                 self.position.x -= self.speed
             }
         }
         
-        if (self.position.y < curDest.yPos) {
+        if (self.position.y < yWithOffset) {
             self.position.y += self.speed
-        } else if (self.position.y > curDest.yPos) {
-            if(self.position.y - curDest.yPos < self.speed){
-                self.position.y -= self.position.y - curDest.yPos
+        } else if (self.position.y > yWithOffset) {
+            if(self.position.y - yWithOffset < self.speed){
+                self.position.y -= self.position.y - yWithOffset
             }
             else{
                 self.position.y -= self.speed

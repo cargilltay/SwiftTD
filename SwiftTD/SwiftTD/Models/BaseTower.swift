@@ -36,15 +36,18 @@ class BaseTower: SKSpriteNode {
     }
     
     func scanForTarget(targets: [BaseMonster]){
+        if(self.type == TowerType.Rock){
+            return;
+        }
+        
         self.targets = targets
         
         let halfTextureSize = (self.texture?.size().width)! / 2
-        let halfRadius:CGFloat = CGFloat(self.radius) / 2.0
         
-        let xOffsetLeft = self.position.x - (halfRadius)
-        let xOffsetRight = self.position.x + (halfTextureSize + halfRadius)
-        let yOffsetDown = self.position.y - (halfRadius)
-        let yOffsetUp = self.position.y + (halfTextureSize + halfRadius)
+        let xOffsetLeft = self.position.x - CGFloat(self.radius)
+        let xOffsetRight = self.position.x + (halfTextureSize + CGFloat(self.radius))
+        let yOffsetDown = self.position.y - CGFloat(self.radius)
+        let yOffsetUp = self.position.y + (halfTextureSize + CGFloat(self.radius))
         
         
         for target in self.targets{
@@ -85,6 +88,10 @@ class BaseTower: SKSpriteNode {
     }
     
     func fireProjectiles(){
+        if(self.type == TowerType.Rock){
+            return;
+        }
+        
         for (index,proj) in self.projectiles.enumerated().reversed(){
             proj.updatePosition()
             

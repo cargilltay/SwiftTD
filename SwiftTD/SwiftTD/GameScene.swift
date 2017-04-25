@@ -241,6 +241,24 @@ class GameScene: SKScene {
         if let touch = touches.first {
             let location = touch.location(in: self)
             
+            if grid!.contains(location){
+                let closest = grid!.closestCell(x: location.x, y: location.y)
+                if(closest.isBlocked && closest.hasTower){
+                    towerCircle = SKShapeNode(circleOfRadius: CGFloat(closest.tower.radius) ) // Size of Circle, modify to tower radius
+                    towerCircle.position = CGPoint(x: closest.xPos +  (TowerWidth / 2) , y: closest.yPos +  (TowerHeight / 2))
+                    towerCircle.strokeColor = SKColor.black
+                    towerCircle.zPosition = 101
+                    towerCircle.glowWidth = 1.0
+                    self.addChild(towerCircle)
+                    viewController!.showPanel(tower: closest.tower, yPos: frame.height - viewController!.topPanel.frame.height)
+                }
+            }
+            
+            //guard tower buttons and other items below from executing when came is in progress
+            if(game.mode == GameMode.Defend){
+                return
+            }
+            
             if rockButton.contains(location) {
                 if(game.gold < TowerPrice[TowerType.Rock]!){
                     return
@@ -301,18 +319,6 @@ class GameScene: SKScene {
                 nodeType = TowerType.Air
             }
             
-            if grid!.contains(location){
-                let closest = grid!.closestCell(x: location.x, y: location.y)
-                if(closest.isBlocked && closest.hasTower){
-                    towerCircle = SKShapeNode(circleOfRadius: CGFloat(closest.tower.radius) ) // Size of Circle, modify to tower radius
-                    towerCircle.position = CGPoint(x: closest.xPos +  (TowerWidth / 2) , y: closest.yPos +  (TowerHeight / 2))
-                    towerCircle.strokeColor = SKColor.black
-                    towerCircle.zPosition = 101
-                    towerCircle.glowWidth = 1.0
-                    self.addChild(towerCircle)
-                    viewController!.showPanel(tower: closest.tower, yPos: frame.height - viewController!.topPanel.frame.height)
-                }
-            }
             
         }
     }

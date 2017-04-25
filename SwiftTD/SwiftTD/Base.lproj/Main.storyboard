@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5oF-Tb-no6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5oF-Tb-no6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -353,28 +353,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FancyCell" rowHeight="77" id="fYG-E6-uNY" customClass="SwiftTDCell" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="77"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FancyCell" rowHeight="133" id="fYG-E6-uNY" customClass="SwiftTDCell" customModule="SwiftTD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYG-E6-uNY" id="G0H-hf-QL2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sft-56-aP8" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="28" width="171" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sft-56-aP8" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="8" width="171" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="G8G-1E-ofa"/>
+                                                <constraint firstAttribute="width" constant="171" id="aia-c7-nE5"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-gv-vTM" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                            <rect key="frame" x="196" y="28" width="171" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-gv-vTM" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
+                                            <rect key="frame" x="187" y="8" width="180" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="180" id="7lP-Pc-cJF"/>
+                                                <constraint firstAttribute="height" constant="35" id="8b0-qr-ePG"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QSv-gv-vTM" firstAttribute="top" secondItem="G0H-hf-QL2" secondAttribute="topMargin" id="0at-jp-XBS"/>
+                                        <constraint firstItem="sft-56-aP8" firstAttribute="top" secondItem="G0H-hf-QL2" secondAttribute="topMargin" id="Mu8-xh-aq8"/>
+                                        <constraint firstItem="QSv-gv-vTM" firstAttribute="leading" secondItem="sft-56-aP8" secondAttribute="trailing" constant="8" id="RUk-6y-h8a"/>
+                                        <constraint firstItem="QSv-gv-vTM" firstAttribute="leading" secondItem="sft-56-aP8" secondAttribute="trailing" constant="8" id="hi2-fI-OdS"/>
+                                        <constraint firstItem="QSv-gv-vTM" firstAttribute="trailing" secondItem="G0H-hf-QL2" secondAttribute="trailingMargin" id="p8x-Pr-a5f"/>
+                                        <constraint firstItem="sft-56-aP8" firstAttribute="leading" secondItem="G0H-hf-QL2" secondAttribute="leadingMargin" id="yRN-JC-xhM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="name" destination="sft-56-aP8" id="ZSF-Kc-ID9"/>
@@ -584,7 +598,7 @@
             <objects>
                 <navigationController storyboardIdentifier="MainMenuNav" automaticallyAdjustsScrollViewInsets="NO" id="L3O-Sv-uO7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xtA-Um-uAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xtA-Um-uAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -656,7 +670,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Effect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKV-OY-K1R" customClass="SwiftTDLabel" customModule="SwiftTD" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="95" width="75" height="21"/>
+                                        <rect key="frame" x="8" y="95" width="304" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -670,7 +684,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-aq-KEu" customClass="SwiftTDButton" customModule="SwiftTD" customModuleProvider="target">
-                                        <rect key="frame" x="308" y="111" width="59" height="30"/>
+                                        <rect key="frame" x="308" y="118" width="59" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Delete"/>
                                         <connections>
@@ -698,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTY-jN-cPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="-315"/>
+            <point key="canvasLocation" x="3005.5999999999999" y="-315.74212893553226"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M73-of-X6d">
@@ -735,7 +749,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1Ge-YC-Hn2"/>
         <segue reference="OSe-xr-8GU"/>
-        <segue reference="kYw-Rd-pi2"/>
     </inferredMetricsTieBreakers>
 </document>

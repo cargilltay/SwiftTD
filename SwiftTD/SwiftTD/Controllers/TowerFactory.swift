@@ -44,8 +44,6 @@ class TowerFactory {
             return EarthTower()
         case .Air:
             return AirTower()
-        default:
-            return BasicTower()
         }
     }
 }
