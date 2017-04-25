@@ -81,13 +81,8 @@ class LeaderboardController: UITableViewController {
             }
         }
         
-        // sort by increasing date.
-        tmpData.sort { (v1, v2) -> Bool in
-            if v1.sectionHeader < v2.sectionHeader {
-                return true
-            } else {
-                return false
-            }
+        tmpData = tmpData.sorted {
+            (s1, s2) -> Bool in return s1.sectionHeader.localizedStandardCompare(s2.sectionHeader) == .orderedDescending
         }
         
         self.tableViewData = tmpData
