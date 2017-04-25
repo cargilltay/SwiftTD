@@ -5,8 +5,8 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>ETD</key>
-			<string></string>
+			<key>ElementTD</key>
+			<string>CIS357.SwiftTD</string>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

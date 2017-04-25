@@ -48,6 +48,12 @@ class GameOverModal: UIViewController {
                 self.present(facebookComposeVC!, animated: true, completion: nil)
             }
             else {
+                let customURL:NSString = "fb://"
+                if UIApplication.shared.canOpenURL(URL(string: customURL as String)!) {
+                    UIApplication.shared.openURL(URL(string: customURL as String)!)
+                }
+
+                
                 self.showAlertMessage(message: "You are not connected to your Facebook account.")
             }
         }

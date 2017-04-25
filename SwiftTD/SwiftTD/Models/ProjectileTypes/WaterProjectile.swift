@@ -23,7 +23,7 @@ class WaterProjectile: BaseProjectile {
         if(!target.hasWaterEffect){
             target.hasWaterEffect = true;
             target.texture = SKTexture(imageNamed:"WaterEffectMonster")
-            target.speed = target.speed / 2
+            target.speed = target.speed / 1.5
         }
     }
     

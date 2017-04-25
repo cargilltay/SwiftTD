@@ -103,7 +103,9 @@ class Grid:SKSpriteNode {
                 }
             }
         }
-        print("Daniel \(cell.xPos), \(cell.yPos)")
+        if(cell == nil) {
+            print("Daniel \(x), \(y)")
+        }
         return cell
     }
     

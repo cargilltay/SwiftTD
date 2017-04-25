@@ -26,15 +26,23 @@ class GameViewController: UIViewController {
     var gameDifficulty: GameDifficulty!
     var panelController: GameTopPanelController?
     var delegate:GameScoreDelegate?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
             scene.game.difficulty = self.gameDifficulty
+            if(gameDifficulty == GameDifficulty.Easy){
+                scene.game.difficultyModifier = 1
+            }
+            else if(gameDifficulty == GameDifficulty.Medium){
+                scene.game.difficultyModifier = 2
+            }
+            else{
+                scene.game.difficultyModifier = 3
+            }
+
             scene.viewController = self
             
             // Set the scale mode to scale to fit the window
@@ -82,8 +90,8 @@ class GameViewController: UIViewController {
             //scene.game.setSolution(solution: [])
         
             //this is not an ideal way to do this.
-            let startLocation = CGPoint(x: scene.screenWidth! / 2, y: scene.screenHeight!)
-            let endLocation = CGPoint(x: scene.screenWidth! / 2, y: 0)
+            let startLocation = CGPoint(x: 0, y: scene.screenHeight! * 0.75)
+            let endLocation = CGPoint(x: scene.screenWidth!, y: scene.screenHeight!/6)
             scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
             scene.game.nextMode()
             updateLabels()
