@@ -22,7 +22,7 @@ class GameController {
     var score: Int = 0
     var numMonsters: Int = 4
     var numSpawnedMinions:Int = 0
-    var monsterHealth: Int = 150
+    var monsterHealth: Int = 200
     var round: Int = 0
     var monsters: [BaseMonster] = []
     var towers: [BaseTower] = []
@@ -132,7 +132,7 @@ class GameController {
     func nextRound(){
         self.numMonsters += 1
         self.round += 1
-        self.monsterHealth += (((self.round / 3) * 10)*2)
+        self.monsterHealth += (((self.round / 3) * 10)*4)
         print("MonsterHealth = \(self.monsterHealth)")
         
     }

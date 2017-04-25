@@ -14,7 +14,7 @@ class FireProjectile: BaseProjectile {
     
     var onFireTimer: Timer!
     let burnRate:CGFloat = 0.5
-    let burnDamage:Int = 10
+    let burnDamage:Int = 5
     
     init(damage: Int, position: CGPoint, target: BaseMonster) {
         let projTexture = SKTexture(imageNamed:"FireArrow")
