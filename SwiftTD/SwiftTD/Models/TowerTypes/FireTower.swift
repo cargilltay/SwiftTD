@@ -18,7 +18,7 @@ class FireTower: BaseTower {
         let cost: Int = 50
         let damage: Int = 40
         let fireRate: CGFloat = 0.5
-        let effectText:String = "Used For walling"
+        let effectText:String = "Ignites target, dealing 20\n damage a second."
         
         super.init(type: towerType,  damage: damage, cost: cost, radius: radius, texture: towerTexture, fireRate: fireRate)
         super.setEffect(text: effectText)

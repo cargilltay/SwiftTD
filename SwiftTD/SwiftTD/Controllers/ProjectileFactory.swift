@@ -24,8 +24,6 @@ class ProjectileFactory {
             return EarthProjectile(damage: tower.damage, position: tower.position, target: target)
         case .Air:
             return AirProjectile(damage: tower.damage, position: tower.position, target: target)
-        default:
-            return BasicProjectile(damage: tower.damage, position: tower.position, target: target)
         }
     }
 }

@@ -32,6 +32,8 @@ class BaseProjectile: SKSpriteNode {
     
     
     func checkHit () -> Bool {
+        
+        
         let tarX = self.target.position.x
         let tarY = self.target.position.y
         let checkWithinPixelOffset:CGFloat = 10.0
