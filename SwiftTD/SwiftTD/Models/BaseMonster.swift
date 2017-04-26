@@ -88,7 +88,9 @@ class BaseMonster: SKSpriteNode {
         updateHealthBarPositions()
         
         //hasReachEnd
-        if(self.position.x == self.endLocation.x + 37.5 && self.position.y == self.endLocation.y + 37.5){
+        //print(self.endLocation)
+        //print(self.position)
+        if(self.position.x == self.endLocation.x + 37.5 && self.position.y > self.endLocation.y + 37.4 && self.position.y < self.endLocation.y + 37.6){
             self.reachedEnd = true
             return
         }

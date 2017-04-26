@@ -357,9 +357,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BxR-1P-ItV">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <state key="normal" title="Main Menu"/>
+                            <connections>
+                                <segue destination="L3O-Sv-uO7" kind="showDetail" id="A1U-WD-YJT"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z2U-Tw-2Ni">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2U-Tw-2Ni" id="wGw-o9-gh1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -367,7 +376,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FancyCell" rowHeight="133" id="fYG-E6-uNY" customClass="SwiftTDCell" customModule="SwiftTD" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYG-E6-uNY" id="G0H-hf-QL2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
@@ -409,10 +418,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EUT-ri-hxy" id="dgh-za-4iq"/>
-                            <outlet property="delegate" destination="EUT-ri-hxy" id="VXW-7a-F55"/>
-                        </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDe-hR-PLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,7 +658,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ioZ-wr-tQ7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="72z-4r-G7C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Gc-hp-faL" customClass="SwiftTDContainer" customModule="SwiftTD" customModuleProvider="target">
@@ -783,7 +788,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="OSe-xr-8GU"/>
-        <segue reference="1Ge-YC-Hn2"/>
+        <segue reference="A1U-WD-YJT"/>
         <segue reference="t8P-BL-P9V"/>
+        <segue reference="1Ge-YC-Hn2"/>
     </inferredMetricsTieBreakers>
 </document>
