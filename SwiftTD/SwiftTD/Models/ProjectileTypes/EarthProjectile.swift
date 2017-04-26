@@ -18,7 +18,7 @@ class EarthProjectile: BaseProjectile {
     init(damage: Int, position: CGPoint, target: BaseMonster) {
         let projTexture = SKTexture(imageNamed:"BasicArrow")
         let damage = damage
-        let speed:CGFloat = 10
+        let speed:CGFloat = 15
         rockRadius = 100
         super.init(damage: damage, speed: speed, target: target, position: position, texture: projTexture, color: UIColor.black)
     }
