@@ -49,7 +49,6 @@ class LeaderboardController: UITableViewController {
             
             self.sortIntoSections(entries: self.entries)
             
-            //self.tableView.reloadData()
             
         }) { (error) in
             print(error.localizedDescription)
@@ -89,7 +88,6 @@ class LeaderboardController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         if let data = self.tableViewData {
             return data.count
         } else {

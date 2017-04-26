@@ -128,6 +128,7 @@
 		703995041E9826390033EFEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7048332D1E896AEE0085BC6B /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		7048332F1E899C9B0085BC6B /* SwiftTDTowerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDTowerButton.swift; sourceTree = "<group>"; };
+		70616D661EB0116A00DB8A73 /* SwiftTD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTD.entitlements; sourceTree = "<group>"; };
 		706417B91E8F5F8000104884 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		70674CC61E6FC79300A5BFB9 /* SwiftTDLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDLabel.swift; sourceTree = "<group>"; };
 		70674CC81E6FC7A800A5BFB9 /* SwiftTDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTDButton.swift; sourceTree = "<group>"; };
@@ -453,7 +454,7 @@
 				TargetAttributes = {
 					701E162D1E6126B3007EEAD9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WYKTC24XLQ;
+						DevelopmentTeam = FAPB23MCG4;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -872,10 +873,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftTD/SwiftTD.entitlements;
-				DEVELOPMENT_TEAM = WYKTC24XLQ;
+				DEVELOPMENT_TEAM = FAPB23MCG4;
 				INFOPLIST_FILE = SwiftTD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CIS357.SwiftTD;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -887,10 +888,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftTD/SwiftTD.entitlements;
-				DEVELOPMENT_TEAM = WYKTC24XLQ;
+				DEVELOPMENT_TEAM = FAPB23MCG4;
 				INFOPLIST_FILE = SwiftTD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CIS357.SwiftTD;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
