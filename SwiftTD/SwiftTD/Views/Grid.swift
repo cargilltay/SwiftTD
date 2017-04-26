@@ -88,21 +88,26 @@ class Grid:SKSpriteNode {
     
     func closestCell(x: CGFloat, y:CGFloat) -> Cell{
         var cell: Cell!
-        
         for (index, _) in self.cells.enumerated(){
             for c in self.cells[index]{
                 let modx = x - (x.truncatingRemainder(dividingBy: c.cSize));
-                
                 let baseOffsetMod = baseOffset.truncatingRemainder(dividingBy: c.cSize)
+                //print("base \(baseOffsetMod)")
                 let mody = y - ((y - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
                 
                 //print("x:\(c.xPos)" + "y:\(c.yPos)")
-                if (c.xPos == modx && c.yPos == mody) {
+                print("X \(c.xPos) \(c.yPos)")
+                if ((c.xPos == modx && c.yPos == mody) || (c.xPos == x-37.5 && c.yPos == y-37.5)) {
                     cell = c;
+                    print("Yes \(c.xPos) \(c.yPos)")
                     break
                 }
+                //print("c \(c.cSize)")
+              
+                //print("mod \(modx) \(mody)")
             }
         }
+        print("Daniel \(x), \(y)")
         if(cell == nil) {
             print("Daniel \(x), \(y)")
         }
