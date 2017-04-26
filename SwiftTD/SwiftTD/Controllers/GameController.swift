@@ -100,7 +100,9 @@ class GameController {
     }
     
     @objc func addMonster(){
-        let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: monsterHealth, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue)
+        let monsterSpeed:CGFloat = CGFloat(5.0) * CGFloat(difficultyModifier!)
+        
+        let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: monsterHealth, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue, speed: monsterSpeed)
         self.monsters.append(m)
         numSpawnedMinions += 1
         
@@ -132,7 +134,7 @@ class GameController {
     func nextRound(){
         self.numMonsters += 1
         self.round += 1
-        self.monsterHealth += ((self.round / 3) * 40) * difficultyModifier
+        self.monsterHealth += ((self.round / 3) * 20) * difficultyModifier
         print("MonsterHealth = \(self.monsterHealth)")
         
     }

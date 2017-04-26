@@ -26,13 +26,13 @@ class BaseMonster: SKSpriteNode {
     var outerHealthBar: SKShapeNode!
     var innerHealthBar: SKShapeNode!
     
-    init(startLocation: CGPoint, endLocation: CGPoint, pathSolution destinations: [Cell], damage: Int, hitPoints: Int, gold: Int, texture: SKTexture, color: UIColor) {
+    init(startLocation: CGPoint, endLocation: CGPoint, pathSolution destinations: [Cell], damage: Int, hitPoints: Int, gold: Int, texture: SKTexture, color: UIColor, speed: CGFloat) {
         super.init(texture: texture, color: color, size: texture.size())
         self.texture = texture
         self.damage = damage
         self.hitPoints = hitPoints
         self.destinations = destinations
-        self.speed = 10
+        self.speed = speed
         
         //this prevents bouncing when attempting to reach a point because you're off by x pixels
         var modifiedStart = startLocation
