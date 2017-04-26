@@ -88,29 +88,36 @@ class Grid:SKSpriteNode {
     
     func closestCell(x: CGFloat, y:CGFloat) -> Cell{
         var cell: Cell!
+        var tempY: CGFloat
+        
+        if(y > (self.size.height + self.baseOffset)){
+            tempY = self.size.height + self.baseOffset
+        }
+        else if(y < self.baseOffset){
+            tempY = self.baseOffset
+        }
+        else {
+            tempY = y
+        }
+        
+        
         for (index, _) in self.cells.enumerated(){
             for c in self.cells[index]{
                 let modx = x - (x.truncatingRemainder(dividingBy: c.cSize));
                 let baseOffsetMod = baseOffset.truncatingRemainder(dividingBy: c.cSize)
                 //print("base \(baseOffsetMod)")
-                let mody = y - ((y - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
+                let mody = tempY - ((tempY - baseOffsetMod).truncatingRemainder(dividingBy: c.cSize));
                 
                 //print("x:\(c.xPos)" + "y:\(c.yPos)")
-                print("X \(c.xPos) \(c.yPos)")
+                print("X \(c.xPos!) \(c.yPos!)")
                 if ((c.xPos == modx && c.yPos == mody)) {
                     cell = c;
                     print("Yes \(c.xPos) \(c.yPos)")
                     break
                 }
-                else if((c.xPos < x && c.xPos+37.5 > x) && c.yPos < y && c.yPos+37.5 > y){
-                    cell = c;
-                    print("Yes \(c.xPos) \(c.yPos)")
-                    break
-
-                }
                 //print("c \(c.cSize)")
               
-                //print("mod \(modx) \(mody)")
+                print("mod \(modx) \(mody)")
             }
         }
         print("Daniel \(x), \(y)")
