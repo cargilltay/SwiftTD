@@ -100,7 +100,7 @@ class GameController {
     }
     
     @objc func addMonster(){
-        let monsterSpeed:CGFloat = CGFloat(5.0) * CGFloat(difficultyModifier!)
+        let monsterSpeed:CGFloat = CGFloat(4.0) * CGFloat(difficultyModifier!)
         
         let m = BaseMonster(startLocation: self.minionStartPosition, endLocation: self.minionEndLocation, pathSolution: solution, damage: 2, hitPoints: monsterHealth, gold: 10, texture: SKTexture(imageNamed: "Monster"), color: UIColor.blue, speed: monsterSpeed)
         self.monsters.append(m)
