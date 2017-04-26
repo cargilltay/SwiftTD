@@ -159,7 +159,6 @@
 		D38E5B36C8A42AD76357A5FC /* Pods_SwiftTDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AE1871E95548A00D57195 /* MonsterStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatController.swift; sourceTree = "<group>"; };
 		F14AE1891E9554C000D57195 /* MonsterStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStats.swift; sourceTree = "<group>"; };
-		F1DCB35D1EB0071E00FB3871 /* SwiftTD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTD.entitlements; sourceTree = "<group>"; };
 		F1DCB35E1EB008BD00FB3871 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		FFCA5B72014B884CBAA53BCF /* Pods-SwiftTDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTDUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTDUITests/Pods-SwiftTDUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,7 +221,6 @@
 		701E16301E6126B3007EEAD9 /* SwiftTD */ = {
 			isa = PBXGroup;
 			children = (
-				F1DCB35D1EB0071E00FB3871 /* SwiftTD.entitlements */,
 				701E16A51E6BCB21007EEAD9 /* ViewControllers */,
 				701E169F1E666894007EEAD9 /* Controllers */,
 				701E16A01E666894007EEAD9 /* Views */,
