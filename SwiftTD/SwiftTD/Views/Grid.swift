@@ -97,10 +97,16 @@ class Grid:SKSpriteNode {
                 
                 //print("x:\(c.xPos)" + "y:\(c.yPos)")
                 print("X \(c.xPos) \(c.yPos)")
-                if ((c.xPos == modx && c.yPos == mody) || (c.xPos == x-37.5 && c.yPos == y-37.5)) {
+                if ((c.xPos == modx && c.yPos == mody)) {
                     cell = c;
                     print("Yes \(c.xPos) \(c.yPos)")
                     break
+                }
+                else if((c.xPos < x && c.xPos+37.5 > x) && c.yPos < y && c.yPos+37.5 > y){
+                    cell = c;
+                    print("Yes \(c.xPos) \(c.yPos)")
+                    break
+
                 }
                 //print("c \(c.cSize)")
               
