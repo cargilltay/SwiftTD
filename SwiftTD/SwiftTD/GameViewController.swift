@@ -91,7 +91,7 @@ class GameViewController: UIViewController {
         
             //this is not an ideal way to do this.
             let startLocation = CGPoint(x: 0, y: scene.screenHeight! * 0.75)
-            let endLocation = CGPoint(x: scene.screenWidth!, y: scene.screenHeight!/6)
+            let endLocation = CGPoint(x: scene.screenWidth!/2, y: 0)
             scene.game.setMinionStartAndEndLocation(start: startLocation, end: endLocation)
             scene.game.nextMode()
             updateLabels()
