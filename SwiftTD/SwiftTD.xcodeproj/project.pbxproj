@@ -222,7 +222,6 @@
 		701E16301E6126B3007EEAD9 /* SwiftTD */ = {
 			isa = PBXGroup;
 			children = (
-				70616D661EB0116A00DB8A73 /* SwiftTD.entitlements */,
 				701E16A51E6BCB21007EEAD9 /* ViewControllers */,
 				701E169F1E666894007EEAD9 /* Controllers */,
 				701E16A01E666894007EEAD9 /* Views */,
