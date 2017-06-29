@@ -60,12 +60,12 @@ class GameOverModal: UIViewController {
         
         // Configure a new action to show the UIActivityViewController
         let moreAction = UIAlertAction(title: "More", style: UIAlertActionStyle.default) { (action) -> Void in
-            let activityViewController = UIActivityViewController(activityItems: ["I Got A New SwiftTD Score of: \(self.score!)"], applicationActivities: nil)
+            /*let activityViewController = UIActivityViewController(activityItems: ["I Got A New SwiftTD Score of: \(self.score!)"], applicationActivities: nil)
             
             activityViewController.excludedActivityTypes = [UIActivityType.mail]
             
             self.present(activityViewController, animated: true, completion: nil)
-
+*/
         }
         
         
